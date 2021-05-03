@@ -11,6 +11,8 @@
 		8492F23F264080E400B9DF4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23E264080E400B9DF4A /* ContentView.swift */; };
 		8492F241264080E400B9DF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F240264080E400B9DF4A /* Assets.xcassets */; };
 		8492F244264080E400B9DF4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F243264080E400B9DF4A /* Preview Assets.xcassets */; };
+		8492F2502640835A00B9DF4A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F24F2640835A00B9DF4A /* MapView.swift */; };
+		8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F2532640890100B9DF4A /* LocationFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		8492F240264080E400B9DF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8492F243264080E400B9DF4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8492F245264080E400B9DF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8492F24F2640835A00B9DF4A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8492F2532640890100B9DF4A /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		8492F24D2640811C00B9DF4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8492F2532640890100B9DF4A /* LocationFetcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 		8492F24E2640813300B9DF4A /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				8492F24F2640835A00B9DF4A /* MapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
+				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
+				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
