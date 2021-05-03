@@ -13,12 +13,21 @@ struct MapView: View {
     
     let locationFetcher = LocationFetcher()
     
+    private var pins = [
+        PinAnnotation(name: "A", coordinate: .init(latitude: -30.045382, longitude:  -51.191168)),
+        PinAnnotation(name: "B", coordinate: .init(latitude: -30.043571, longitude: -51.193679)),
+        PinAnnotation(name: "C", coordinate: .init(latitude: -30.047617, longitude: -51.196549))
+        ]
+    
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: pins) { pin in
+            MapPin(coordinate: pin.coordinate)
+        }
             .frame(width: 400, height: 300)
             .onAppear(perform: {
                 requestUserLocation()
             })
+            .edgesIgnoringSafeArea(.all)
     }
     
     func requestUserLocation() {
