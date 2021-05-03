@@ -109,4 +109,6 @@ iOSInjectionProject/
 # https://github.com/johnno1962/injectionforxcode
 
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,xcodeinjection
