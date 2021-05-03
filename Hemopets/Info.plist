@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Precisamos da sua localização para poder procurar hemocentros próximos a você!</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Precisamos da sua localização para poder procurar hemocentros próximos a você!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

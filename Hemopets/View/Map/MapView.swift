@@ -11,6 +11,8 @@ import MapKit
 struct MapView: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
+    let locationFetcher = LocationFetcher()
+    
     var body: some View {
         Map(coordinateRegion: $region, showsUserLocation: true)
             .frame(width: 400, height: 300)
@@ -20,7 +22,12 @@ struct MapView: View {
     }
     
     func requestUserLocation() {
-    
+        self.locationFetcher.start()
+        DispatchQueue.main.async {
+            if let location = self.locationFetcher.lastKnownLocation {
+                region.center = location
+            }
+        }
     }
 }
 
