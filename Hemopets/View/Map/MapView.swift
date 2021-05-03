@@ -21,7 +21,13 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: pins) { pin in
-            MapPin(coordinate: pin.coordinate)
+            MapAnnotation(coordinate: pin.coordinate) {
+                Button(action: {
+                        print(pin.name)
+                }, label: {
+                    Text(pin.name)
+                })
+            }
         }
             .frame(width: 400, height: 300)
             .onAppear(perform: {
