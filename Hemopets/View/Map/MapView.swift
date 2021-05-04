@@ -42,12 +42,11 @@ struct MapView: View {
         .frame(width: 400, height: 300)
         .onAppear(perform: {
             requestUserLocation()
-            
         })
         .edgesIgnoringSafeArea(.all)
         
         .sheet(item: $selectedHemocenter) { hemocenter in
-            // Details View
+            LocationDetails(name: hemocenter.name)
         }
     }
 }
