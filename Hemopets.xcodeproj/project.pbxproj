@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAC26417BF300CD4FAC /* Hemocenter.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
 		8492F23F264080E400B9DF4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23E264080E400B9DF4A /* ContentView.swift */; };
 		8492F241264080E400B9DF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F240264080E400B9DF4A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84263CAC26417BF300CD4FAC /* Hemocenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemocenter.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492F23C264080E400B9DF4A /* HemopetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HemopetsApp.swift; sourceTree = "<group>"; };
 		8492F23E264080E400B9DF4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				8492F2532640890100B9DF4A /* LocationFetcher.swift */,
 				8492F25726408EE800B9DF4A /* PinAnnotation.swift */,
+				84263CAC26417BF300CD4FAC /* Hemocenter.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
+				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 			);

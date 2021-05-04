@@ -17,7 +17,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         manager.delegate = self
     }
 
-    func start() {
+    func getUserLocation() {
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
