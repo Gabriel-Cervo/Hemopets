@@ -35,7 +35,8 @@ struct MapView: View {
                 Button(action: {
                     self.selectedHemocenter = pin.info
                 }, label: {
-                    Text(pin.info.name)
+                    Image(systemName: "mappin.circle.fill")
+                        .foregroundColor(.red)
                 })
             }
         }
