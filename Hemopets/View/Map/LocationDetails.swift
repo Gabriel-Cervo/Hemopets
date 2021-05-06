@@ -16,14 +16,7 @@ struct LocationDetails: View {
 
             VStack(alignment: .leading) {
                 
-                HStack {
-                    Spacer()
-                    RoundedRectangle(cornerRadius: 0)
-                        .frame(width: 90, height: 1)
-                        .foregroundColor(.gray)
-                    Spacer()
-                }
-                .padding(.bottom, 50)
+                SwipeDownIndicatorView()
                 
                 HStack {
                     Spacer()
@@ -38,11 +31,11 @@ struct LocationDetails: View {
                     SubtitleView(text: name)
                         .padding(.vertical, 15)
                     
-                    FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: "R. Dr. Florêncio Ygartua, 429 - Moinhos de Vento, Porto Alegre - RS, 90430-010")
+                    FieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: " (51) 3072-0427")
                     
                     FieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: "09:00 - 18:30 (segunda a sexta)")
                     
-                    FieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: " (51) 3072-0427")
+                    FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: "R. Dr. Florêncio Ygartua, 429 - Moinhos de Vento, Porto Alegre - RS, 90430-010")
                 }
                 .padding(.leading, 10)
                 
