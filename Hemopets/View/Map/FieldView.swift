@@ -16,12 +16,15 @@ struct FieldView: View {
         HStack(alignment: .top) {
             Image(systemName: iconName)
                 .offset(y: 2)
+                .foregroundColor(.black)
             VStack(alignment: .leading, spacing: 2) {
                 Text(fieldName)
                     .bold()
                     .font(.headline)
+                    .foregroundColor(.black)
                 Text(fieldDescription)
                     .font(.subheadline)
+                    .foregroundColor(.black)
             }
         }
         .frame(width: 255, alignment: .leading)

@@ -44,7 +44,6 @@ struct LocationDetails: View {
                     
                     FieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: " (51) 3072-0427")
                 }
-                
                 .padding(.leading, 10)
                 
                 Spacer()
