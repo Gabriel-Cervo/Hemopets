@@ -30,6 +30,8 @@ struct MapView: View {
                     self.selectedHemocenter = pin.info
                 }, label: {
                     Image(systemName: "mappin.circle.fill")
+                        .resizable()
+                        .frame(width: 30.0, height: 30.0)
                         .foregroundColor(.red)
                 })
             }
