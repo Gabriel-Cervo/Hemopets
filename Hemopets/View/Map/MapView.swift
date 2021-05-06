@@ -24,26 +24,31 @@ struct MapView: View {
     }
     
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
-            MapAnnotation(coordinate: pin.info.coordinate) {
-                Button(action: {
-                    self.selectedHemocenter = pin.info
-                }, label: {
-                    Image(systemName: "mappin.circle.fill")
-                        .resizable()
-                        .frame(width: 30.0, height: 30.0)
-                        .foregroundColor(.red)
-                })
+        VStack {
+            TitleView(text: "Hemocentros")
+                .padding(.bottom, 20)
+            
+            Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
+                MapAnnotation(coordinate: pin.info.coordinate) {
+                    Button(action: {
+                        self.selectedHemocenter = pin.info
+                    }, label: {
+                        Image(systemName: "mappin.circle.fill")
+                            .resizable()
+                            .frame(width: 30.0, height: 30.0)
+                            .foregroundColor(.red)
+                    })
+                }
             }
+            .frame(width: 400, height: 300)
+            .onAppear(perform: {
+                requestUserLocation()
+            })
+            .edgesIgnoringSafeArea(.all)
+            
+            .sheet(item: $selectedHemocenter) { hemocenter in
+                LocationDetails(name: hemocenter.name)
         }
-        .frame(width: 400, height: 300)
-        .onAppear(perform: {
-            requestUserLocation()
-        })
-        .edgesIgnoringSafeArea(.all)
-        
-        .sheet(item: $selectedHemocenter) { hemocenter in
-            LocationDetails(name: hemocenter.name)
         }
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5F8264463BF0044EB71 /* MapConstants.swift */; };
+		8408D5FE264477E10044EB71 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5FD264477E10044EB71 /* TitleView.swift */; };
+		8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8408D600264478530044EB71 /* Mithella-Regular.otf */; };
+		8408D603264478530044EB71 /* Mithella-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8408D601264478530044EB71 /* Mithella-Bold.otf */; };
 		84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAC26417BF300CD4FAC /* Hemocenter.swift */; };
 		84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAF26417E7C00CD4FAC /* LocationDetails.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		8408D5F8264463BF0044EB71 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
+		8408D5FD264477E10044EB71 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8408D600264478530044EB71 /* Mithella-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mithella-Regular.otf"; sourceTree = "<group>"; };
+		8408D601264478530044EB71 /* Mithella-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mithella-Bold.otf"; sourceTree = "<group>"; };
 		84263CAC26417BF300CD4FAC /* Hemocenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemocenter.swift; sourceTree = "<group>"; };
 		84263CAF26417E7C00CD4FAC /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8408D5FA264477C30044EB71 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8408D5FD264477E10044EB71 /* TitleView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8408D5FF264478300044EB71 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8408D601264478530044EB71 /* Mithella-Bold.otf */,
+				8408D600264478530044EB71 /* Mithella-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		8492F230264080E400B9DF4A = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +87,7 @@
 		8492F23B264080E400B9DF4A /* Hemopets */ = {
 			isa = PBXGroup;
 			children = (
+				8408D5FF264478300044EB71 /* Font */,
 				8492F24D2640811C00B9DF4A /* Model */,
 				8492F24C2640811600B9DF4A /* View */,
 				8492F23C264080E400B9DF4A /* HemopetsApp.swift */,
@@ -86,6 +110,7 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8408D5FA264477C30044EB71 /* Shared */,
 				8492F24E2640813300B9DF4A /* Map */,
 			);
 			path = View;
@@ -177,6 +202,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8492F244264080E400B9DF4A /* Preview Assets.xcassets in Resources */,
+				8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */,
+				8408D603264478530044EB71 /* Mithella-Bold.otf in Resources */,
 				8492F241264080E400B9DF4A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +220,7 @@
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
+				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 				8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */,
