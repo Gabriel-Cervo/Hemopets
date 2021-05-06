@@ -11,47 +11,28 @@ struct LocationDetails: View {
     var name: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Image("testeHemo")
-                .resizable()
-                .frame(width: 350, height: 250)
-                .aspectRatio(contentMode: .fit)
-            
-            Text(name)
-                .font(.system(.title))
-                .padding(.bottom, -2)
-            
-            HStack {
-                Text("Telefone:")
-                    .font(.system(.caption))
-                    .bold()
-                Text("+55 51 555112345")
-                    .font(.system(.caption))
+        ZStack {
+            Color.init("Card")
+
+            VStack(alignment: .leading) {
+                
+                HemocenterImage(imageName: "testeHemo")
+                
+                VStack(alignment: .leading) {
+                    SubtitleView(text: name)
+                        .padding(.vertical, 15)
+                    
+                    FieldView(iconName: "pencil", fieldName: "Endereço:", fieldDescription: "R. Dr. Florêncio Ygartua, 429 - Moinhos de Vento, Porto Alegre - RS, 90430-010")
+                    
+                    FieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: "09:00 - 18:30 (segunda a sexta)")
+                    
+                    FieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: " (51) 3072-0427")
+                }
+                
+                .padding(.leading, 10)
             }
-            
-            HStack {
-                Text("Aceita doação de:")
-                    .font(.system(.caption))
-                    .bold()
-                Text("Cachorros e gatos")
-                    .font(.system(.caption))
-            }
-            
-            HStack {
-                Text("Horários:")
-                    .font(.system(.caption))
-                    .bold()
-                Text("Das 08h as 19h")
-                    .font(.system(.caption))
-            }
-            
-            Divider()
-            
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec quam lectus. Mauris hendrerit vehicula sapien, in finibus dui vulputate ut. Mauris in rhoncus lorem, ut laoreet ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et sollicitudin metus. Nullam pellentesque scelerisque sem, ac malesuada orci dignissim vitae. Aenean vestibulum metus vel felis vulputate, in gravida risus accumsan. Aliquam vehicula ipsum sit amet condimentum tempus. Donec suscipit ipsum massa, non elementum lacus tempor non. Maecenas dui lectus, vehicula vitae venenatis a, suscipit eget diam. Proin id scelerisque diam.")
-                .font(.system(.subheadline))
-            
+            .padding()
         }
-        .padding()
     }
 }
 
