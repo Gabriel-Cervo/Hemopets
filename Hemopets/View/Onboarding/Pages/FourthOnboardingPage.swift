@@ -28,7 +28,7 @@ struct FourthOnboardingPage: View {
 
                         ProgressView(activeCircle: 4)
                         
-                        FinishButton(text: "Vamos lá!", nextView: AnyView(FirstOnboardingPage()))
+                        FinishButton(text: "Vamos lá!", nextView: AnyView(MapView()))
                             .frame(width: 300, alignment: .center)
                             .padding(.top, 30)
                             .padding(.leading, 10)
@@ -37,7 +37,8 @@ struct FourthOnboardingPage: View {
                 }
             }
         }
-        .navigationBarHidden(true)    }
+        .navigationBarHidden(true)
+    }
 }
 
 struct FourthOnboardingPage_Previews: PreviewProvider {

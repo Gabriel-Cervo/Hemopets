@@ -55,6 +55,7 @@ struct MapView: View {
             }
         }
         .ignoresSafeArea()
+        .navigationBarHidden(true)
     }
 }
 
