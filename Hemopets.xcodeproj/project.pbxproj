@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B79EE50264087B700E67CD2 /* DonationFaqQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79EE4F264087B700E67CD2 /* DonationFaqQuestions.swift */; };
+		2BD3FE3E2643105600ECCE48 /* DonationFaqCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3FE3D2643105600ECCE48 /* DonationFaqCategories.swift */; };
+		2BD3FE402643110D00ECCE48 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3FE3F2643110D00ECCE48 /* Question.swift */; };
+		2BD3FE42264311FA00ECCE48 /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3FE41264311FA00ECCE48 /* QuestionsData.swift */; };
+		2BD3FE462644680500ECCE48 /* QuestionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD3FE452644680500ECCE48 /* QuestionCategory.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
 		8492F23F264080E400B9DF4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23E264080E400B9DF4A /* ContentView.swift */; };
 		8492F241264080E400B9DF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F240264080E400B9DF4A /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B79EE4F264087B700E67CD2 /* DonationFaqQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqQuestions.swift; sourceTree = "<group>"; };
+		2BD3FE3D2643105600ECCE48 /* DonationFaqCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqCategories.swift; sourceTree = "<group>"; };
+		2BD3FE3F2643110D00ECCE48 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2BD3FE41264311FA00ECCE48 /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
+		2BD3FE452644680500ECCE48 /* QuestionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCategory.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492F23C264080E400B9DF4A /* HemopetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HemopetsApp.swift; sourceTree = "<group>"; };
 		8492F23E264080E400B9DF4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +43,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B79EE4B2640862100E67CD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BD3FE4826446F6000ECCE48 /* FAQ */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B79EE4C2640862900E67CD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B79EE512640881500E67CD2 /* DonationInformations */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B79EE512640881500E67CD2 /* DonationInformations */ = {
+			isa = PBXGroup;
+			children = (
+				2B79EE4F264087B700E67CD2 /* DonationFaqQuestions.swift */,
+				2BD3FE3D2643105600ECCE48 /* DonationFaqCategories.swift */,
+			);
+			path = DonationInformations;
+			sourceTree = "<group>";
+		};
+		2BD3FE4826446F6000ECCE48 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2BD3FE3F2643110D00ECCE48 /* Question.swift */,
+				2BD3FE41264311FA00ECCE48 /* QuestionsData.swift */,
+				2BD3FE452644680500ECCE48 /* QuestionCategory.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		8492F230264080E400B9DF4A = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +97,8 @@
 		8492F23B264080E400B9DF4A /* Hemopets */ = {
 			isa = PBXGroup;
 			children = (
-				8492F24D2640811C00B9DF4A /* Model */,
-				8492F24C2640811600B9DF4A /* View */,
+				2B79EE4C2640862900E67CD2 /* View */,
+				2B79EE4B2640862100E67CD2 /* Model */,
 				8492F23C264080E400B9DF4A /* HemopetsApp.swift */,
 				8492F23E264080E400B9DF4A /* ContentView.swift */,
 				8492F240264080E400B9DF4A /* Assets.xcassets */,
@@ -69,28 +114,6 @@
 				8492F243264080E400B9DF4A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8492F24C2640811600B9DF4A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8492F24E2640813300B9DF4A /* Map */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		8492F24D2640811C00B9DF4A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8492F24E2640813300B9DF4A /* Map */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
+				2B79EE50264087B700E67CD2 /* DonationFaqQuestions.swift in Sources */,
+				2BD3FE42264311FA00ECCE48 /* QuestionsData.swift in Sources */,
+				2BD3FE3E2643105600ECCE48 /* DonationFaqCategories.swift in Sources */,
+				2BD3FE402643110D00ECCE48 /* Question.swift in Sources */,
+				2BD3FE462644680500ECCE48 /* QuestionCategory.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

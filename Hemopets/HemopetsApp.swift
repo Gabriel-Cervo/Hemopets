@@ -11,7 +11,8 @@ import SwiftUI
 struct HemopetsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            DonationFaqCategories()
         }
     }
 }
