@@ -9,7 +9,39 @@ import SwiftUI
 
 struct MainContentView: View {
     var body: some View {
-        MapView()
+        TabView {
+            OnboardingView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square.fill")
+                        Text("inicio")
+                    }
+                }
+            
+            OnboardingView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square.fill")
+                        Text("Meus Pets")
+                    }
+                }
+            
+            MapView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square.fill")
+                        Text("Hemocentros")
+                    }
+                }
+            
+            OnboardingView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square.fill")
+                        Text("Dúvidas")
+                    }
+                }
+        }
     }
 }
 
