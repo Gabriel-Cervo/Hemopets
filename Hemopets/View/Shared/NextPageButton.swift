@@ -15,9 +15,9 @@ struct NextPageButton: View {
             ZStack {
                 Color.init("ButtonPrimary")
                 
-                Image(systemName: "greaterthan")
+                Image(systemName: "chevron.right")
                     .resizable()
-                    .frame(width: 18, height: 18)
+                    .frame(width: 15, height: 20)
                     .foregroundColor(.white)
             }
             .frame(width: 55, height: 55)
