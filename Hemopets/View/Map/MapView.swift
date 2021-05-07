@@ -36,14 +36,20 @@ struct MapView: View {
                         Button(action: {
                             self.selectedHemocenter = pin.info
                         }, label: {
-                            Image(systemName: "mappin.circle.fill")
-                                .resizable()
-                                .frame(width: 30.0, height: 30.0)
-                                .foregroundColor(.red)
+                            ZStack {
+                                Color.init("Card")
+                                
+                                Image("PawRed")
+                                    .resizable()
+                                    .frame(width: 15, height: 15)
+                            }
+                            .frame(width: 30.0, height: 30.0)
+                            .cornerRadius(25)
+                            
                         })
                     }
                 }
-                .frame(width: 400, height: 500)
+                .frame(width: 400, height: 650)
                 .onAppear(perform: {
                     requestUserLocation()
                 })
@@ -55,11 +61,13 @@ struct MapView: View {
             }
         }
         .ignoresSafeArea()
+        .navigationBarHidden(true)
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
+            .colorScheme(.dark)
     }
 }
