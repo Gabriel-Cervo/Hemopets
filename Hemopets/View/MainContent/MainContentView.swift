@@ -33,6 +33,7 @@ struct MainContentView: View {
                         Text("Hemocentros")
                     }
                 }
+                .colorScheme(.dark)
             
             OnboardingView()
                 .tabItem {
