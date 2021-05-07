@@ -5,9 +5,12 @@ import Foundation
     
     static func saveData<T: Encodable>(data: T, for key: String) throws {
         let jsonEncoder = JSONEncoder()
-        let savedData = try jsonEncoder.encode(data)
+        if let savedData = try? jsonEncoder.encode(data) {
+            userDefaults.set(savedData, forKey: key)
+        } else {
+            throw NSError()
+        }
        
-        userDefaults.set(savedData, forKey: key)
     }
     
     static func loadData<T: Decodable>(for key: String) throws -> T {
@@ -16,8 +19,11 @@ import Foundation
             throw NSError()
         }
         
-        let TData = try jsonDecoder.decode(T.self, from: loadData)
+        if let TData = try? jsonDecoder.decode(T.self, from: loadData) {
+            return TData
+        } else {
+            throw NSError()
+        }
         
-        return TData
     }
 }
