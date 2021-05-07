@@ -46,7 +46,7 @@ struct MainContentView: View {
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
-            UITabBar.appearance().barTintColor = .init(named: "Background")
+            UITabBar.appearance().barTintColor = UIColor(named: "Background")
         }
     }
     
