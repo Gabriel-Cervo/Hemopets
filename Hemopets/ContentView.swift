@@ -24,16 +24,13 @@ struct ContentView: View {
                 OnboardingView()
             }
         }
-        
     }
     
     func checkOnboardDefaults() {
         do {
             let storedValue = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
-            print(storedValue)
 
             DispatchQueue.main.async {
-                print(storedValue)
                 self.hasSeenOnboarding = storedValue
                 self.hasNotLoadedDefaults = false
             }
