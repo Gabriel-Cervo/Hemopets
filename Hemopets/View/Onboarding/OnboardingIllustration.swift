@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct OnboardingIllustration: View {
+    var illustrationName: String
+    
     var body: some View {
-        Image("Blank4")
+        Image(illustrationName)
             .resizable()
             .cornerRadius(10)
             .frame(width: 300, height: 300)
@@ -18,6 +20,6 @@ struct OnboardingIllustration: View {
 
 struct OnboardingIllustration_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingIllustration()
+        OnboardingIllustration(illustrationName: "Blank4")
     }
 }

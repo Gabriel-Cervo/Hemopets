@@ -9,10 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        NavigationView {
-            FirstOnboardingPage()
-        }
-        .navigationBarHidden(true)
+        FirstOnboardingPage()
     }
 }
 

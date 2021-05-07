@@ -9,29 +9,32 @@ import SwiftUI
 
 struct SecondOnboardingPage: View {
     var body: some View {
-        ZStack {
-            OnboardingBackgroundView()
-            
-            VStack(alignment: .leading) {
-                OnboardingIllustration()
-                
-                Spacer()
+        NavigationView {
+            ZStack {
+                OnboardingBackgroundView()
                 
                 VStack(alignment: .leading) {
-                    Text("Pets")
-                        .foregroundColor(.init("Title"))
-                        .font(.custom("Mithella-Bold", size: 30))
-                    .padding(.bottom, 5)
-                    
-                    OnboardingDescriptionTextView(text: "Cadastre o seu pet e descubra se ele pode se tornar um doador e salvar vidas!")
+                    OnboardingIllustration(illustrationName: "Blank4")
 
-                    ProgressView(activeCircle: 2)
+                    Spacer()
                     
-                    NextPageButton(nextView: AnyView(OnboardingView()))
+                    VStack(alignment: .leading) {
+                        Text("Pets")
+                            .foregroundColor(.init("Title"))
+                            .font(.custom("Mithella-Bold", size: 30))
+                        .padding(.bottom, 5)
+                        
+                        OnboardingDescriptionTextView(text: "Cadastre o seu pet e descubra se ele pode se tornar um doador e salvar vidas!")
+
+                        ProgressView(activeCircle: 2)
+                        
+                        NextPageButton(nextView: AnyView(OnboardingView()))
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
         }
+        .navigationBarHidden(true)
     }
 }
 
