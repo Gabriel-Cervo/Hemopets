@@ -49,7 +49,7 @@ struct MainContentView: View {
             UITabBar.appearance().barTintColor = UIColor(named: "Background")
         }
     }
-    
+
     func updateOnboardValueInDefaults() {
         do {
             try UserDefaultsManager.saveData(data: true, for: "sawOnboarding")
