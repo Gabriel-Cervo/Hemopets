@@ -43,6 +43,9 @@ struct MainContentView: View {
                 }
         }
         .accentColor(Color.init("ButtonPrimary"))
+        .onAppear() {
+            UITabBar.appearance().barTintColor = .init(named: "Background")
+        }
     }
 }
 
