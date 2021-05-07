@@ -28,6 +28,7 @@
 		8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D62426456F6C0044EB71 /* FourthOnboardingPage.swift */; };
 		8408D62726456FC00044EB71 /* FinishButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D62626456FC00044EB71 /* FinishButton.swift */; };
 		8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D628264570CC0044EB71 /* ButtonAligned.swift */; };
+		8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D62B2645775D0044EB71 /* MainContentView.swift */; };
 		84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAC26417BF300CD4FAC /* Hemocenter.swift */; };
 		84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAF26417E7C00CD4FAC /* LocationDetails.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
@@ -61,6 +62,7 @@
 		8408D62426456F6C0044EB71 /* FourthOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingPage.swift; sourceTree = "<group>"; };
 		8408D62626456FC00044EB71 /* FinishButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishButton.swift; sourceTree = "<group>"; };
 		8408D628264570CC0044EB71 /* ButtonAligned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAligned.swift; sourceTree = "<group>"; };
+		8408D62B2645775D0044EB71 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		84263CAC26417BF300CD4FAC /* Hemocenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemocenter.swift; sourceTree = "<group>"; };
 		84263CAF26417E7C00CD4FAC /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,14 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		8408D62A264577470044EB71 /* MainContent */ = {
+			isa = PBXGroup;
+			children = (
+				8408D62B2645775D0044EB71 /* MainContentView.swift */,
+			);
+			path = MainContent;
+			sourceTree = "<group>";
+		};
 		8492F230264080E400B9DF4A = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
 				8408D5FA264477C30044EB71 /* Shared */,
 				8492F24E2640813300B9DF4A /* Map */,
@@ -287,6 +298,7 @@
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
+				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
 				8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
