@@ -24,6 +24,8 @@
 		8492F2502640835A00B9DF4A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F24F2640835A00B9DF4A /* MapView.swift */; };
 		8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F2532640890100B9DF4A /* LocationFetcher.swift */; };
 		8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F25726408EE800B9DF4A /* PinAnnotation.swift */; };
+		CCED12892645A8E400A05B19 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCED12882645A8E400A05B19 /* Pet.swift */; };
+		CCED128D2645A92100A05B19 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCED128C2645A92100A05B19 /* PetsConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		8492F24F2640835A00B9DF4A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8492F2532640890100B9DF4A /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		8492F25726408EE800B9DF4A /* PinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		CCED12882645A8E400A05B19 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		CCED128C2645A92100A05B19 /* PetsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		8492F24D2640811C00B9DF4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCED12862645A88B00A05B19 /* Pet */,
 				8492F25626408EC300B9DF4A /* Map */,
 			);
 			path = Model;
@@ -154,6 +159,15 @@
 				8408D5F8264463BF0044EB71 /* MapConstants.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		CCED12862645A88B00A05B19 /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				CCED12882645A8E400A05B19 /* Pet.swift */,
+				CCED128C2645A92100A05B19 /* PetsConstants.swift */,
+			);
+			path = Pet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,11 +248,13 @@
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
+				CCED12892645A8E400A05B19 /* Pet.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 				8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */,
 				8408D60726447CDF0044EB71 /* SubtitleView.swift in Sources */,
+				CCED128D2645A92100A05B19 /* PetsConstants.swift in Sources */,
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
