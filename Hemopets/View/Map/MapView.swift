@@ -43,7 +43,7 @@ struct MapView: View {
                         })
                     }
                 }
-                .frame(width: 400, height: 500)
+                .frame(width: 400, height: 650)
                 .onAppear(perform: {
                     requestUserLocation()
                 })
