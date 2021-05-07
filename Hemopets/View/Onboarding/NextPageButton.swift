@@ -1,0 +1,37 @@
+//
+//  NextPageButton.swift
+//  Hemopets
+//
+//  Created by Joao Gabriel Dourado Cervo on 07/05/21.
+//
+
+import SwiftUI
+
+struct NextPageButton: View {
+    var nextView: OnboardingView
+    
+    var body: some View {
+        NavigationLink(destination: nextView) {
+            ZStack {
+                Color.init("ButtonPrimary")
+                
+                Image(systemName: "arrow.right")
+                    .resizable()
+                    .frame(width: 18, height: 18)
+                    .foregroundColor(.white)
+            }
+            .frame(width: 55, height: 55)
+            .cornerRadius(30)
+        }
+        .frame(width: 300, alignment: .trailing)
+        .padding(.top, 30)
+        .padding(.leading, 10)
+        
+    }
+}
+
+struct NextPageButton_Previews: PreviewProvider {
+    static var previews: some View {
+        NextPageButton(nextView: OnboardingView())
+    }
+}
