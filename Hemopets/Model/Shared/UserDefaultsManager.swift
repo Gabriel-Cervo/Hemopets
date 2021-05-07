@@ -8,7 +8,7 @@ import Foundation
         if let savedData = try? jsonEncoder.encode(data) {
             userDefaults.set(savedData, forKey: key)
         } else {
-            throw NSError()
+            throw ErrorType.errorSaving
         }
        
     }
@@ -16,14 +16,20 @@ import Foundation
     static func loadData<T: Decodable>(for key: String) throws -> T {
         let jsonDecoder = JSONDecoder()
         guard let loadData = userDefaults.data(forKey: key) else {
-            throw NSError()
+            throw ErrorType.errorLoading
         }
         
         if let TData = try? jsonDecoder.decode(T.self, from: loadData) {
             return TData
         } else {
-            throw NSError()
+            throw ErrorType.noDataFound
         }
         
     }
+}
+
+private enum ErrorType: Error {
+    case errorSaving
+    case errorLoading
+    case noDataFound
 }
