@@ -14,9 +14,9 @@ struct PreviousPageButton: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Image(systemName: "lessthan")
+            Image(systemName: "chevron.left")
                 .resizable()
-                .frame(width: 18, height: 18)
+                .frame(width: 15, height: 20)
                 .foregroundColor(.gray)
                 .frame(width: 55, height: 55)
                 .cornerRadius(30)
