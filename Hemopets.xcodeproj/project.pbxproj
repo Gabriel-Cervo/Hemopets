@@ -22,6 +22,8 @@
 		8408D616264569450044EB71 /* NextPageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D615264569450044EB71 /* NextPageButton.swift */; };
 		8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D61726456A0F0044EB71 /* OnboardingBackgroundView.swift */; };
 		8408D61A26456A2E0044EB71 /* OnboardingIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D61926456A2E0044EB71 /* OnboardingIllustration.swift */; };
+		8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D61D26456C1C0044EB71 /* FirstOnboardingPage.swift */; };
+		8408D62026456C480044EB71 /* SecondOnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D61F26456C480044EB71 /* SecondOnboardingPage.swift */; };
 		84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAC26417BF300CD4FAC /* Hemocenter.swift */; };
 		84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAF26417E7C00CD4FAC /* LocationDetails.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
@@ -49,6 +51,8 @@
 		8408D615264569450044EB71 /* NextPageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPageButton.swift; sourceTree = "<group>"; };
 		8408D61726456A0F0044EB71 /* OnboardingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackgroundView.swift; sourceTree = "<group>"; };
 		8408D61926456A2E0044EB71 /* OnboardingIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIllustration.swift; sourceTree = "<group>"; };
+		8408D61D26456C1C0044EB71 /* FirstOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingPage.swift; sourceTree = "<group>"; };
+		8408D61F26456C480044EB71 /* SecondOnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingPage.swift; sourceTree = "<group>"; };
 		84263CAC26417BF300CD4FAC /* Hemocenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemocenter.swift; sourceTree = "<group>"; };
 		84263CAF26417E7C00CD4FAC /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +98,7 @@
 		8408D60C26455D360044EB71 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8408D62126456C560044EB71 /* Pages */,
 				8408D60D26455E6D0044EB71 /* OnboardingView.swift */,
 				8408D60F2645631D0044EB71 /* OnboardingDescriptionTextView.swift */,
 				8408D611264563C00044EB71 /* ProgressCircle.swift */,
@@ -103,6 +108,15 @@
 				8408D61926456A2E0044EB71 /* OnboardingIllustration.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8408D62126456C560044EB71 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				8408D61D26456C1C0044EB71 /* FirstOnboardingPage.swift */,
+				8408D61F26456C480044EB71 /* SecondOnboardingPage.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		8492F230264080E400B9DF4A = {
@@ -266,6 +280,7 @@
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
+				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 				8408D61A26456A2E0044EB71 /* OnboardingIllustration.swift in Sources */,
@@ -276,6 +291,7 @@
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
+				8408D62026456C480044EB71 /* SecondOnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

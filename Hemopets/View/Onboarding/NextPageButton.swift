@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NextPageButton: View {
-    var nextView: OnboardingView
+    var nextView: AnyView
     
     var body: some View {
         NavigationLink(destination: nextView) {
@@ -32,6 +32,6 @@ struct NextPageButton: View {
 
 struct NextPageButton_Previews: PreviewProvider {
     static var previews: some View {
-        NextPageButton(nextView: OnboardingView())
+        NextPageButton(nextView: AnyView(FirstOnboardingPage()))
     }
 }
