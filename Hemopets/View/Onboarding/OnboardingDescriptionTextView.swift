@@ -13,7 +13,7 @@ struct OnboardingDescriptionTextView: View {
     var body: some View {
         Text(text)
             .frame(width: 300, alignment: .leading)
-            .opacity(0.7)
+            .foregroundColor(.gray)
     }
 }
 
