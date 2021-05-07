@@ -13,7 +13,7 @@ struct MainContentView: View {
             OnboardingView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.text.square.fill")
+                        Image(systemName: "wallet.pass.fill")
                         Text("inicio")
                     }
                 }
@@ -21,7 +21,7 @@ struct MainContentView: View {
             OnboardingView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.text.square.fill")
+                        Image(systemName: "heart.fill")
                         Text("Meus Pets")
                     }
                 }
@@ -29,7 +29,7 @@ struct MainContentView: View {
             MapView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.text.square.fill")
+                        Image(systemName: "drop.fill")
                         Text("Hemocentros")
                     }
                 }
@@ -37,11 +37,12 @@ struct MainContentView: View {
             OnboardingView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.text.square.fill")
+                        Image(systemName: "questionmark.circle.fill")
                         Text("Dúvidas")
                     }
                 }
         }
+        .accentColor(Color.init("ButtonPrimary"))
     }
 }
 
