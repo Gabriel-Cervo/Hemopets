@@ -23,10 +23,6 @@ struct NextPageButton: View {
             .frame(width: 55, height: 55)
             .cornerRadius(30)
         }
-        .frame(width: 300, alignment: .trailing)
-        .padding(.top, 30)
-        .padding(.leading, 10)
-        
     }
 }
 

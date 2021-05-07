@@ -1,5 +1,5 @@
 //
-//  SecondOnboardingPage.swift
+//  FourthOnboardingPage.swift
 //  Hemopets
 //
 //  Created by Joao Gabriel Dourado Cervo on 07/05/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondOnboardingPage: View {
+struct FourthOnboardingPage: View {
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,27 +19,29 @@ struct SecondOnboardingPage: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        Text("Pets")
+                        Text("Dúvidas")
                             .foregroundColor(.init("Title"))
                             .font(.custom("Mithella-Bold", size: 30))
                         .padding(.bottom, 5)
                         
-                        OnboardingDescriptionTextView(text: "Cadastre o seu pet e descubra se ele pode se tornar um doador e salvar vidas!")
+                        OnboardingDescriptionTextView(text: "Saiba mais sobre o procedimento e os pré-requisitos necessários para realizar a doação")
 
-                        ProgressView(activeCircle: 2)
+                        ProgressView(activeCircle: 4)
                         
-                        ButtonAligned(nextPage: AnyView(ThirdOnboardingPage()))
+                        FinishButton(text: "Vamos lá!", nextView: AnyView(FirstOnboardingPage()))
+                            .frame(width: 300, alignment: .center)
+                            .padding(.top, 30)
+                            .padding(.leading, 10)
                     }
                     Spacer()
                 }
             }
         }
-        .navigationBarHidden(true)
-    }
+        .navigationBarHidden(true)    }
 }
 
-struct SecondOnboardingPage_Previews: PreviewProvider {
+struct FourthOnboardingPage_Previews: PreviewProvider {
     static var previews: some View {
-        SecondOnboardingPage()
+        FourthOnboardingPage()
     }
 }
