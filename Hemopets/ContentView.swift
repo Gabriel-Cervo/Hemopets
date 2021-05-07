@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var hasNotLoadedDefaults: Bool = true
+    @State private var hasSeenOnboarding: Bool = false
+    
     var body: some View {
-        OnboardingView()
+        if hasNotLoadedDefaults {
+            SplashView()
+                .onAppear() {
+                    checkOnboardDefaults()
+                }
+        } else {
+            if hasSeenOnboarding {
+                MainContentView()
+            } else {
+                OnboardingView()
+            }
+        }
+        
+    }
+    
+    func checkOnboardDefaults() {
+        do {
+            let storedValue = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
+            print(storedValue)
+
+            DispatchQueue.main.async {
+                print(storedValue)
+                self.hasSeenOnboarding = storedValue
+                self.hasNotLoadedDefaults = false
+            }
+        } catch {
+            self.hasNotLoadedDefaults = false
+        }
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

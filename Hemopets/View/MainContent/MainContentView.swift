@@ -45,7 +45,16 @@ struct MainContentView: View {
         }
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
+            self.updateOnboardValueInDefaults()
             UITabBar.appearance().barTintColor = .init(named: "Background")
+        }
+    }
+    
+    func updateOnboardValueInDefaults() {
+        do {
+            try UserDefaultsManager.saveData(data: true, for: "sawOnboarding")
+        } catch {
+            print("Error while saving data: \(error)")
         }
     }
 }
