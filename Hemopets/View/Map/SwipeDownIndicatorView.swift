@@ -16,7 +16,7 @@ struct SwipeDownIndicatorView: View {
                 .foregroundColor(.gray)
             Spacer()
         }
-        .padding(.bottom, 50)
+        .padding(.bottom, 30)
     }
 }
 

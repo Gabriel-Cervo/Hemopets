@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "pet-doa-sangue-7ca8c1d1.jpg",
+      "filename" : "Banco de Sangue Veterinário LACVet UFRGS@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Banco de Sangue Veterinário LACVet UFRGS@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Banco de Sangue Veterinário LACVet UFRGS@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

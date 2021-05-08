@@ -55,8 +55,8 @@ struct MapView: View {
                 })
                 .edgesIgnoringSafeArea(.all)
                 
-                .sheet(item: $selectedHemocenter) { hemocenter in
-                    LocationDetails(name: hemocenter.name)
+                .sheet(item: $selectedHemocenter) {
+                    LocationDetails(hemocenter: $0)
                 }
             }
         }
