@@ -18,6 +18,12 @@ struct MapConstants {
         
         PinAnnotation(info: Hemocenter(name: "Hemovet", telephoneNumbers: ["(11) 2918-8050", "(11) 93363-8325 - Whatsapp"], address: "R. Pinheiro Guimarães, 86 - Parque da Vila Prudente, São Paulo - SP, 03141-030", coordinate: .init(latitude: -23.5841388, longitude:  -46.5744639), openingHours: ["Segunda a Sexta: 08:00 às 18:00", "Sábados: 09:00 as 17:00"], websites: ["https://hemovet.com.br", "https://pt-br.facebook.com/HemovetBR/"])),
         
+        PinAnnotation(info: Hemocenter(name: "Pets & Life", telephoneNumbers: ["(11) 3476-9461", "(11) 94333-4082 - Whatsapp"], address: "Av. Leão Machado, 100 - Jaguaré, São Paulo - SP, 05328-020", coordinate: .init(latitude: -23.547625, longitude:  -46.7570126), openingHours: ["Segunda a Sexta: 08:00 às 21:00", "Sábados: 08:00 as 17:00", "Domingos e feriados: 10:00 às 16:00"], websites: ["https://petsandlife.com.br", "https://www.facebook.com/petsandlifesp/"])),
+        
+        PinAnnotation(info: Hemocenter(name: "BSVET", telephoneNumbers: ["(11) 3624-3958", "(11) 99824-3995 - Whatsapp"], address: "Rua Desembargador do Vale, 196 - Pompeia, São Paulo - SP, 05010-040", coordinate: .init(latitude: -23.5327084, longitude:  -46.6831914), openingHours: ["Se informar com o local"], websites: ["https://www.bsvet.com.br"])),
+        
+        PinAnnotation(info: Hemocenter(name: "Transfucão", telephoneNumbers: ["(11) 3624-3958", "(11) 94595-6141 - Whatsapp"], address: "R. Mariquinha Viana, 865 - Mandaqui, São Paulo - SP, 02408-131", coordinate: .init(latitude: -23.4822336, longitude:  -46.6290257), openingHours: ["Segunda a Sexta: 08:00 às 20:00", "Sábados: 09:00 as 20:00", "Domingos e feriados: 10:00 às 16:00"], websites: ["https://www.transfucao.com.br/?gclid=CjwKCAjw7diEBhB-EiwAskVi11VnM_OCljaf5Y6pfeZqtxedg_dP08UY7F8nK7_Z_tGYHXrsYZaLqxoC4TkQAvD_BwE", "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjB1d2YjLrwAhU-LLkGHTDnBrkQFjAAegQIBBAE&url=https%3A%2F%2Fwww.facebook.com%2Ftransfucao%2F&usg=AOvVaw2VN7ntf_RgE-w6Ue-E-f_k", "https://www.instagram.com/transfucao/?hl=en"])),
+        
         
         ]
 }
