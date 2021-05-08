@@ -31,6 +31,7 @@ struct LocationDetails: View {
                     VStack(alignment: .leading) {
                         SubtitleView(text: hemocenter.name)
                             .padding(.vertical, 15)
+                            .frame(width: 350, alignment: .leading)
                         
                         ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
                         
@@ -52,6 +53,6 @@ struct LocationDetails: View {
 
 struct LocationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetails(hemocenter: MapConstants.pins[0].info)
+        LocationDetails(hemocenter: MapConstants.pins[2].info)
     }
 }
