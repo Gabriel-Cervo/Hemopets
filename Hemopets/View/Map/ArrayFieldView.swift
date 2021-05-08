@@ -30,6 +30,7 @@ struct ArrayFieldView: View {
                         Link($0, destination: URL(string: $0)!)
                             .font(.subheadline)
                             .foregroundColor(Color.init("Title"))
+                            .padding(.bottom, 5)
                     } else {
                         Text($0)
                             .font(.subheadline)
@@ -45,6 +46,6 @@ struct ArrayFieldView: View {
 
 struct ArrayFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        ArrayFieldView(iconName: "pencil", fieldName: "Telefone:", fieldDescription: MapConstants.pins[0].info.websites!, isURL: true)
+        ArrayFieldView(iconName: "pencil", fieldName: "Websites:", fieldDescription: MapConstants.pins[0].info.websites!, isURL: true)
     }
 }
