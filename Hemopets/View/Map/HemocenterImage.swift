@@ -15,7 +15,7 @@ struct HemocenterImage: View {
             Spacer()
             Image(imageName)
                 .resizable()
-                .frame(width: 300, height: 250)
+                .frame(width: 350, height: 200)
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(20)
                 .shadow(radius: 1)
