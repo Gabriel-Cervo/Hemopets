@@ -25,23 +25,25 @@ struct LocationDetails: View {
                 }
                 .padding(.bottom, 10)
                 
-                HemocenterImage(imageName: "testeHemo")
-                
-                VStack(alignment: .leading) {
-                    SubtitleView(text: hemocenter.name)
-                        .padding(.vertical, 15)
+                ScrollView {
+                    HemocenterImage(imageName: hemocenter.name)
                     
-                    ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
+                    VStack(alignment: .leading) {
+                        SubtitleView(text: hemocenter.name)
+                            .padding(.vertical, 15)
+                        
+                        ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
+                        
+                        ArrayFieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: hemocenter.openingHours)
+                        
+                        FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: hemocenter.address)
+                        
+                        ArrayFieldView(iconName: "desktopcomputer", fieldName: "Sites:", fieldDescription: hemocenter.websites ?? [""], isURL: true)
+                    }
+                    .padding(.leading, 10)
                     
-                    ArrayFieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: hemocenter.openingHours)
-                    
-                    FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: hemocenter.address)
-                    
-                    ArrayFieldView(iconName: "desktopcomputer", fieldName: "Sites:", fieldDescription: hemocenter.websites ?? [""], isURL: true)
+                    Spacer()
                 }
-                .padding(.leading, 10)
-                
-                Spacer()
             }
             .padding()
         }

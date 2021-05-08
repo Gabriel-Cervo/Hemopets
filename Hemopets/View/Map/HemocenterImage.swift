@@ -15,7 +15,7 @@ struct HemocenterImage: View {
             Spacer()
             Image(imageName)
                 .resizable()
-                .frame(width: 350, height: 180)
+                .frame(width: 300, height: 250)
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(20)
                 .shadow(radius: 1)
@@ -26,6 +26,6 @@ struct HemocenterImage: View {
 
 struct HemocenterImage_Previews: PreviewProvider {
     static var previews: some View {
-        HemocenterImage(imageName: "testeHemo")
+        HemocenterImage(imageName: MapConstants.pins[0].info.name)
     }
 }
