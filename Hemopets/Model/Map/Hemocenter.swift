@@ -15,6 +15,5 @@ struct Hemocenter: Identifiable {
     var address: String
     var coordinate: CLLocationCoordinate2D
     var openingHours: [String]
-    var website: String?
-    var socialMedia: [String]?
+    var websites: [String]?
 }

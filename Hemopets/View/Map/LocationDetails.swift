@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationDetails: View {
-    var name: String
+    var hemocenter: Hemocenter
     
     var body: some View {
         ZStack {
@@ -28,14 +28,16 @@ struct LocationDetails: View {
                 HemocenterImage(imageName: "testeHemo")
                 
                 VStack(alignment: .leading) {
-                    SubtitleView(text: name)
+                    SubtitleView(text: hemocenter.name)
                         .padding(.vertical, 15)
                     
-                    FieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: " (51) 3072-0427")
+                    ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
                     
-                    FieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: "09:00 - 18:30 (segunda a sexta)")
+                    ArrayFieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: hemocenter.openingHours)
                     
-                    FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: "R. Dr. Florêncio Ygartua, 429 - Moinhos de Vento, Porto Alegre - RS, 90430-010")
+                    FieldView(iconName: "location.circle.fill", fieldName: "Endereço:", fieldDescription: hemocenter.address)
+                    
+                    ArrayFieldView(iconName: "desktopcomputer", fieldName: "Sites:", fieldDescription: hemocenter.websites ?? [""], isURL: true)
                 }
                 .padding(.leading, 10)
                 
@@ -48,6 +50,6 @@ struct LocationDetails: View {
 
 struct LocationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetails(name: "Companhia dos bichos")
+        LocationDetails(hemocenter: MapConstants.pins[0].info)
     }
 }
