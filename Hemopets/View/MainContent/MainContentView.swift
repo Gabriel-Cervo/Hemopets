@@ -35,13 +35,16 @@ struct MainContentView: View {
                 }
                 .colorScheme(.dark)
             
-            OnboardingView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "questionmark.circle.fill")
-                        Text("Dúvidas")
-                    }
+            NavigationView {
+                DonationFaqCategories()
+                
+            }
+            .tabItem {
+                VStack {
+                    Image(systemName: "questionmark.circle.fill")
+                    Text("Dúvidas")
                 }
+            }
         }
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD6DA552645D32300079010 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA542645D32300079010 /* Question.swift */; };
+		2BD6DA572645D33A00079010 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA562645D33A00079010 /* Category.swift */; };
+		2BD6DA592645D35200079010 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA582645D35200079010 /* QuestionData.swift */; };
+		2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */; };
+		2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */; };
 		8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5F8264463BF0044EB71 /* MapConstants.swift */; };
 		8408D5FE264477E10044EB71 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5FD264477E10044EB71 /* TitleView.swift */; };
 		8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8408D600264478530044EB71 /* Mithella-Regular.otf */; };
@@ -46,6 +51,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BD6DA542645D32300079010 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2BD6DA562645D33A00079010 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2BD6DA582645D35200079010 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqCategories.swift; sourceTree = "<group>"; };
+		2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqQuestions.swift; sourceTree = "<group>"; };
 		8408D5F8264463BF0044EB71 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		8408D5FD264477E10044EB71 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8408D600264478530044EB71 /* Mithella-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mithella-Regular.otf"; sourceTree = "<group>"; };
@@ -97,6 +107,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BD6DA532645D30200079010 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6DA542645D32300079010 /* Question.swift */,
+				2BD6DA562645D33A00079010 /* Category.swift */,
+				2BD6DA582645D35200079010 /* QuestionData.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		2BD6DA5A2645D41300079010 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */,
+				2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		8408D5FA264477C30044EB71 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +223,7 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BD6DA5A2645D41300079010 /* FAQ */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -206,6 +236,7 @@
 		8492F24D2640811C00B9DF4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BD6DA532645D30200079010 /* FAQ */,
 				CC22FAF32645B5DC00CBC8C7 /* Pet */,
 				84B040112645AA74006E0589 /* Shared */,
 				8492F25626408EC300B9DF4A /* Map */,
@@ -332,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */,
 				84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */,
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
@@ -341,12 +373,16 @@
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
+				2BD6DA552645D32300079010 /* Question.swift in Sources */,
 				8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */,
+				2BD6DA572645D33A00079010 /* Category.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8408D614264564630044EB71 /* ProgressView.swift in Sources */,
+				2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
 				8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */,
+				2BD6DA592645D35200079010 /* QuestionData.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
