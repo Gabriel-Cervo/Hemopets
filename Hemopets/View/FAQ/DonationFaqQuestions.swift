@@ -20,28 +20,53 @@ struct DonationFaqQuestions: View {
                     .font(.custom("Mithella-Regular", size: 30))
                     .bold()
                     .foregroundColor(Color("Title"))
+                    .padding(.bottom)
 
-                VStack (alignment: .leading) {
+//                VStack (alignment: .leading) {
+//                    Text("\(categoryChoosed)")
+//                        .font(.custom("Mithella-Regular", size: 30))
+//                        .foregroundColor(.red)
+//                        .bold()
+//                        .padding()
+//                    ForEach(questions) { questionIndex in
+//                        DisclosureGroup("\(questionIndex.question)") {
+//                            Text(questionIndex.answer)
+//                                .font(.subheadline)
+//                                .foregroundColor(.gray)
+//                                .padding()
+//                        }
+//                        .foregroundColor(.gray)
+//                        .padding([.trailing, .leading], 20)
+//                        .background(Color.white)
+//                        .cornerRadius(20)
+//
+//                        Spacer(minLength: 30)
+//                    }
+//                }
+                
+                VStack(alignment: .leading) {
                     Text("\(categoryChoosed)")
                         .font(.custom("Mithella-Regular", size: 30))
                         .foregroundColor(.red)
                         .bold()
-                        .padding()
-                    ForEach(questions) { questionIndex in
-                        DisclosureGroup("\(questionIndex.question)") {
-                            Text(questionIndex.answer)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                                .padding()
-                        }
-                        .foregroundColor(.gray)
-                        .padding([.trailing, .leading], 20)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        
-                        Spacer(minLength: 30)
+                        .padding(.top, 5)
+                        .padding(.bottom,30)
+                    
+                    ForEach(questions.indices) { questionIndex in
+                        Text("\(questionIndex+1). "+"\(questions[questionIndex].question)")
+                            .bold()
+                        Text(questions[questionIndex].answer)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .padding(.top)
+                            .padding(.bottom,30)
                     }
+                    
                 }
+                .foregroundColor(.gray)
+                .padding(30)
+                .background(Color.white)
+                .cornerRadius(50)
             }
             .padding()
         }
