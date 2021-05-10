@@ -9,7 +9,30 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            OnboardingBackgroundView()
+            
+            VStack(alignment: .center) {
+                Spacer()
+                
+                SplashIllustration(illustrationName: "Blank4")
+                    .padding(.bottom, 10)
+                
+                VStack(alignment: .leading) {
+                    HStack(spacing: 0) {
+                        Text("Hemo")
+                            .foregroundColor(.init("ButtonPrimary"))
+                            .font(.custom("Mithella-Bold", size: 40))
+                        
+                        Text("Pets")
+                            .foregroundColor(.init("Title"))
+                            .font(.custom("Mithella-Regular", size: 40))
+                    }
+                }
+                Spacer()
+            }
+            .padding(.bottom, 55)
+        }
     }
 }
 
