@@ -13,14 +13,6 @@ struct MainContentView: View {
             OnboardingView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "wallet.pass.fill")
-                        Text("inicio")
-                    }
-                }
-            
-            OnboardingView()
-                .tabItem {
-                    VStack {
                         Image(systemName: "heart.fill")
                         Text("Meus Pets")
                     }
