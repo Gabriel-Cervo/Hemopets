@@ -14,15 +14,6 @@ struct MapView: View {
     
     let locationFetcher = LocationFetcher()
     
-    func requestUserLocation() {
-        self.locationFetcher.getUserLocation()
-        DispatchQueue.main.async {
-            if let location = self.locationFetcher.lastKnownLocation {
-                region.center = location
-            }
-        }
-    }
-    
     var body: some View {
         ZStack {
             Color.init("Background")
@@ -50,9 +41,10 @@ struct MapView: View {
                     }
                 }
                 .frame(width: 400, height: 650)
-                .onAppear(perform: {
+                .onAppear() {
                     requestUserLocation()
-                })
+                    calculateMapSpan()
+                }
                 .edgesIgnoringSafeArea(.all)
                 
                 .sheet(item: $selectedHemocenter) {
@@ -62,6 +54,55 @@ struct MapView: View {
         }
         .ignoresSafeArea()
         .navigationBarHidden(true)
+    }
+    
+    func requestUserLocation() {
+        self.locationFetcher.getUserLocation()
+        DispatchQueue.main.async {
+            if let location = self.locationFetcher.lastKnownLocation {
+                region.center = location
+            }
+        }
+    }
+    
+    func calculateMapSpan() {
+        DispatchQueue.main.async {
+            let currentLocation = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
+            
+            var closestDistance: CLLocationDistance?
+            
+            for pin in MapConstants.pins {
+                let latitude = pin.info.coordinate.latitude
+                let longitude = pin.info.coordinate.longitude
+                
+                let location = CLLocation(latitude: latitude, longitude: longitude)
+                
+                let distanceFromUser = location.distance(from: currentLocation)
+                
+                if let nearestDistance = closestDistance {
+                    if distanceFromUser < nearestDistance {
+                        closestDistance = distanceFromUser
+                    }
+                }
+                
+                closestDistance = distanceFromUser
+            }
+            
+            var spanValue: Double = 0.03
+            
+            if let closestDistance = closestDistance {
+                let squaredDistance = sqrt(closestDistance.nextDown)
+                if squaredDistance > 800 && squaredDistance < 1000 {
+                    spanValue = squaredDistance * 0.0003
+                } else if squaredDistance <= 150 {
+                    spanValue = squaredDistance * 0.003
+                } else {
+                    spanValue = squaredDistance * 0.04
+                }
+            }
+                        
+            region.span = MKCoordinateSpan(latitudeDelta: spanValue, longitudeDelta: spanValue)
+        }
     }
 }
 
