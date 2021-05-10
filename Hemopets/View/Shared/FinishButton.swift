@@ -9,6 +9,7 @@ import SwiftUI
 struct FinishButton: View {
     var text: String
     var nextView: AnyView
+    var width: Int?
     
     var body: some View {
         NavigationLink(destination: nextView) {
@@ -21,7 +22,7 @@ struct FinishButton: View {
                     .textCase(.uppercase)
                     .font(.system(.callout))
             }
-            .frame(width: 145, height: 45)
+            .frame(width: CGFloat(width ?? 170), height: 45)
             .cornerRadius(20)
         }
     }
@@ -29,6 +30,6 @@ struct FinishButton: View {
 
 struct FinishButton_Previews: PreviewProvider {
     static var previews: some View {
-        FinishButton(text: "Vamos lá!", nextView: AnyView(FirstOnboardingPage()))
+        FinishButton(text: "Vamos lá!", nextView: AnyView(FirstOnboardingPage()), width: 170)
     }
 }
