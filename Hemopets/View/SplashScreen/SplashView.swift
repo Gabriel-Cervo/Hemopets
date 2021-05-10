@@ -12,7 +12,7 @@ struct SplashView: View {
         ZStack {
             OnboardingBackgroundView()
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Spacer()
                 
                 SplashIllustration(illustrationName: "Blank4")
