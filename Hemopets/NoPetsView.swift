@@ -39,6 +39,7 @@ struct NoPetsView: View {
                                 
                                 Text("Que tal clicar no botão abaixo e ver se seu animalzinho pode ser um doador?")
                                     .font(.body)
+                                    .frame(width: 230)
                             }
                             .padding(.top, 10)
                             .frame(width: 300)
