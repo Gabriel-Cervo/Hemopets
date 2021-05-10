@@ -40,6 +40,7 @@
 		8492F2502640835A00B9DF4A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F24F2640835A00B9DF4A /* MapView.swift */; };
 		8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F2532640890100B9DF4A /* LocationFetcher.swift */; };
 		8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F25726408EE800B9DF4A /* PinAnnotation.swift */; };
+		8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A85D2649B1B700A218DD /* SplashIllustration.swift */; };
 		84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040122645AAA1006E0589 /* UserDefaultsManager.swift */; };
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
@@ -82,6 +83,7 @@
 		8492F24F2640835A00B9DF4A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8492F2532640890100B9DF4A /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		8492F25726408EE800B9DF4A /* PinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		8495A85D2649B1B700A218DD /* SplashIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashIllustration.swift; sourceTree = "<group>"; };
 		84B040122645AAA1006E0589 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				84B040182645B0CA006E0589 /* SplashView.swift */,
+				8495A85D2649B1B700A218DD /* SplashIllustration.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
+				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
 				84B040192645B0CA006E0589 /* SplashView.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
