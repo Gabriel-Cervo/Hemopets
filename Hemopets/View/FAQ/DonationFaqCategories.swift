@@ -28,7 +28,7 @@ struct DonationFaqCategories: View {
                                     .padding(.leading, 20)
                                 Text("\(categoriesIndex.categoryName)")
                                     .fontWeight(.bold)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color("ButtonSecondary"))
                                     .font(.title3)
                                 Spacer()
                                 Image(systemName:"chevron.right")

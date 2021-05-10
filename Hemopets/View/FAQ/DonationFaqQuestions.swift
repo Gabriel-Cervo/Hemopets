@@ -32,7 +32,7 @@ struct DonationFaqQuestions: View {
 //                        DisclosureGroup("\(questionIndex.question)") {
 //                            Text(questionIndex.answer)
 //                                .font(.subheadline)
-//                                .foregroundColor(.gray)
+//                                .foregroundColor(Color("ButtonSecondary"))
 //                                .padding()
 //                        }
 //                        .foregroundColor(.gray)
@@ -54,10 +54,11 @@ struct DonationFaqQuestions: View {
                     
                     ForEach(questions.indices) { questionIndex in
                         Text("\(questionIndex+1). "+"\(questions[questionIndex].question)")
+                            .foregroundColor(Color("ButtonSecondary"))
                             .bold()
                         Text(questions[questionIndex].answer)
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("ButtonSecondary"))
                             .padding(.top)
                             .padding(.bottom,30)
                     }
