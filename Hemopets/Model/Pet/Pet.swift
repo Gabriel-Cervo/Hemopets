@@ -7,27 +7,51 @@
 
 import Foundation
 
-protocol Pet: Identifiable {
-    var id: UUID {get}
-    var name: String {get set}
-    var age: Int {get set}
-    var weight: Double {get set}
-    var vaccinesTaken: [String] {get set}
-    var imageName: String {get set}
-    
+protocol Eligible {
+
     func checkAge() -> Bool
     func checkWeight() -> Bool
-    func checkVaccinesTaken() -> [String]
+    func checkVaccinesNotTaken() -> [String]
 }
 
-struct Dog: Pet {
+extension Eligible {
     
-    var id: UUID
+    func isEligible() -> Bool {
+        return checkAge() && checkWeight() && checkVaccinesNotTaken().count == 0
+    }
+}
+
+class Pet: Identifiable {
+    var id: String = UUID().uuidString
     var name: String
     var age: Int
     var weight: Double
-    var vaccinesTaken: [String]
     var imageName: String
+    var vaccines: [Vaccine]
+    
+    init(name: String, age: Int, weight: Double, imageName: String) {
+        self.name = name
+        self.age = age
+        self.weight = weight
+        self.imageName = imageName
+        self.vaccines = [Vaccine]()
+    }
+    func checkVaccinesNotTaken() -> [String] {
+        let filterVaccines = self.vaccines.filter{ vaccine in
+            return !vaccine.isTaken
+        }
+        return filterVaccines.map { vaccine in
+            return vaccine.name
+        }
+    }
+}
+
+class Dog: Pet, Eligible {
+    
+    override init(name: String, age: Int, weight: Double, imageName: String) {
+        super.init(name: name, age: age, weight: weight, imageName: imageName)
+        self.vaccines = PetsContants.mandatoryVaccines["Dog"]!
+    }
     
     func checkAge() -> Bool {
         return self.age >= 1 && self.age <= 8
@@ -36,27 +60,15 @@ struct Dog: Pet {
     func checkWeight() -> Bool {
         return self.weight >= 27
     }
-    
-    func checkVaccinesTaken() -> [String] {
-        var vaccinesNotTaken: [String] = []
-        for vac in PetsContants.mandatoryVaccines["Dog"]! {
-            if !self.vaccinesTaken.contains(vac) {
-                vaccinesNotTaken.append(vac)
-            }
-        }
-        return vaccinesNotTaken
-    }
 }
 
-struct Cat: Pet {
+class Cat: Pet, Eligible {
     
-    var id: UUID
-    var name: String
-    var age: Int
-    var weight: Double
-    var vaccinesTaken: [String]
-    var imageName: String
-    
+    override init(name: String, age: Int, weight: Double, imageName: String) {
+        super.init(name: name, age: age, weight: weight, imageName: imageName)
+        self.vaccines = PetsContants.mandatoryVaccines["Cat"]!
+    }
+
     func checkAge() -> Bool {
         return self.age >= 1 && self.age <= 7
     }
@@ -64,15 +76,4 @@ struct Cat: Pet {
     func checkWeight() -> Bool {
         return self.weight >= 4
     }
-    
-    func checkVaccinesTaken() -> [String] {
-        var vaccinesNotTaken: [String] = []
-        for vac in PetsContants.mandatoryVaccines["Cat"]! {
-            if !self.vaccinesTaken.contains(vac) {
-                vaccinesNotTaken.append(vac)
-            }
-        }
-        return vaccinesNotTaken
-    }
 }
-

@@ -47,6 +47,7 @@
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
+		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF446E264AFE070044547C /* Register */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -216,6 +219,7 @@
 		8492F24D2640811C00B9DF4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF446B264AFCE10044547C /* Vaccines */,
 				CC22FAF32645B5DC00CBC8C7 /* Pet */,
 				84B040112645AA74006E0589 /* Shared */,
 				8492F25626408EC300B9DF4A /* Map */,
@@ -271,6 +275,21 @@
 				CC22FAF52645B5DC00CBC8C7 /* Pet.swift */,
 			);
 			path = Pet;
+			sourceTree = "<group>";
+		};
+		CCEF446B264AFCE10044547C /* Vaccines */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF446C264AFD120044547C /* Vaccine.swift */,
+			);
+			path = Vaccines;
+			sourceTree = "<group>";
+		};
+		CCEF446E264AFE070044547C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +369,7 @@
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
+				CCEF446D264AFD120044547C /* Vaccine.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
