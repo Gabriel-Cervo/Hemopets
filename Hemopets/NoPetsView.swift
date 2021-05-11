@@ -35,10 +35,12 @@ struct NoPetsView: View {
                             VStack(alignment: .center, spacing: 15) {
                                 Text("Vi que você ainda não cadastrou nenhum pet!")
                                     .font(.title2)
+                                    .foregroundColor(.black)
                                     .bold()
                                 
                                 Text("Que tal clicar no botão abaixo e ver se seu animalzinho pode ser um doador?")
                                     .font(.body)
+                                    .foregroundColor(.black)
                                     .frame(width: 230)
                             }
                             .padding(.top, 10)
@@ -56,7 +58,7 @@ struct NoPetsView: View {
                 }
                 .shadow(radius: 2)
                 .padding()
-                .frame(height: 700)
+                .frame(height: 600)
             }
         }
     }

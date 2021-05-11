@@ -20,7 +20,7 @@ struct MapView: View {
             
             VStack {
                 TitleView(text: "Hemocentros")
-                    .padding(.bottom, 20)
+                    .padding(.vertical, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
                     MapAnnotation(coordinate: pin.info.coordinate) {

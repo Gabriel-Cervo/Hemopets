@@ -35,6 +35,7 @@ struct ArrayFieldView: View {
                         Text($0)
                             .font(.subheadline)
                             .foregroundColor(.black)
+                            .lineLimit(5)
                     }
                 }
             }
@@ -46,6 +47,6 @@ struct ArrayFieldView: View {
 
 struct ArrayFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        ArrayFieldView(iconName: "pencil", fieldName: "Websites:", fieldDescription: MapConstants.pins[0].info.websites!, isURL: true)
+        ArrayFieldView(iconName: "pencil", fieldName: "Horários:", fieldDescription: MapConstants.pins[3].info.openingHours, isURL: false)
     }
 }

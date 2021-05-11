@@ -35,10 +35,11 @@ struct MainContentView: View {
                     }
                 }
         }
+        .navigationBarHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
-            UITabBar.appearance().barTintColor = UIColor(named: "Background")
+            UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
         }
     }
 

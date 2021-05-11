@@ -41,10 +41,9 @@ struct LocationDetails: View {
                         
                         ArrayFieldView(iconName: "desktopcomputer", fieldName: "Sites:", fieldDescription: hemocenter.websites ?? [""], isURL: true)
                     }
-                    .padding(.leading, 10)
-                    
                     Spacer()
                 }
+                .padding(.horizontal, 10)
             }
             .padding()
         }
@@ -53,6 +52,6 @@ struct LocationDetails: View {
 
 struct LocationDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetails(hemocenter: MapConstants.pins[2].info)
+        LocationDetails(hemocenter: MapConstants.pins[3].info)
     }
 }
