@@ -20,7 +20,8 @@ struct MapView: View {
             
             VStack {
                 TitleView(text: "Hemocentros")
-                    .padding(.vertical, 20)
+                    .padding(.top, 25)
+                    .padding(.bottom, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
                     MapAnnotation(coordinate: pin.info.coordinate) {
@@ -47,6 +48,7 @@ struct MapView: View {
                 }
                 .edgesIgnoringSafeArea(.all)
                 .cornerRadius(20)
+                .shadow(radius: 5)
                 
                 .sheet(item: $selectedHemocenter) {
                     LocationDetails(hemocenter: $0)
