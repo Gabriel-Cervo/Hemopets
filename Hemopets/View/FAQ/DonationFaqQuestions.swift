@@ -14,8 +14,12 @@ struct DonationFaqQuestions: View {
     
     var body: some View {
         VStack {
+            HStack {
+                PreviousPageButton(title: "Dúvidas")
+                    .foregroundColor(.gray)
+                Spacer()
+            }
             ScrollView (showsIndicators: false) {
-                Spacer(minLength: 50)
                 Text ("Dúvidas")
                     .font(.custom("Mithella-Regular", size: 30))
                     .bold()
@@ -51,7 +55,7 @@ struct DonationFaqQuestions: View {
                         .bold()
                         .padding(.top, 5)
                         .padding(.bottom,30)
-                    
+
                     ForEach(questions.indices) { questionIndex in
                         Text("\(questionIndex+1). "+"\(questions[questionIndex].question)")
                             .foregroundColor(Color("ButtonSecondary"))
@@ -62,7 +66,7 @@ struct DonationFaqQuestions: View {
                             .padding(.top)
                             .padding(.bottom,30)
                     }
-                    
+
                 }
                 .foregroundColor(.gray)
                 .padding(30)
@@ -72,6 +76,7 @@ struct DonationFaqQuestions: View {
             .padding()
         }
         .background(Color("Background"))
+        .navigationBarHidden(true)
     }
 }
 

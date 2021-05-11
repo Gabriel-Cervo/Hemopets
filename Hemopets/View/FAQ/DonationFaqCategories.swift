@@ -22,7 +22,6 @@ struct DonationFaqCategories: View {
                             NavigationLink (
                                 destination: DonationFaqQuestions(categoryChoosed: categoriesIndex.categoryName, questions: categoriesIndex.questions)
                             ) {
-                                
                                 Image(systemName:"square.fill")
                                     .foregroundColor(Color("Background"))
                                     .padding(.leading, 20)
@@ -54,6 +53,7 @@ struct DonationFaqCategories: View {
               maxHeight: .infinity
             )
             .background(Color("Background"))
+            .navigationBarHidden(true)
         }
 }
 
