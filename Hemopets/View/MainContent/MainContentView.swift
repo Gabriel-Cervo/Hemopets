@@ -27,13 +27,16 @@ struct MainContentView: View {
                 }
                 .colorScheme(.dark)
             
-            OnboardingView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "questionmark.circle.fill")
-                        Text("Dúvidas")
-                    }
+            NavigationView {
+                DonationFaqCategories()
+                
+            }
+            .tabItem {
+                VStack {
+                    Image(systemName: "questionmark.circle.fill")
+                    Text("Dúvidas")
                 }
+            }
         }
         .navigationBarHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
