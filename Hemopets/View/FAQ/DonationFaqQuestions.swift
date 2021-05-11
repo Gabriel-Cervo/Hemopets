@@ -46,7 +46,7 @@ struct DonationFaqQuestions: View {
                                 .lineLimit(500)
 
                         }
-                        .accentColor(Color("ButtonSecondary"))
+                        .accentColor(Color("ButtonPrimary"))
                         .foregroundColor(.black)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
