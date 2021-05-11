@@ -15,10 +15,12 @@ struct DonationFaqQuestions: View {
     var body: some View {
         VStack {
             HStack {
-                PreviousPageButton(title: "Dúvidas")
+                PreviousPageButton(title: "Voltar")
                     .foregroundColor(.gray)
+                    .padding(.top, 40)
                 Spacer()
             }
+            
             ScrollView (showsIndicators: false) {
                 Text ("Dúvidas")
                     .font(.custom("Mithella-Regular", size: 30))
@@ -26,56 +28,40 @@ struct DonationFaqQuestions: View {
                     .foregroundColor(Color("Title"))
                     .padding(.bottom)
 
-//                VStack (alignment: .leading) {
-//                    Text("\(categoryChoosed)")
-//                        .font(.custom("Mithella-Regular", size: 30))
-//                        .foregroundColor(.red)
-//                        .bold()
-//                        .padding()
-//                    ForEach(questions) { questionIndex in
-//                        DisclosureGroup("\(questionIndex.question)") {
-//                            Text(questionIndex.answer)
-//                                .font(.subheadline)
-//                                .foregroundColor(Color("ButtonSecondary"))
-//                                .padding()
-//                        }
-//                        .foregroundColor(.gray)
-//                        .padding([.trailing, .leading], 20)
-//                        .background(Color.white)
-//                        .cornerRadius(20)
-//
-//                        Spacer(minLength: 30)
-//                    }
-//                }
-                
-                VStack(alignment: .leading) {
+                VStack (alignment: .leading) {
                     Text("\(categoryChoosed)")
                         .font(.custom("Mithella-Regular", size: 30))
                         .foregroundColor(.red)
                         .bold()
-                        .padding(.top, 5)
-                        .padding(.bottom,30)
+                        .padding()
+                    ForEach(questions) { questionIndex in
+                        DisclosureGroup("\(questionIndex.question)") {
+                            Divider()
+                                .padding()
+                                .padding(.bottom, -25)
+                            Text(questionIndex.answer)
+                                .font(.callout)
+                                .foregroundColor(Color("ButtonSecondary"))
+                                .padding()
+                                .lineLimit(500)
 
-                    ForEach(questions.indices) { questionIndex in
-                        Text("\(questionIndex+1). "+"\(questions[questionIndex].question)")
-                            .foregroundColor(Color("ButtonSecondary"))
-                            .bold()
-                        Text(questions[questionIndex].answer)
-                            .font(.subheadline)
-                            .foregroundColor(Color("ButtonSecondary"))
-                            .padding(.top)
-                            .padding(.bottom,30)
+                        }
+                        .accentColor(Color("ButtonSecondary"))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                        .lineLimit(5)
+
+                        Spacer(minLength: 30)
                     }
-
                 }
-                .foregroundColor(.gray)
-                .padding(30)
-                .background(Color.white)
-                .cornerRadius(50)
             }
             .padding()
         }
         .background(Color("Background"))
+        .ignoresSafeArea()
         .navigationBarHidden(true)
     }
 }

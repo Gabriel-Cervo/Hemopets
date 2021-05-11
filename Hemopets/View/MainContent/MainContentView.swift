@@ -29,7 +29,6 @@ struct MainContentView: View {
             
             NavigationView {
                 DonationFaqCategories()
-                
             }
             .tabItem {
                 VStack {

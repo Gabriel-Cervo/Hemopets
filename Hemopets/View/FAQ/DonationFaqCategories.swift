@@ -11,12 +11,16 @@ struct DonationFaqCategories: View {
     var body: some View {
             VStack {
                 ScrollView(showsIndicators: false) {
+                    
                     Spacer(minLength: 50)
+                    
                     Text ("Dúvidas")
                         .font(.custom("Mithella-Regular", size: 30))
                         .bold()
                         .foregroundColor(Color("Title"))
                         .padding(.bottom, 50)
+                        .padding(.top, 30)
+                    
                     VStack {
                         ForEach(categories) { categoriesIndex in
                             NavigationLink (
@@ -40,7 +44,6 @@ struct DonationFaqCategories: View {
                             .background(Color("Card"))
                             .cornerRadius(15)
                            Spacer(minLength: 30)
-
                         }
                     }
                 }
@@ -53,6 +56,7 @@ struct DonationFaqCategories: View {
               maxHeight: .infinity
             )
             .background(Color("Background"))
+            .ignoresSafeArea()
             .navigationBarHidden(true)
         }
 }
