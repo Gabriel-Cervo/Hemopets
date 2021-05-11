@@ -206,7 +206,6 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCEF446E264AFE070044547C /* Register */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -283,13 +282,6 @@
 				CCEF446C264AFD120044547C /* Vaccine.swift */,
 			);
 			path = Vaccines;
-			sourceTree = "<group>";
-		};
-		CCEF446E264AFE070044547C /* Register */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

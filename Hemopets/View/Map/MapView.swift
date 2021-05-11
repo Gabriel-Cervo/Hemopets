@@ -46,6 +46,7 @@ struct MapView: View {
                     calculateMapSpan()
                 }
                 .edgesIgnoringSafeArea(.all)
+                .cornerRadius(20)
                 
                 .sheet(item: $selectedHemocenter) {
                     LocationDetails(hemocenter: $0)
