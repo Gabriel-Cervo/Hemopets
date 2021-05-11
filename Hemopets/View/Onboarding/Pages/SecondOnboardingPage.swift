@@ -14,9 +14,7 @@ struct SecondOnboardingPage: View {
                 OnboardingBackgroundView()
                 
                 VStack(alignment: .leading) {
-                    OnboardingIllustration(illustrationName: "Blank4")
-
-                    Spacer()
+                    OnboardingIllustration(illustrationName: "SecondOnboarding")
                     
                     VStack(alignment: .leading) {
                         Text("Pets")

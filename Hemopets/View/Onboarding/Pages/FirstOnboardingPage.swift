@@ -14,10 +14,8 @@ struct FirstOnboardingPage: View {
                 OnboardingBackgroundView()
                 
                 VStack(alignment: .leading) {
-                    OnboardingIllustration(illustrationName: "Blank4")
-                    
-                    Spacer()
-                    
+                    OnboardingIllustration(illustrationName: "FirstOnboarding")
+
                     VStack(alignment: .leading) {
                         HStack(spacing: 0) {
                             Text("Hemo")
