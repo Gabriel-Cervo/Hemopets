@@ -13,7 +13,6 @@ struct SplashIllustration: View {
     var body: some View {
         Image(illustrationName)
             .resizable()
-            .cornerRadius(10)
             .frame(width: 180, height: 180)
     }
 }

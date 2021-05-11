@@ -54,6 +54,7 @@ struct NoPetsView: View {
                     }
                     .cornerRadius(40)
                 }
+                .shadow(radius: 2)
                 .padding()
                 .frame(height: 700)
             }

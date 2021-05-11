@@ -15,6 +15,7 @@ struct OnboardingIllustration: View {
             .resizable()
             .cornerRadius(10)
             .frame(width: 300, height: 300)
+            .padding(.bottom, 30)
     }
 }
 

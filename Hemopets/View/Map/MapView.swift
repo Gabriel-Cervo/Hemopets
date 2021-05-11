@@ -32,7 +32,7 @@ struct MapView: View {
                                 
                                 Image("PawRed")
                                     .resizable()
-                                    .frame(width: 15, height: 15)
+                                    .frame(width: 16, height: 15)
                             }
                             .frame(width: 30.0, height: 30.0)
                             .cornerRadius(25)
