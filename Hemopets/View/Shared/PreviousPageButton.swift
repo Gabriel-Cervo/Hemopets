@@ -9,17 +9,20 @@ import SwiftUI
 
 struct PreviousPageButton: View {
     @Environment(\.presentationMode) var presentationMode
-
+    var title: String?
     var body: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Image(systemName: "chevron.left")
-                .resizable()
-                .frame(width: 15, height: 20)
-                .foregroundColor(.gray)
-                .frame(width: 55, height: 55)
-                .cornerRadius(30)
+            HStack (spacing: -5){
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .frame(width: 15, height: 20)
+                    .foregroundColor(.gray)
+                    .frame(width: 55, height: 55)
+                    .cornerRadius(30)
+                Text(title ?? "")
+            }
         })
     }
 }
