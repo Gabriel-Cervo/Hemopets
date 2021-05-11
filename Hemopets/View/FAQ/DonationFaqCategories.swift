@@ -19,7 +19,7 @@ struct DonationFaqCategories: View {
                         .bold()
                         .foregroundColor(Color("Title"))
                         .padding(.bottom, 50)
-                        .padding(.top, 30)
+                        .padding(.top, 20)
                     
                     VStack {
                         ForEach(categories) { categoriesIndex in

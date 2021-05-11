@@ -17,7 +17,8 @@ struct DonationFaqQuestions: View {
             HStack {
                 PreviousPageButton(title: "Voltar")
                     .foregroundColor(.gray)
-                    .padding(.top, 40)
+                    .padding(.top, 30)
+                    .padding(.bottom, -30)
                 Spacer()
             }
             
@@ -27,6 +28,7 @@ struct DonationFaqQuestions: View {
                     .bold()
                     .foregroundColor(Color("Title"))
                     .padding(.bottom)
+                    .padding()
 
                 VStack (alignment: .leading) {
                     Text("\(categoryChoosed)")
