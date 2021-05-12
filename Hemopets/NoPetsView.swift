@@ -38,6 +38,7 @@ struct NoPetsView: View {
                                     .font(.title2)
                                     .foregroundColor(.black)
                                     .bold()
+                                    .lineLimit(2)
                                 
                                 Text("Que tal clicar no botão abaixo e ver se seu animalzinho pode ser um doador?")
                                     .font(.body)
@@ -50,7 +51,7 @@ struct NoPetsView: View {
                             Spacer()
                             
                             FinishButton(text: "Cadastrar meu Pet", nextView: AnyView(MapView()), width: 250)
-                                .padding(.bottom, 40)
+                                .padding(.bottom, 25)
                             
                         }
                         
@@ -59,8 +60,8 @@ struct NoPetsView: View {
                 }
                 .shadow(radius: 2)
                 .padding()
-                .frame(height: UIScreen.main.bounds.height * 0.76)
             }
+            .navigationBarHidden(true)
         }
     }
 }

@@ -12,6 +12,7 @@ struct OnboardingDescriptionTextView: View {
     
     var body: some View {
         Text(text)
+            .lineLimit(4)
             .frame(width: 300, alignment: .leading)
             .foregroundColor(.gray)
     }

@@ -9,14 +9,15 @@ import SwiftUI
 
 struct DonationFaqCategories: View {
     var body: some View {
+        ZStack {
+            Color("Background")
+                .ignoresSafeArea()
+            
             VStack {
                 ScrollView(showsIndicators: false) {
-                    
-                    Spacer(minLength: 50)
-                    
                     TitleView(text: "Dúvidas")
                         .padding(.bottom, 50)
-                        .padding(.top, 20)
+                        .padding(.top, 40)
                     
                     VStack {
                         ForEach(categories) { categoriesIndex in
@@ -28,22 +29,20 @@ struct DonationFaqCategories: View {
                             .frame(width: 330, height: 50)
                             .background(Color("Card"))
                             .cornerRadius(15)
-                           Spacer(minLength: 30)
+                            Spacer(minLength: 30)
                         }
                     }
                 }
-                .padding()
             }
             .frame(
-              minWidth: 0,
-              maxWidth: .infinity,
-              minHeight: 0,
-              maxHeight: .infinity
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity
             )
-            .background(Color("Background"))
-            .ignoresSafeArea()
             .navigationBarHidden(true)
         }
+    }
 }
 
 struct DropdownBase_Previews: PreviewProvider {

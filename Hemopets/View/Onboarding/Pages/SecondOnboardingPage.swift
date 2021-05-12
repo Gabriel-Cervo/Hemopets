@@ -9,27 +9,27 @@ import SwiftUI
 
 struct SecondOnboardingPage: View {
     var body: some View {
-        NavigationView {
-            ZStack {
-                OnboardingBackgroundView()
+        ZStack {
+            OnboardingBackgroundView()
+            
+            VStack(alignment: .center) {
+                Spacer()
                 
-                VStack(alignment: .center) {
-                    OnboardingIllustration(illustrationName: "SecondOnboarding")
+                OnboardingIllustration(illustrationName: "SecondOnboarding")
+                
+                VStack(alignment: .leading) {
+                    Text("Pets")
+                        .foregroundColor(.init("Title"))
+                        .font(.custom("Mithella-Bold", size: 30))
+                    .padding(.bottom, 5)
                     
-                    VStack(alignment: .leading) {
-                        Text("Pets")
-                            .foregroundColor(.init("Title"))
-                            .font(.custom("Mithella-Bold", size: 30))
-                        .padding(.bottom, 5)
-                        
-                        OnboardingDescriptionTextView(text: "Cadastre o seu pet e descubra se ele pode se tornar um doador e salvar vidas!")
+                    OnboardingDescriptionTextView(text: "Cadastre o seu pet e descubra se ele pode se tornar um doador e salvar vidas!")
 
-                        ProgressView(activeCircle: 2)
-                        
-                        ButtonAligned(nextPage: AnyView(ThirdOnboardingPage()))
-                    }
-                    Spacer()
+                    ProgressView(activeCircle: 2)
+                    
+                    ButtonAligned(nextPage: AnyView(ThirdOnboardingPage()))
                 }
+                Spacer()
             }
         }
         .navigationBarHidden(true)
@@ -38,6 +38,8 @@ struct SecondOnboardingPage: View {
 
 struct SecondOnboardingPage_Previews: PreviewProvider {
     static var previews: some View {
-        SecondOnboardingPage()
+        NavigationView {
+            SecondOnboardingPage()
+        }
     }
 }

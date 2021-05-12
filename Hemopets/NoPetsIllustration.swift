@@ -14,7 +14,7 @@ struct NoPetsIllustration: View {
         Image(illustrationName)
             .resizable()
             .cornerRadius(10)
-            .frame(width: 150, height: 150)
+            .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.35)
     }
 }
 

@@ -9,30 +9,30 @@ import SwiftUI
 
 struct FourthOnboardingPage: View {
     var body: some View {
-        NavigationView {
-            ZStack {
-                OnboardingBackgroundView()
+        ZStack {
+            OnboardingBackgroundView()
+            
+            VStack(alignment: .center) {
+                Spacer()
                 
-                VStack(alignment: .center) {
-                    OnboardingIllustration(illustrationName: "FourthOnboarding")
+                OnboardingIllustration(illustrationName: "FourthOnboarding")
+                
+                VStack(alignment: .leading) {
+                    Text("Dúvidas")
+                        .foregroundColor(.init("Title"))
+                        .font(.custom("Mithella-Bold", size: 30))
+                    .padding(.bottom, 5)
                     
-                    VStack(alignment: .leading) {
-                        Text("Dúvidas")
-                            .foregroundColor(.init("Title"))
-                            .font(.custom("Mithella-Bold", size: 30))
-                        .padding(.bottom, 5)
-                        
-                        OnboardingDescriptionTextView(text: "Saiba mais sobre o procedimento e os pré-requisitos necessários para realizar a doação")
+                    OnboardingDescriptionTextView(text: "Saiba mais sobre o procedimento e os pré-requisitos necessários para realizar a doação")
 
-                        ProgressView(activeCircle: 4)
-                        
-                        FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView()))
-                            .frame(width: 300, alignment: .center)
-                            .padding(.top, 30)
-                            .padding(.leading, 10)
-                    }
-                    Spacer()
+                    ProgressView(activeCircle: 4)
+                    
+                    FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView()))
+                        .frame(width: 300, alignment: .center)
+                        .padding(.top, 30)
+                        .padding(.leading, 10)
                 }
+                Spacer()
             }
         }
         .navigationBarHidden(true)

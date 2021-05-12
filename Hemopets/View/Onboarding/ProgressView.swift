@@ -18,7 +18,7 @@ struct ProgressView: View {
             ProgressCircle(isActive: activeCircle == 4)
         }
         .frame(width: 300)
-        .padding(.top, 25)
+        .padding(.top, 15)
         
     }
 }

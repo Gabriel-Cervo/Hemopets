@@ -14,13 +14,13 @@ struct OnboardingIllustration: View {
         Image(illustrationName)
             .resizable()
             .cornerRadius(10)
-            .frame(width: 300, height: 300)
+            .frame(width: UIScreen.main.bounds.width * 0.70, height: UIScreen.main.bounds.width * 0.70)
             .padding(.bottom, 30)
     }
 }
 
 struct OnboardingIllustration_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingIllustration(illustrationName: "Blank4")
+        OnboardingIllustration(illustrationName: "FirstOnboarding")
     }
 }

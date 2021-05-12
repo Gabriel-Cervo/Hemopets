@@ -14,6 +14,8 @@ struct FirstOnboardingPage: View {
                 OnboardingBackgroundView()
                 
                 VStack(alignment: .center) {
+                    Spacer()
+                    
                     OnboardingIllustration(illustrationName: "FirstOnboarding")
 
                     VStack(alignment: .leading) {
@@ -37,8 +39,8 @@ struct FirstOnboardingPage: View {
                     Spacer()
                 }
             }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
     }
 }
 

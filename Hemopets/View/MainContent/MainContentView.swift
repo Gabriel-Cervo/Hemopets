@@ -27,6 +27,7 @@ struct MainContentView: View {
                 }
         }
         .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
@@ -46,5 +47,9 @@ struct MainContentView: View {
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainContentView()
+            .previewDevice("iPhone 12")
+        
+        MainContentView()
+            .previewDevice("iPhone 8")
     }
 }
