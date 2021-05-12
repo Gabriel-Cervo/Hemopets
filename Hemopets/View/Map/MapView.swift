@@ -14,13 +14,23 @@ struct MapView: View {
     
     let locationFetcher = LocationFetcher()
     
+    var paddingTop: CGFloat {
+        if Metrics.deviceIsSmall() {
+            return 10.0
+        } else if Metrics.deviceIsMedium() {
+            return 40.0
+        } else {
+            return 25.0
+        }
+    }
+    
     var body: some View {
         ZStack {
             Color.init("Background")
             
             VStack {
                 TitleView(text: "Hemocentros")
-                    .padding(.top, 30)
+                    .padding(.top, paddingTop)
                     .padding(.bottom, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
@@ -32,7 +42,7 @@ struct MapView: View {
                         })
                     }
                 }
-                .frame(width: 400, height: 650)
+                .frame(width: 400, height: UIScreen.main.bounds.height * Metrics.sizeModifier)
                 .edgesIgnoringSafeArea(.all)
                 .cornerRadius(20)
                 .shadow(radius: 5)

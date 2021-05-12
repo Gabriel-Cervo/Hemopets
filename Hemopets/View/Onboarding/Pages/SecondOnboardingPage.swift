@@ -13,7 +13,7 @@ struct SecondOnboardingPage: View {
             ZStack {
                 OnboardingBackgroundView()
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     OnboardingIllustration(illustrationName: "SecondOnboarding")
                     
                     VStack(alignment: .leading) {

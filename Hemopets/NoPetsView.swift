@@ -8,6 +8,40 @@
 import SwiftUI
 
 struct NoPetsView: View {
+    var paddingTop: CGFloat {
+        if Metrics.deviceIsMedium() {
+            return 50.0
+        } else if Metrics.smallDevices.contains(where: { $0 == UIDevice.current.name }) {
+            return 20.0
+        } else {
+            return 40.0
+        }
+    }
+    
+    var titleSize: CGFloat {
+        if Metrics.deviceIsSmall() {
+            return 30.0
+        } else {
+            return 40.0
+        }
+    }
+    
+    var subTitle: Font {
+        if Metrics.deviceIsSmall() {
+            return .callout
+        } else {
+            return .title2
+        }
+    }
+    
+    var textSize: Font {
+        if Metrics.deviceIsSmall() {
+            return .caption
+        } else {
+            return .body
+        }
+    }
+    
     var body: some View {
         ZStack {
             Color.init("Background")
@@ -15,6 +49,7 @@ struct NoPetsView: View {
             
             VStack {
                 TitleView(text: "Meus Pets")
+                    .padding(.top, paddingTop)
                 
                 VStack(alignment: .center) {
                     ZStack {
@@ -22,10 +57,10 @@ struct NoPetsView: View {
 
                         VStack {
                             NoPetsIllustration(illustrationName: "Blank5")
-                                .padding(.vertical, 40)
+                                .padding(.vertical, 30)
                             
                             Text("Ei, tutor!")
-                                .font(.custom("Mithella-Bold", size: 40))
+                                .font(.custom("Mithella-Bold", size: titleSize))
                                 .foregroundColor(.yellow)
                                 .padding(.bottom, 5)
                             
@@ -34,12 +69,12 @@ struct NoPetsView: View {
                             
                             VStack(alignment: .center, spacing: 15) {
                                 Text("Vi que você ainda não cadastrou nenhum pet!")
-                                    .font(.title2)
+                                    .font(subTitle)
                                     .foregroundColor(.black)
                                     .bold()
                                 
                                 Text("Que tal clicar no botão abaixo e ver se seu animalzinho pode ser um doador?")
-                                    .font(.body)
+                                    .font(textSize)
                                     .foregroundColor(.black)
                                     .frame(width: 230)
                             }
@@ -58,7 +93,7 @@ struct NoPetsView: View {
                 }
                 .shadow(radius: 2)
                 .padding()
-                .frame(height: 600)
+                .frame(height: UIScreen.main.bounds.height * Metrics.sizeModifier)
             }
         }
     }

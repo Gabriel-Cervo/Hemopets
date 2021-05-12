@@ -13,7 +13,7 @@ struct SubtitleView: View {
     
     var body: some View {
         Text(text)
-            .font(.custom("Mithella-Bold", size: CGFloat(size)))
+            .font(.custom("Mithella-Bold", size: CGFloat(size) + Metrics.fontSize))
             .foregroundColor(.init("ButtonPrimary"))
     }
 }

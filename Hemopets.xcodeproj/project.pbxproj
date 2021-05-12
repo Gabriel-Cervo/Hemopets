@@ -12,6 +12,7 @@
 		2BD6DA592645D35200079010 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA582645D35200079010 /* QuestionData.swift */; };
 		2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */; };
 		2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */; };
+		84009FA1264C1BAD00A1256A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84009FA0264C1BAD00A1256A /* Metrics.swift */; };
 		8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5F8264463BF0044EB71 /* MapConstants.swift */; };
 		8408D5FE264477E10044EB71 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5FD264477E10044EB71 /* TitleView.swift */; };
 		8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8408D600264478530044EB71 /* Mithella-Regular.otf */; };
@@ -66,6 +67,7 @@
 		2BD6DA582645D35200079010 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqCategories.swift; sourceTree = "<group>"; };
 		2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqQuestions.swift; sourceTree = "<group>"; };
+		84009FA0264C1BAD00A1256A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		8408D5F8264463BF0044EB71 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		8408D5FD264477E10044EB71 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8408D600264478530044EB71 /* Mithella-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mithella-Regular.otf"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8408D62626456FC00044EB71 /* FinishButton.swift */,
 				8408D5FD264477E10044EB71 /* TitleView.swift */,
 				8408D60626447CDF0044EB71 /* SubtitleView.swift */,
+				84009FA0264C1BAD00A1256A /* Metrics.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
 				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
+				84009FA1264C1BAD00A1256A /* Metrics.swift in Sources */,
 				84B040192645B0CA006E0589 /* SplashView.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8408D62E26458E470044EB71 /* PreviousPageButton.swift in Sources */,

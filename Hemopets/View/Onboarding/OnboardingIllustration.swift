@@ -14,7 +14,7 @@ struct OnboardingIllustration: View {
         Image(illustrationName)
             .resizable()
             .cornerRadius(10)
-            .frame(width: 300, height: 300)
+            .frame(width: 300 * Metrics.sizeModifier, height: 300 * Metrics.sizeModifier)
             .padding(.bottom, 30)
     }
 }

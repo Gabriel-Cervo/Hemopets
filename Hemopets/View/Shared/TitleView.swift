@@ -12,7 +12,7 @@ struct TitleView: View {
     
     var body: some View {
         Text(text)
-            .font(.custom("Mithella-Bold", size: 30))
+            .font(.custom("Mithella-Bold", size: 30 + Metrics.fontSize))
             .foregroundColor(.init("Title"))
     }
 }
