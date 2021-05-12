@@ -15,7 +15,7 @@ struct NoPetsView: View {
             
             VStack {
                 TitleView(text: "Meus Pets")
-                    .padding(.top, paddingTop)
+                    .padding(.top, 40)
                 
                 VStack(alignment: .center) {
                     ZStack {
@@ -26,7 +26,7 @@ struct NoPetsView: View {
                                 .padding(.vertical, 30)
                             
                             Text("Ei, tutor!")
-                                .font(.custom("Mithella-Bold", size: titleSize))
+                                .font(.custom("Mithella-Bold", size: 40))
                                 .foregroundColor(.yellow)
                                 .padding(.bottom, 5)
                             
@@ -35,12 +35,12 @@ struct NoPetsView: View {
                             
                             VStack(alignment: .center, spacing: 15) {
                                 Text("Vi que você ainda não cadastrou nenhum pet!")
-                                    .font(subTitle)
+                                    .font(.title2)
                                     .foregroundColor(.black)
                                     .bold()
                                 
                                 Text("Que tal clicar no botão abaixo e ver se seu animalzinho pode ser um doador?")
-                                    .font(textSize)
+                                    .font(.body)
                                     .foregroundColor(.black)
                                     .frame(width: 230)
                             }
@@ -59,7 +59,7 @@ struct NoPetsView: View {
                 }
                 .shadow(radius: 2)
                 .padding()
-                .frame(height: UIScreen.main.bounds.height * Metrics.sizeModifier)
+                .frame(height: UIScreen.main.bounds.height * 0.76)
             }
         }
     }

@@ -16,7 +16,7 @@ struct DonationFaqCategories: View {
                     
                     TitleView(text: "Dúvidas")
                         .padding(.bottom, 50)
-                        .padding(.top, 10.0)
+                        .padding(.top, 20)
                     
                     VStack {
                         ForEach(categories) { categoriesIndex in
