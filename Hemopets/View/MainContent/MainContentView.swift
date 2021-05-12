@@ -27,6 +27,7 @@ struct MainContentView: View {
                 }
         }
         .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
