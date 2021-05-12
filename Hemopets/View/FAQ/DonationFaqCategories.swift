@@ -8,16 +8,6 @@
 import SwiftUI
 
 struct DonationFaqCategories: View {
-    var paddingTop: CGFloat {
-        if Metrics.deviceIsSmall() {
-            return -13.0
-        } else if Metrics.deviceIsMedium() {
-            return 10.0
-        } else {
-            return 15.0
-        }
-    }
-    
     var body: some View {
             VStack {
                 ScrollView(showsIndicators: false) {
@@ -26,7 +16,7 @@ struct DonationFaqCategories: View {
                     
                     TitleView(text: "Dúvidas")
                         .padding(.bottom, 50)
-                        .padding(.top, paddingTop)
+                        .padding(.top, 10.0)
                     
                     VStack {
                         ForEach(categories) { categoriesIndex in

@@ -16,6 +16,7 @@ struct ContentView: View {
             SplashView()
                 .onAppear() {
                     checkOnboardDefaults()
+                    print(UIDevice.current.localizedModel)
                 }
         } else {
             if hasSeenOnboarding {

@@ -8,40 +8,6 @@
 import SwiftUI
 
 struct NoPetsView: View {
-    var paddingTop: CGFloat {
-        if Metrics.deviceIsMedium() {
-            return 50.0
-        } else if Metrics.smallDevices.contains(where: { $0 == UIDevice.current.name }) {
-            return 20.0
-        } else {
-            return 40.0
-        }
-    }
-    
-    var titleSize: CGFloat {
-        if Metrics.deviceIsSmall() {
-            return 30.0
-        } else {
-            return 40.0
-        }
-    }
-    
-    var subTitle: Font {
-        if Metrics.deviceIsSmall() {
-            return .callout
-        } else {
-            return .title2
-        }
-    }
-    
-    var textSize: Font {
-        if Metrics.deviceIsSmall() {
-            return .caption
-        } else {
-            return .body
-        }
-    }
-    
     var body: some View {
         ZStack {
             Color.init("Background")
