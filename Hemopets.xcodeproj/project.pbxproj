@@ -56,6 +56,12 @@
 		8495A86C264C077A00A218DD /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A86B264C077A00A218DD /* DonationView.swift */; };
 		84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040122645AAA1006E0589 /* UserDefaultsManager.swift */; };
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
+		C0BC20912649A920001B5681 /* PartialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20902649A920001B5681 /* PartialDetailsView.swift */; };
+		C0BC20932649AB81001B5681 /* ImagePartialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */; };
+		C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20942649B551001B5681 /* RegisteredPetsView.swift */; };
+		C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */; };
+		C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */; };
+		C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
 		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
@@ -113,6 +119,12 @@
 		8495A86B264C077A00A218DD /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		84B040122645AAA1006E0589 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C0BC20902649A920001B5681 /* PartialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialDetailsView.swift; sourceTree = "<group>"; };
+		C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePartialDetailsView.swift; sourceTree = "<group>"; };
+		C0BC20942649B551001B5681 /* RegisteredPetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredPetsView.swift; sourceTree = "<group>"; };
+		C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDetailsView.swift; sourceTree = "<group>"; };
+		C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
+		C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableDetail.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
@@ -253,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD6DA5A2645D41300079010 /* FAQ */,
+				C0BC208D2649A1E6001B5681 /* RegisteredPets */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -314,6 +327,19 @@
 				8495A85D2649B1B700A218DD /* SplashIllustration.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		C0BC208D2649A1E6001B5681 /* RegisteredPets */ = {
+			isa = PBXGroup;
+			children = (
+				C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */,
+				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
+				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
+				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
+				C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */,
+				C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */,
+			);
+			path = RegisteredPets;
 			sourceTree = "<group>";
 		};
 		CC22FAF32645B5DC00CBC8C7 /* Pet */ = {
@@ -407,9 +433,11 @@
 				2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */,
 				84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */,
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
+				C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
+				C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
 				8495A864264C02A600A218DD /* DisclosureDetailsView.swift in Sources */,
 				8495A866264C042400A218DD /* CategoriesView.swift in Sources */,
@@ -427,6 +455,7 @@
 				2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
 				8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */,
+				C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */,
 				8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */,
 				2BD6DA592645D35200079010 /* QuestionData.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
@@ -451,6 +480,9 @@
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
+				C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */,
+				C0BC20932649AB81001B5681 /* ImagePartialDetailsView.swift in Sources */,
+				C0BC20912649A920001B5681 /* PartialDetailsView.swift in Sources */,
 				8408D62026456C480044EB71 /* SecondOnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
