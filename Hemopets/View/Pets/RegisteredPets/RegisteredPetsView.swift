@@ -62,8 +62,8 @@ struct RegisteredPetsView: View {
                     }
                     Spacer()
                 }
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
         }
     }
 }

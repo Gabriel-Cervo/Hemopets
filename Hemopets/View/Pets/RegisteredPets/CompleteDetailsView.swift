@@ -16,77 +16,73 @@ struct CompleteDetailsView: View {
             Color(.init("Background"))
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading) {
-                HStack {
+            ScrollView {
+                VStack(alignment: .leading) {
                     PreviousPageButton(title: "Meus Pets")
                         .foregroundColor(.gray)
-                        .padding(.top, 105)
-                    Spacer()
-                }
-                Spacer()
-            }
-            
-            ZStack {
-                Color("Card")
-                
-                ScrollView {
-                    VStack {
-                        Image("NewImage")
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 120, height: 120)
-                            .padding(.top, 30)
-                            .shadow(radius: 2)
+                    
+                    ZStack {
+                        Color("Card")
                         
-                        SubtitleView(text: cat.name)
-                            .padding()
-                        
-                        HStack {
-                            VStack (alignment: .leading, spacing: 10) {
-                                Text("Informações Básicas")
+                        VStack {
+                            Image("NewImage")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 120, height: 120)
+                                .padding(.top, 30)
+                                .shadow(radius: 2)
+                            
+                            SubtitleView(text: cat.name)
+                                .padding()
+                            
+                            HStack {
+                                VStack (alignment: .leading, spacing: 10) {
+                                    Text("Informações Básicas")
+                                        .font(.custom("Mithella-Bold", size: 20))
+                                        .foregroundColor(.init("ButtonSecondary"))
+                                    
+                                    Group {
+                                        EditableDetail(text: "Nome", textFieldValue: $catAge)
+                                        EditableDetail(text: "Idade", textFieldValue: $catAge)
+                                        EditableDetail(text: "Peso", textFieldValue: $catAge)
+                                    }
+                                    .padding(.trailing, 15)
+                                }
+                                .padding(.leading, 30)
+                                Spacer()
+                            }
+                            
+                            VStack(alignment: .leading) {
+                                Text("Vacinas")
                                     .font(.custom("Mithella-Bold", size: 20))
                                     .foregroundColor(.init("ButtonSecondary"))
+                                    .padding(.leading, 30)
+                                    .padding(.top, 15)
+                                    .padding(.bottom, -10)
                                 
-                                Group {
-                                    EditableDetail(text: "Nome", textFieldValue: $catAge)
-                                    EditableDetail(text: "Idade", textFieldValue: $catAge)
-                                    EditableDetail(text: "Peso", textFieldValue: $catAge)
-                                }
-                                .padding(.trailing, 15)
+                                VaccinesListView()
+                                    .frame(height: 180)
+                                    .padding(.horizontal, 15)
+                                    .colorScheme(.light)
                             }
-                            .padding(.leading, 30)
+                            .padding(.bottom, 20)
+                            
                             Spacer()
                         }
-                        
-                        VStack(alignment: .leading) {
-                            Text("Vacinas")
-                                .font(.custom("Mithella-Bold", size: 20))
-                                .foregroundColor(.init("ButtonSecondary"))
-                                .padding(.leading, 30)
-                                .padding(.top, 15)
-                                .padding(.bottom, -10)
-                            
-                            VaccinesListView()
-                                .frame(height: 180)
-                                .padding(.horizontal, 15)
-                                .colorScheme(.light)
-                        }
-                        
-                        
-                        
-                        Spacer()
                     }
+                    .frame(height: UIScreen.main.bounds.height * 0.90)
+                    .cornerRadius(45)
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, 20)
                 }
+                .padding(.top, Metrics.cardPaddingTop)
+                
             }
-            .frame(height: UIScreen.main.bounds.height * 0.92)
-            .cornerRadius(45)
-            .padding(.top, 160)
-            .padding(.horizontal, 10)
+            .onAppear() {
+                catAge = String(cat.age)
+            }
+            .navigationBarHidden(true)
         }
-        .onAppear() {
-            catAge = String(cat.age)
-        }
-        .navigationBarHidden(true)
     }
 }
 

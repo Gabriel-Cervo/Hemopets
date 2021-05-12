@@ -10,24 +10,25 @@ import SwiftUI
 struct MainContentView: View {
     var body: some View {
         TabView {
-            RegisteredPetsView()
-                .tabItem {
-                    TabItemView(iconName: "heart.fill", text: "Meus Pets")
-                }
-            
-            MapView()
-                .tabItem {
-                    TabItemView(iconName: "drop.fill", text: "Hemocentros")
-                }
-                .colorScheme(.dark)
-            
-            DonationView()
-                .tabItem {
-                    TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
-                }
+            Group {
+                RegisteredPetsView()
+                    .tabItem {
+                        TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                    }
+                
+                MapView()
+                    .tabItem {
+                        TabItemView(iconName: "drop.fill", text: "Hemocentros")
+                    }
+                    .colorScheme(.dark)
+                
+                DonationView()
+                    .tabItem {
+                        TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
+                    }
+            }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
@@ -46,8 +47,11 @@ struct MainContentView: View {
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainContentView()
-            .previewDevice("iPhone 12")
+        NavigationView {
+            MainContentView()
+                .previewDevice("iPhone 12")
+        }
+
         
         MainContentView()
             .previewDevice("iPhone 8")
