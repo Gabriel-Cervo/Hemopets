@@ -11,17 +11,20 @@ struct ImagePartialDetailsView: View {
     var imageName: String
     var isViable: Bool
     var body: some View {
-        ZStack{
+        ZStack {
             Image(imageName)
                 .resizable()
                 .clipShape(Circle())
-                .frame(width: 75, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 75, height: 75)
+            
             Image(systemName: isViable ? "checkmark.seal" : "xmark.seal")
                 .resizable()
                 .foregroundColor(isViable ? Color(UIColor.systemGreen) : Color(UIColor.systemYellow))
                 .frame(width: 40, height: 40)
                 .padding([.leading, .top], 60)
-        }.frame(width: 115, height: 115)
+            
+        }
+        .frame(width: 115, height: 115)
     }
 }
 

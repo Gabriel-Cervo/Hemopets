@@ -8,40 +8,42 @@
 import SwiftUI
 
 struct RegisteredPetsView: View {
-    var catList: [Cat] = [Cat(id: UUID.init(), name: "Gato1", age: 20, weight: 30, vaccinesTaken: ["V3", "V4", "V5", "Antirrábica"], imageName: "testeHemo"), Cat(id: UUID.init(), name: "Gato2", age: 20, weight: 2, vaccinesTaken: ["V3", "V4", "V5", "Antirrábica"], imageName: "testeHemo")]
+    var catList: [Cat] = [Cat(name: "Gato1", age: 20, weight: 30, imageName: "NewImage"), Cat(name: "Gato2", age: 20, weight: 2, imageName: "NewImage")]
+    
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 Color(.init("Background"))
                     .ignoresSafeArea()
-                VStack{
-                    ZStack{
-                        HStack{
-                            Text("Meus Pets")
-                                .font(.custom("Mithella-Bold", size: 42))
-                                .foregroundColor(.init("Title"))
+                
+                VStack {
+                    ZStack {
+                        HStack {
+                            TitleView(text: "Meus Pets")
                         }
-                        HStack{
+                        HStack {
                             Spacer()
-                            Image(systemName: "plus") //create navigation link to register a new pet
-                                .resizable()
-                                .frame(width: 28, height: 28)
+                            // create navigation link to register a new pet
+                            Image(systemName: "plus")
+                                .font(.title2)
                                 .padding(.trailing, 30)
                         }
                     }
                     .padding(.top, 30)
                     .padding(.bottom, 10)
                     ScrollView {
-                        VStack(spacing: 20) {
+                        VStack(spacing: 5) {
                             ForEach(catList, id: \.id) { cat in
-                                ZStack{ // check if whole view should bre clickable (?)
+                                ZStack {
                                     PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.checkWeight())
-                                    HStack{
+                                        .padding(.horizontal, 10)
+                                    
+                                    HStack {
                                         Spacer()
                                         NavigationLink(destination: CompleteDetailsView(cat: cat)) {
                                             Image(systemName: "square.and.pencil")
                                                 .resizable()
-                                                .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                                .frame(width: 25, height: 25)
                                                 .padding(.trailing, 30)
                                                 .foregroundColor(Color(UIColor.systemGray))
                                         }
@@ -62,5 +64,9 @@ struct RegisteredPetsView: View {
 struct RegisteredPetsView_Previews: PreviewProvider {
     static var previews: some View {
         RegisteredPetsView()
+            .previewDevice("iPhone 12")
+        
+        RegisteredPetsView()
+            .previewDevice("iPhone 8")
     }
 }

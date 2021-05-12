@@ -12,14 +12,14 @@ struct PartialDetailsView: View {
     var imageName: String
     var type: String
     var isViable: Bool
+    
     var body: some View {
         ZStack {
-            Image("Blank3")
-                .resizable()
-                .frame(width: 370, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            HStack{
+            Color("Card")
+            
+            HStack {
                 ImagePartialDetailsView(imageName: imageName, isViable: isViable)
-                    .padding(.leading, 20)
+                
                 VStack (alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
                     Text("\(type)")
@@ -29,7 +29,10 @@ struct PartialDetailsView: View {
                 }
                 Spacer()
             }
-        }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+        }
+        .frame(height: 120)
+        .cornerRadius(25)
+        .shadow(radius: 2)
     }
 }
 

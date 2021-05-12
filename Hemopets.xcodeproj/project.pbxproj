@@ -220,6 +220,19 @@
 			path = MainContent;
 			sourceTree = "<group>";
 		};
+		8424F2F6264C536600E912EE /* RegisteredPets */ = {
+			isa = PBXGroup;
+			children = (
+				C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */,
+				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
+				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
+				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
+				C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */,
+				C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */,
+			);
+			path = RegisteredPets;
+			sourceTree = "<group>";
+		};
 		8492F230264080E400B9DF4A = {
 			isa = PBXGroup;
 			children = (
@@ -247,8 +260,6 @@
 				8492F240264080E400B9DF4A /* Assets.xcassets */,
 				8492F245264080E400B9DF4A /* Info.plist */,
 				8492F242264080E400B9DF4A /* Preview Content */,
-				8495A85F2649C61A00A218DD /* NoPetsView.swift */,
-				8495A8612649C69400A218DD /* NoPetsIllustration.swift */,
 			);
 			path = Hemopets;
 			sourceTree = "<group>";
@@ -265,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD6DA5A2645D41300079010 /* FAQ */,
-				C0BC208D2649A1E6001B5681 /* RegisteredPets */,
+				C0BC208D2649A1E6001B5681 /* Pets */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -329,17 +340,14 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
-		C0BC208D2649A1E6001B5681 /* RegisteredPets */ = {
+		C0BC208D2649A1E6001B5681 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
-				C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */,
-				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
-				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
-				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
-				C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */,
-				C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */,
+				8424F2F6264C536600E912EE /* RegisteredPets */,
+				8495A85F2649C61A00A218DD /* NoPetsView.swift */,
+				8495A8612649C69400A218DD /* NoPetsIllustration.swift */,
 			);
-			path = RegisteredPets;
+			path = Pets;
 			sourceTree = "<group>";
 		};
 		CC22FAF32645B5DC00CBC8C7 /* Pet */ = {

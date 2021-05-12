@@ -10,7 +10,7 @@ import SwiftUI
 struct MainContentView: View {
     var body: some View {
         TabView {
-            NoPetsView()
+            RegisteredPetsView()
                 .tabItem {
                     TabItemView(iconName: "heart.fill", text: "Meus Pets")
                 }
