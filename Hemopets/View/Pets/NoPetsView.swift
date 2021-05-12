@@ -22,8 +22,9 @@ struct NoPetsView: View {
                         Color.init("Card")
 
                         VStack {
-                            NoPetsIllustration(illustrationName: "Blank5")
-                                .padding(.vertical, 30)
+                            NoPetsIllustration(illustrationName: "NoPets")
+                                .padding(.top, 45)
+                                .padding(.bottom, 15)
                             
                             Text("Ei, tutor!")
                                 .font(.custom("Mithella-Bold", size: 40))

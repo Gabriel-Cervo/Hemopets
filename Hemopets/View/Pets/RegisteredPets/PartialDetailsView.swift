@@ -22,6 +22,7 @@ struct PartialDetailsView: View {
                 
                 VStack(alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
+                        .lineLimit(2)
                     
                     Text("\(type)")
                         .foregroundColor(.gray)
@@ -30,6 +31,7 @@ struct PartialDetailsView: View {
                         .foregroundColor(isViable ? .green : .yellow)
                         .bold()
                 }
+                .padding(.leading, 10)
                 
                 Spacer()
             }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisteredPetsView: View {
-    var catList: [Cat] = [Cat(name: "Gato1", age: 20, weight: 30, imageName: "NewImage"), Cat(name: "Gato2", age: 20, weight: 2, imageName: "NewImage")]
+    var catList: [Cat] = [Cat(name: "Gato", age: 3, weight: 5, imageName: "CatPlaceholder"), Cat(name: "Cachorro", age: 6, weight: 1, imageName: "DogPlaceholder")]
     
     var body: some View {
         NavigationView {
@@ -42,14 +42,19 @@ struct RegisteredPetsView: View {
                                     
                                     HStack {
                                         Spacer()
+                                        
                                         NavigationLink(destination: CompleteDetailsView(cat: cat)) {
                                             Image(systemName: "square.and.pencil")
-                                                .resizable()
-                                                .frame(width: 25, height: 25)
-                                                .padding(.trailing, 30)
-                                                .foregroundColor(.gray)
+                                                .font(.title3)
                                         }
+                                        
+                                        // Excluir -> Fazer funcionalidade
+                                        Image(systemName: "trash")
+                                            .font(.title3)
+                                        
                                     }
+                                    .padding(.trailing, 30)
+                                    .foregroundColor(.gray)
                                 }
                                 
                             }.padding(.bottom)

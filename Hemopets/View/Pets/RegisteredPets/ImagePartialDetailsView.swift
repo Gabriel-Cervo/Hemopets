@@ -17,11 +17,11 @@ struct ImagePartialDetailsView: View {
                 .clipShape(Circle())
                 .frame(width: 75, height: 75)
             
-            Image(systemName: isViable ? "checkmark.seal" : "xmark.seal")
-                .resizable()
+            Image(systemName: isViable ? "checkmark.seal.fill" : "xmark.seal.fill")
+                .font(.largeTitle)
                 .foregroundColor(isViable ? .green : .yellow)
-                .frame(width: 40, height: 40)
-                .padding([.leading, .top], 60)
+                .padding(.top, 50)
+                .padding(.leading, 80)
         }
         
         .frame(width: 115, height: 115)
@@ -30,6 +30,6 @@ struct ImagePartialDetailsView: View {
 
 struct ImagePartialDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePartialDetailsView(imageName: "NewImage", isViable: true)
+        ImagePartialDetailsView(imageName: "NewImage", isViable: false)
     }
 }
