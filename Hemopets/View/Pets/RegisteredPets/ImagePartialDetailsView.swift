@@ -19,17 +19,17 @@ struct ImagePartialDetailsView: View {
             
             Image(systemName: isViable ? "checkmark.seal" : "xmark.seal")
                 .resizable()
-                .foregroundColor(isViable ? Color(UIColor.systemGreen) : Color(UIColor.systemYellow))
+                .foregroundColor(isViable ? .green : .yellow)
                 .frame(width: 40, height: 40)
                 .padding([.leading, .top], 60)
-            
         }
+        
         .frame(width: 115, height: 115)
     }
 }
 
 struct ImagePartialDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePartialDetailsView(imageName: "testeHemo", isViable: true)
+        ImagePartialDetailsView(imageName: "NewImage", isViable: true)
     }
 }

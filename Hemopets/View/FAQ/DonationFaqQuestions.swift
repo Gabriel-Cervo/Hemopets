@@ -17,8 +17,8 @@ struct DonationFaqQuestions: View {
             HStack {
                 PreviousPageButton(title: "Voltar")
                     .foregroundColor(.gray)
-                    .padding(.top, 40)
-                    .padding(.bottom, -40)
+                    .padding(.top, Metrics.cardPaddingTop)
+                    .padding(.bottom, -Metrics.cardPaddingTop)
                 Spacer()
             }
             

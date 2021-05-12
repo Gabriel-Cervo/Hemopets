@@ -14,13 +14,11 @@ struct EditableDetail: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text(text)
-                    .padding(.leading, 5)
-                
-                Spacer()
+                Text("\(text):")
+                    .foregroundColor(.gray)
                 
                 TextField(text, text: $textFieldValue)
-                    .multilineTextAlignment(.trailing)
+                    .foregroundColor(.black)
                     .padding(.trailing, 40)
             }
             
@@ -32,6 +30,6 @@ struct EditableDetail: View {
 
 struct EditableDetail_Previews: PreviewProvider {
     static var previews: some View {
-        EditableDetail(text: "1", textFieldValue: Binding.constant("Roberto"))
+        EditableDetail(text: "Nome", textFieldValue: Binding.constant("Roberto"))
     }
 }

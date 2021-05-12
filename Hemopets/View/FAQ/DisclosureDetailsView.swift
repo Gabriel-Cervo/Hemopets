@@ -14,6 +14,7 @@ struct DisclosureDetailsView: View {
         Divider()
             .padding()
             .padding(.bottom, -25)
+        
         Text(text)
             .font(.callout)
             .foregroundColor(Color("ButtonSecondary"))

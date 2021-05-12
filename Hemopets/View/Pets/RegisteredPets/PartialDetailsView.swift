@@ -20,14 +20,17 @@ struct PartialDetailsView: View {
             HStack {
                 ImagePartialDetailsView(imageName: imageName, isViable: isViable)
                 
-                VStack (alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
+                    
                     Text("\(type)")
                         .foregroundColor(.gray)
+                    
                     Text(isViable ? "Doador" : "Não Doador")
                         .foregroundColor(isViable ? .green : .yellow)
                         .bold()
                 }
+                
                 Spacer()
             }
         }

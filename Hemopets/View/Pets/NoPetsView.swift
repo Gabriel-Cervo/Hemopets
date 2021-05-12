@@ -15,7 +15,7 @@ struct NoPetsView: View {
             
             VStack {
                 TitleView(text: "Meus Pets")
-                    .padding(.top, 40)
+                    .padding(.top, Metrics.cardPaddingTop)
                 
                 VStack(alignment: .center) {
                     ZStack {

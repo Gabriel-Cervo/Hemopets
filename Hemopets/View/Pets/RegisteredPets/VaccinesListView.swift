@@ -13,6 +13,7 @@ struct VaccinesListView: View {
     var body: some View {
         List(vacsTest.indices, id: \.self) { index in
             Toggle("\(vacsTest[index].name)", isOn: $vacsTest[index].isTaken)
+                .foregroundColor(.gray)
         }
     }
 }

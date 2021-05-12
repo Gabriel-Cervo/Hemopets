@@ -17,7 +17,7 @@ struct DonationFaqCategories: View {
                 ScrollView(showsIndicators: false) {
                     TitleView(text: "Dúvidas")
                         .padding(.bottom, 50)
-                        .padding(.top, 40)
+                        .padding(.top, Metrics.cardPaddingTop)
                     
                     VStack {
                         ForEach(categories) { categoriesIndex in

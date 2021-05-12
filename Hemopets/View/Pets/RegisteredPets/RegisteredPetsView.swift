@@ -30,8 +30,9 @@ struct RegisteredPetsView: View {
                                 .foregroundColor(.gray)
                         }
                     }
-                    .padding(.top, 40)
+                    .padding(.top, Metrics.cardPaddingTop)
                     .padding(.bottom, 10)
+                    
                     ScrollView {
                         VStack(spacing: 5) {
                             ForEach(catList, id: \.id) { cat in

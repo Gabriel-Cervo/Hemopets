@@ -44,21 +44,35 @@ struct CompleteDetailsView: View {
                         HStack {
                             VStack (alignment: .leading, spacing: 10) {
                                 Text("Informações Básicas")
-                                    .font(.custom("Mithella-Bold", size: 25))
+                                    .font(.custom("Mithella-Bold", size: 20))
                                     .foregroundColor(.init("ButtonSecondary"))
                                 
-                                EditableDetail(text: "Nome", textFieldValue: $catAge)
-                                EditableDetail(text: "Idade", textFieldValue: $catAge)
-                                EditableDetail(text: "Idade", textFieldValue: $catAge)
-
+                                Group {
+                                    EditableDetail(text: "Nome", textFieldValue: $catAge)
+                                    EditableDetail(text: "Idade", textFieldValue: $catAge)
+                                    EditableDetail(text: "Peso", textFieldValue: $catAge)
+                                }
+                                .padding(.trailing, 15)
                             }
                             .padding(.leading, 30)
                             Spacer()
                         }
                         
-                        VaccinesListView()
-                            .frame(height: 180)
-                            .padding(.horizontal, 15)
+                        VStack(alignment: .leading) {
+                            Text("Vacinas")
+                                .font(.custom("Mithella-Bold", size: 20))
+                                .foregroundColor(.init("ButtonSecondary"))
+                                .padding(.leading, 30)
+                                .padding(.top, 15)
+                                .padding(.bottom, -10)
+                            
+                            VaccinesListView()
+                                .frame(height: 180)
+                                .padding(.horizontal, 15)
+                                .colorScheme(.light)
+                        }
+                        
+                        
                         
                         Spacer()
                     }

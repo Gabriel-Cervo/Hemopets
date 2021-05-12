@@ -12,5 +12,7 @@ import SwiftUI
  Valores que mudam de acordo com acessibilidade (tamanhos)
  */
 struct Metrics {
-    @ScaledMetric public static var fontSize: CGFloat = 1    
+    @ScaledMetric public static var fontSize: CGFloat = 1
+    
+    public static let cardPaddingTop: CGFloat = 40
 }
