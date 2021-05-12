@@ -28,10 +28,6 @@ struct PartialDetailsView: View {
                         .bold()
                 }
                 Spacer()
-                Image(systemName: "square.and.pencil")
-                    .resizable()
-                    .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(.trailing, 30)
             }
         }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
     }

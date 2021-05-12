@@ -20,7 +20,7 @@ struct ImagePartialDetailsView: View {
                 .resizable()
                 .foregroundColor(isViable ? Color(UIColor.systemGreen) : Color(UIColor.systemYellow))
                 .frame(width: 40, height: 40)
-                .offset(x: 30, y: 30)
+                .padding([.leading, .top], 60)
         }.frame(width: 115, height: 115)
     }
 }

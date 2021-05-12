@@ -45,7 +45,8 @@
 		C0BC20932649AB81001B5681 /* ImagePartialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */; };
 		C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20942649B551001B5681 /* RegisteredPetsView.swift */; };
 		C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */; };
-		C0BC20992649C452001B5681 /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20982649C452001B5681 /* VaccinesListView.swift */; };
+		C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */; };
+		C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
 /* End PBXBuildFile section */
@@ -91,7 +92,8 @@
 		C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePartialDetailsView.swift; sourceTree = "<group>"; };
 		C0BC20942649B551001B5681 /* RegisteredPetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredPetsView.swift; sourceTree = "<group>"; };
 		C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDetailsView.swift; sourceTree = "<group>"; };
-		C0BC20982649C452001B5681 /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
+		C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
+		C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableDetail.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,7 +272,8 @@
 				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
 				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
 				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
-				C0BC20982649C452001B5681 /* VaccinesListView.swift */,
+				C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */,
+				C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */,
 			);
 			path = RegisteredPets;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
+				C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
@@ -370,7 +374,7 @@
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8408D614264564630044EB71 /* ProgressView.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
-				C0BC20992649C452001B5681 /* VaccinesListView.swift in Sources */,
+				C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */,
 				8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,

@@ -23,7 +23,7 @@ struct RegisteredPetsView: View {
                         }
                         HStack{
                             Spacer()
-                            Image(systemName: "plus")
+                            Image(systemName: "plus") //create navigation link to register a new pet
                                 .resizable()
                                 .frame(width: 28, height: 28)
                                 .padding(.trailing, 30)
@@ -34,8 +34,18 @@ struct RegisteredPetsView: View {
                     ScrollView {
                         VStack(spacing: 20) {
                             ForEach(catList, id: \.id) { cat in
-                                NavigationLink(destination: CompleteDetailsView(cat: cat)) {
+                                ZStack{ // check if whole view should bre clickable (?)
                                     PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.checkWeight())
+                                    HStack{
+                                        Spacer()
+                                        NavigationLink(destination: CompleteDetailsView(cat: cat)) {
+                                            Image(systemName: "square.and.pencil")
+                                                .resizable()
+                                                .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                                .padding(.trailing, 30)
+                                                .foregroundColor(Color(UIColor.systemGray))
+                                        }
+                                    }
                                 }
                                 
                             }.padding(.bottom)

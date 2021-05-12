@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CompleteDetailsView: View {
-    @State var cat: Cat
+    @State var cat: Cat //typecast
+    @State var catAge: String = ""
     var body: some View {
         ZStack{
             Color(.init("Background"))
@@ -19,35 +20,44 @@ struct CompleteDetailsView: View {
                         .foregroundColor(.gray)
                     Spacer()
                 }
-                .offset(y: 60)
-                ZStack{
-                    Image("Blank4")
+                Spacer()
+            }
+            ZStack{
+                Image("Blank4")
+                    .resizable()
+                    .frame(width: 370, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 2) //ask
+                VStack{
+                    Image("testeHemo")
                         .resizable()
-                        .frame(width: 370, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    VStack{
-                        Image("testeHemo")
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 120, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .padding(.top, 45)
-                        SubtitleView(text: cat.name)
-                            .padding()
+                        .clipShape(Circle())
+                        .frame(width: 120, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .shadow(radius: 2) //ask
+                        .padding(.top, 80)
+                    SubtitleView(text: cat.name)
+                        .padding()
+                    HStack {
                         VStack (alignment: .leading, spacing: 10){
                             Text("Informações Básicas")
                                 .font(.custom("Mithella-Bold", size: 25))
                                 .foregroundColor(.init("ButtonSecondary"))
-                            Text("\(cat.age)")
-                            Text("genero")
-                            Text("\(cat.weight)")
-                            
-                            
+                            EditableDetail(text: "Idade", textFieldValue: $catAge)
                         }
-                        .padding([.leading, .trailing], 40)
+                        .padding(.leading, 30)
                         Spacer()
                     }
+                    Divider()
+                        .padding(.horizontal, 20)
+                    VaccinesListView()
+                        .frame(width: 370, height: 180)
+                    Spacer()
                 }
             }
-        }.navigationBarHidden(true)
+        }
+        .onAppear() {
+            catAge = String(cat.age)
+        }
+        .navigationBarHidden(true)
     }
 }
 
