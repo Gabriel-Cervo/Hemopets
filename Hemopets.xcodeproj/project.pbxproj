@@ -50,6 +50,9 @@
 		8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A8612649C69400A218DD /* NoPetsIllustration.swift */; };
 		8495A864264C02A600A218DD /* DisclosureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A863264C02A600A218DD /* DisclosureDetailsView.swift */; };
 		8495A866264C042400A218DD /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A865264C042400A218DD /* CategoriesView.swift */; };
+		8495A868264C04DF00A218DD /* MapMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A867264C04DF00A218DD /* MapMarkerView.swift */; };
+		8495A86A264C070B00A218DD /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A869264C070B00A218DD /* TabItemView.swift */; };
+		8495A86C264C077A00A218DD /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A86B264C077A00A218DD /* DonationView.swift */; };
 		84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040122645AAA1006E0589 /* UserDefaultsManager.swift */; };
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
@@ -103,6 +106,9 @@
 		8495A8612649C69400A218DD /* NoPetsIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPetsIllustration.swift; sourceTree = "<group>"; };
 		8495A863264C02A600A218DD /* DisclosureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureDetailsView.swift; sourceTree = "<group>"; };
 		8495A865264C042400A218DD /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		8495A867264C04DF00A218DD /* MapMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerView.swift; sourceTree = "<group>"; };
+		8495A869264C070B00A218DD /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
+		8495A86B264C077A00A218DD /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		84B040122645AAA1006E0589 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */,
 				8495A863264C02A600A218DD /* DisclosureDetailsView.swift */,
 				8495A865264C042400A218DD /* CategoriesView.swift */,
+				8495A86B264C077A00A218DD /* DonationView.swift */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				8408D62B2645775D0044EB71 /* MainContentView.swift */,
+				8495A869264C070B00A218DD /* TabItemView.swift */,
 			);
 			path = MainContent;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				8408D60826447DB70044EB71 /* FieldView.swift */,
 				8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */,
 				8408D60A2644851C0044EB71 /* SwipeDownIndicatorView.swift */,
+				8495A867264C04DF00A218DD /* MapMarkerView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
 				2BD6DA552645D32300079010 /* Question.swift in Sources */,
+				8495A868264C04DF00A218DD /* MapMarkerView.swift in Sources */,
 				8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */,
 				2BD6DA572645D33A00079010 /* Category.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
@@ -418,6 +428,7 @@
 				2BD6DA592645D35200079010 /* QuestionData.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
+				8495A86C264C077A00A218DD /* DonationView.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
 				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
@@ -432,6 +443,7 @@
 				8408D60726447CDF0044EB71 /* SubtitleView.swift in Sources */,
 				8408D616264569450044EB71 /* NextPageButton.swift in Sources */,
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
+				8495A86A264C070B00A218DD /* TabItemView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,

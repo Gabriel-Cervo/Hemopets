@@ -12,30 +12,19 @@ struct MainContentView: View {
         TabView {
             NoPetsView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "heart.fill")
-                        Text("Meus Pets")
-                    }
+                    TabItemView(iconName: "heart.fill", text: "Meus Pets")
                 }
             
             MapView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "drop.fill")
-                        Text("Hemocentros")
-                    }
+                    TabItemView(iconName: "drop.fill", text: "Hemocentros")
                 }
                 .colorScheme(.dark)
             
-            NavigationView {
-                DonationFaqCategories()
-            }
-            .tabItem {
-                VStack {
-                    Image(systemName: "questionmark.circle.fill")
-                    Text("Dúvidas")
+            DonationView()
+                .tabItem {
+                    TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
                 }
-            }
         }
         .navigationBarHidden(true)
         .accentColor(Color.init("ButtonPrimary"))
