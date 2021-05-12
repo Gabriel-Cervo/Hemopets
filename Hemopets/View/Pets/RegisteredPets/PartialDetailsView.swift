@@ -23,8 +23,9 @@ struct PartialDetailsView: View {
                 VStack (alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
                     Text("\(type)")
+                        .foregroundColor(.gray)
                     Text(isViable ? "Doador" : "Não Doador")
-                        .foregroundColor(isViable ? Color(UIColor.systemGreen) : Color(UIColor.systemYellow))
+                        .foregroundColor(isViable ? .green : .yellow)
                         .bold()
                 }
                 Spacer()

@@ -16,11 +16,11 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Color.init("Background")
+            Color("Background")
+                .ignoresSafeArea()
             
             VStack {
                 TitleView(text: "Hemocentros")
-                    .padding(.top, 30)
                     .padding(.bottom, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
@@ -45,8 +45,9 @@ struct MapView: View {
                     LocationDetails(hemocenter: $0)
                 }
             }
+            .padding(.top, 75)
+
         }
-        .ignoresSafeArea()
         .navigationBarHidden(true)
     }
     

@@ -13,7 +13,7 @@ struct RegisteredPetsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.init("Background"))
+                Color("Background")
                     .ignoresSafeArea()
                 
                 VStack {
@@ -27,9 +27,10 @@ struct RegisteredPetsView: View {
                             Image(systemName: "plus")
                                 .font(.title2)
                                 .padding(.trailing, 30)
+                                .foregroundColor(.gray)
                         }
                     }
-                    .padding(.top, 30)
+                    .padding(.top, 40)
                     .padding(.bottom, 10)
                     ScrollView {
                         VStack(spacing: 5) {
@@ -45,7 +46,7 @@ struct RegisteredPetsView: View {
                                                 .resizable()
                                                 .frame(width: 25, height: 25)
                                                 .padding(.trailing, 30)
-                                                .foregroundColor(Color(UIColor.systemGray))
+                                                .foregroundColor(.gray)
                                         }
                                     }
                                 }
