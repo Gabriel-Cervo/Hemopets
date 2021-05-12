@@ -13,14 +13,17 @@ struct CompleteDetailsView: View {
     
     var body: some View {
         ZStack {
-            Color(.init("Background"))
+            Color("Background")
                 .ignoresSafeArea()
             
-            ScrollView {
-                VStack(alignment: .leading) {
-                    PreviousPageButton(title: "Meus Pets")
-                        .foregroundColor(.gray)
-                    
+            
+            VStack(alignment: .leading) {
+                PreviousPageButton(title: "Meus Pets")
+                    .foregroundColor(.gray)
+                    .padding(.top, Metrics.cardPaddingTop - 30)
+                    .padding(.bottom, -10)
+                
+                ScrollView {
                     ZStack {
                         Color("Card")
                         
@@ -65,18 +68,15 @@ struct CompleteDetailsView: View {
                                     .padding(.horizontal, 15)
                                     .colorScheme(.light)
                             }
-                            .padding(.bottom, 20)
+                            .padding(.bottom, 40)
                             
                             Spacer()
                         }
                     }
-                    .frame(height: UIScreen.main.bounds.height * 0.90)
-                    .cornerRadius(45)
+                    .cornerRadius(50)
                     .padding(.horizontal, 10)
                     .padding(.bottom, 20)
                 }
-                .padding(.top, Metrics.cardPaddingTop)
-                
             }
             .onAppear() {
                 catAge = String(cat.age)
