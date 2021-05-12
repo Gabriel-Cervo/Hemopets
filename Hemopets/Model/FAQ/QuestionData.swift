@@ -15,10 +15,10 @@ let frequentlyAskedQuestions: [Question] = [question1, question2, question3, que
 
 
 // Categories
-let category1 = Category(id: 0, categoryName: "Procedimentos", questions: [question3, question4, question5, question6])
-let category2 = Category(id: 1, categoryName: "Pré-requisitos", questions: [question1, question2, question10])
-let category3 = Category(id: 2, categoryName: "Locais de Doação", questions: [question12])
-let category4 = Category(id: 3, categoryName: "Gerais", questions: [question7, question8, question9])
+let category1 = Category(id: 0, categoryName: "Procedimentos", categoryIconName: "cross.case.fill", questions: [question3, question4, question5, question6])
+let category2 = Category(id: 1, categoryName: "Pré-requisitos", categoryIconName: "heart.text.square.fill", questions: [question1, question2, question10])
+let category3 = Category(id: 2, categoryName: "Locais de Doação", categoryIconName: "paperplane.circle.fill", questions: [question12])
+let category4 = Category(id: 3, categoryName: "Gerais", categoryIconName: "exclamationmark.circle.fill", questions: [question7, question8, question9])
 
 
 

@@ -13,9 +13,7 @@ import Foundation
  variables named question and answer.
  */
 struct Question: Identifiable{
-    
     let id: Int
     let question: String
     let answer: String
-    
 }

@@ -12,9 +12,9 @@ import Foundation
  Category Struct. Responsible to create an category inside FAQ section.
  */
 struct Category: Identifiable {
-    
     let id: Int
     let categoryName: String
+    let categoryIconName: String
     let questions: [Question]
     
 }

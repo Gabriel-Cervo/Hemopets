@@ -23,7 +23,7 @@ struct DonationFaqCategories: View {
                             NavigationLink (
                                 destination: DonationFaqQuestions(categoryChoosed: categoriesIndex.categoryName, questions: categoriesIndex.questions)
                             ) {
-                                CategoriesView(iconName: "square.fill", title: categoriesIndex.categoryName)
+                                CategoriesView(iconName: categoriesIndex.categoryIconName, title: categoriesIndex.categoryName)
                             }
                             .frame(width: 330, height: 50)
                             .background(Color("Card"))

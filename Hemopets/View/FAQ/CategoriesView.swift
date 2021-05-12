@@ -14,7 +14,7 @@ struct CategoriesView: View {
     var body: some View {
         Group {
             Image(systemName: iconName)
-                .foregroundColor(Color("Background"))
+                .foregroundColor(Color("ButtonPrimary"))
                 .padding(.leading, 20)
             
             Text(title)
