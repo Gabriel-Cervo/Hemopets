@@ -45,7 +45,7 @@ struct MapView: View {
                     LocationDetails(hemocenter: $0)
                 }
             }
-            .padding(.top, Metrics.cardPaddingTop + 35)
+            .padding(.top, Metrics.cardPaddingTop)
 
         }
         .navigationBarHidden(true)
