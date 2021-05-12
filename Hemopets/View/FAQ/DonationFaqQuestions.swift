@@ -23,30 +23,17 @@ struct DonationFaqQuestions: View {
             }
             
             ScrollView (showsIndicators: false) {
-                Text ("Dúvidas")
-                    .font(.custom("Mithella-Regular", size: 30))
-                    .bold()
-                    .foregroundColor(Color("Title"))
+                TitleView(text: "Dúvidas")
                     .padding(.bottom)
                     .padding()
 
                 VStack (alignment: .leading) {
-                    Text("\(categoryChoosed)")
-                        .font(.custom("Mithella-Regular", size: 30))
-                        .foregroundColor(.red)
-                        .bold()
+                    SubtitleView(text: categoryChoosed, size: 30)
                         .padding()
+                    
                     ForEach(questions) { questionIndex in
                         DisclosureGroup("\(questionIndex.question)") {
-                            Divider()
-                                .padding()
-                                .padding(.bottom, -25)
-                            Text(questionIndex.answer)
-                                .font(.callout)
-                                .foregroundColor(Color("ButtonSecondary"))
-                                .padding()
-                                .lineLimit(500)
-
+                            DisclosureDetailsView(text: questionIndex.answer)
                         }
                         .accentColor(Color("ButtonPrimary"))
                         .foregroundColor(.black)

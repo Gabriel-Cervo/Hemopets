@@ -14,10 +14,7 @@ struct DonationFaqCategories: View {
                     
                     Spacer(minLength: 50)
                     
-                    Text ("Dúvidas")
-                        .font(.custom("Mithella-Regular", size: 30))
-                        .bold()
-                        .foregroundColor(Color("Title"))
+                    TitleView(text: "Dúvidas")
                         .padding(.bottom, 50)
                         .padding(.top, 20)
                     
@@ -26,19 +23,7 @@ struct DonationFaqCategories: View {
                             NavigationLink (
                                 destination: DonationFaqQuestions(categoryChoosed: categoriesIndex.categoryName, questions: categoriesIndex.questions)
                             ) {
-                                Image(systemName:"square.fill")
-                                    .foregroundColor(Color("Background"))
-                                    .padding(.leading, 20)
-                                Text("\(categoriesIndex.categoryName)")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("ButtonSecondary"))
-                                    .font(.title3)
-                                Spacer()
-                                Image(systemName:"chevron.right")
-                                    .foregroundColor(.black)
-                                    .padding(.trailing, 20)
-
-              
+                                CategoriesView(iconName: "square.fill", title: categoriesIndex.categoryName)
                             }
                             .frame(width: 330, height: 50)
                             .background(Color("Card"))
