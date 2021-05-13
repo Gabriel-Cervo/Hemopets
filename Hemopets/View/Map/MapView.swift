@@ -16,44 +16,38 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Color.init("Background")
+            Color("Background")
+                .ignoresSafeArea()
             
             VStack {
                 TitleView(text: "Hemocentros")
-                    .padding(.vertical, 20)
+                    .padding(.bottom, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
                     MapAnnotation(coordinate: pin.info.coordinate) {
                         Button(action: {
                             self.selectedHemocenter = pin.info
                         }, label: {
-                            ZStack {
-                                Color.init("Card")
-                                
-                                Image("PawRed")
-                                    .resizable()
-                                    .frame(width: 16, height: 15)
-                            }
-                            .frame(width: 30.0, height: 30.0)
-                            .cornerRadius(25)
-                            
+                            MapMarkerView()
                         })
                     }
                 }
-                .frame(width: 400, height: 650)
+                .frame(width: 400, height: UIScreen.main.bounds.height * 0.77)
+                .edgesIgnoringSafeArea(.all)
+                .cornerRadius(20)
+                .shadow(radius: 5)
                 .onAppear() {
                     requestUserLocation()
                     calculateMapSpan()
                 }
-                .edgesIgnoringSafeArea(.all)
-                .cornerRadius(20)
                 
                 .sheet(item: $selectedHemocenter) {
                     LocationDetails(hemocenter: $0)
                 }
             }
+            .padding(.top, Metrics.cardPaddingTop)
+
         }
-        .ignoresSafeArea()
         .navigationBarHidden(true)
     }
     
@@ -91,14 +85,16 @@ struct MapView: View {
             
             var spanValue: Double = 0.03
             
+            let modifiers: [String : Double] = ["long": 0.0003, "medium": 0.003, "short": 0.04]
+            
             if let closestDistance = closestDistance {
                 let squaredDistance = sqrt(closestDistance.nextDown)
                 if squaredDistance > 800 && squaredDistance < 1000 {
-                    spanValue = squaredDistance * 0.0003
+                    spanValue = squaredDistance * modifiers["long"]!
                 } else if squaredDistance <= 150 {
-                    spanValue = squaredDistance * 0.003
+                    spanValue = squaredDistance * modifiers["medium"]!
                 } else {
-                    spanValue = squaredDistance * 0.04
+                    spanValue = squaredDistance * modifiers["short"]!
                 }
             }
                         

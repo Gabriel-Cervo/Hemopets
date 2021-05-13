@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD6DA552645D32300079010 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA542645D32300079010 /* Question.swift */; };
+		2BD6DA572645D33A00079010 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA562645D33A00079010 /* Category.swift */; };
+		2BD6DA592645D35200079010 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA582645D35200079010 /* QuestionData.swift */; };
+		2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */; };
+		2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */; };
+		84009FA1264C1BAD00A1256A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84009FA0264C1BAD00A1256A /* Metrics.swift */; };
 		8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5F8264463BF0044EB71 /* MapConstants.swift */; };
 		8408D5FE264477E10044EB71 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408D5FD264477E10044EB71 /* TitleView.swift */; };
 		8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8408D600264478530044EB71 /* Mithella-Regular.otf */; };
@@ -43,8 +49,19 @@
 		8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A85D2649B1B700A218DD /* SplashIllustration.swift */; };
 		8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A85F2649C61A00A218DD /* NoPetsView.swift */; };
 		8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A8612649C69400A218DD /* NoPetsIllustration.swift */; };
+		8495A864264C02A600A218DD /* DisclosureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A863264C02A600A218DD /* DisclosureDetailsView.swift */; };
+		8495A866264C042400A218DD /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A865264C042400A218DD /* CategoriesView.swift */; };
+		8495A868264C04DF00A218DD /* MapMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A867264C04DF00A218DD /* MapMarkerView.swift */; };
+		8495A86A264C070B00A218DD /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A869264C070B00A218DD /* TabItemView.swift */; };
+		8495A86C264C077A00A218DD /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495A86B264C077A00A218DD /* DonationView.swift */; };
 		84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040122645AAA1006E0589 /* UserDefaultsManager.swift */; };
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
+		C0BC20912649A920001B5681 /* PartialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20902649A920001B5681 /* PartialDetailsView.swift */; };
+		C0BC20932649AB81001B5681 /* ImagePartialDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */; };
+		C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20942649B551001B5681 /* RegisteredPetsView.swift */; };
+		C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */; };
+		C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */; };
+		C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
 		CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567965264C61A00037360D /* RegisterSecondScreen.swift */; };
@@ -58,6 +75,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BD6DA542645D32300079010 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		2BD6DA562645D33A00079010 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2BD6DA582645D35200079010 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqCategories.swift; sourceTree = "<group>"; };
+		2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFaqQuestions.swift; sourceTree = "<group>"; };
+		84009FA0264C1BAD00A1256A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		8408D5F8264463BF0044EB71 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		8408D5FD264477E10044EB71 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		8408D600264478530044EB71 /* Mithella-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mithella-Regular.otf"; sourceTree = "<group>"; };
@@ -96,8 +119,19 @@
 		8495A85D2649B1B700A218DD /* SplashIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashIllustration.swift; sourceTree = "<group>"; };
 		8495A85F2649C61A00A218DD /* NoPetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPetsView.swift; sourceTree = "<group>"; };
 		8495A8612649C69400A218DD /* NoPetsIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPetsIllustration.swift; sourceTree = "<group>"; };
+		8495A863264C02A600A218DD /* DisclosureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureDetailsView.swift; sourceTree = "<group>"; };
+		8495A865264C042400A218DD /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		8495A867264C04DF00A218DD /* MapMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerView.swift; sourceTree = "<group>"; };
+		8495A869264C070B00A218DD /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
+		8495A86B264C077A00A218DD /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		84B040122645AAA1006E0589 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C0BC20902649A920001B5681 /* PartialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialDetailsView.swift; sourceTree = "<group>"; };
+		C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePartialDetailsView.swift; sourceTree = "<group>"; };
+		C0BC20942649B551001B5681 /* RegisteredPetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredPetsView.swift; sourceTree = "<group>"; };
+		C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDetailsView.swift; sourceTree = "<group>"; };
+		C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
+		C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableDetail.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		CC567965264C61A00037360D /* RegisterSecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondScreen.swift; sourceTree = "<group>"; };
@@ -121,6 +155,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BD6DA532645D30200079010 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6DA542645D32300079010 /* Question.swift */,
+				2BD6DA562645D33A00079010 /* Category.swift */,
+				2BD6DA582645D35200079010 /* QuestionData.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		2BD6DA5A2645D41300079010 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6DA5B2645D5BB00079010 /* DonationFaqCategories.swift */,
+				2BD6DA5D2645D5C900079010 /* DonationFaqQuestions.swift */,
+				8495A863264C02A600A218DD /* DisclosureDetailsView.swift */,
+				8495A865264C042400A218DD /* CategoriesView.swift */,
+				8495A86B264C077A00A218DD /* DonationView.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		8408D5FA264477C30044EB71 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +185,7 @@
 				8408D62626456FC00044EB71 /* FinishButton.swift */,
 				8408D5FD264477E10044EB71 /* TitleView.swift */,
 				8408D60626447CDF0044EB71 /* SubtitleView.swift */,
+				84009FA0264C1BAD00A1256A /* Metrics.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -172,8 +229,22 @@
 			isa = PBXGroup;
 			children = (
 				8408D62B2645775D0044EB71 /* MainContentView.swift */,
+				8495A869264C070B00A218DD /* TabItemView.swift */,
 			);
 			path = MainContent;
+			sourceTree = "<group>";
+		};
+		8424F2F6264C536600E912EE /* RegisteredPets */ = {
+			isa = PBXGroup;
+			children = (
+				C0BC20922649AB81001B5681 /* ImagePartialDetailsView.swift */,
+				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
+				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
+				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
+				C0EF5E1F264B0BB2003AA5ED /* EditableDetail.swift */,
+				C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */,
+			);
+			path = RegisteredPets;
 			sourceTree = "<group>";
 		};
 		8492F230264080E400B9DF4A = {
@@ -203,8 +274,6 @@
 				8492F240264080E400B9DF4A /* Assets.xcassets */,
 				8492F245264080E400B9DF4A /* Info.plist */,
 				8492F242264080E400B9DF4A /* Preview Content */,
-				8495A85F2649C61A00A218DD /* NoPetsView.swift */,
-				8495A8612649C69400A218DD /* NoPetsIllustration.swift */,
 			);
 			path = Hemopets;
 			sourceTree = "<group>";
@@ -221,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				CCEF4471264C3C630044547C /* RegisterView */,
+				2BD6DA5A2645D41300079010 /* FAQ */,
+				C0BC208D2649A1E6001B5681 /* Pets */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -235,6 +306,7 @@
 			children = (
 				CCEF446F264C3BFE0044547C /* Register */,
 				CCEF446B264AFCE10044547C /* Vaccines */,
+				2BD6DA532645D30200079010 /* FAQ */,
 				CC22FAF32645B5DC00CBC8C7 /* Pet */,
 				84B040112645AA74006E0589 /* Shared */,
 				8492F25626408EC300B9DF4A /* Map */,
@@ -251,6 +323,7 @@
 				8408D60826447DB70044EB71 /* FieldView.swift */,
 				8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */,
 				8408D60A2644851C0044EB71 /* SwipeDownIndicatorView.swift */,
+				8495A867264C04DF00A218DD /* MapMarkerView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -281,6 +354,16 @@
 				8495A85D2649B1B700A218DD /* SplashIllustration.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		C0BC208D2649A1E6001B5681 /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				8424F2F6264C536600E912EE /* RegisteredPets */,
+				8495A85F2649C61A00A218DD /* NoPetsView.swift */,
+				8495A8612649C69400A218DD /* NoPetsIllustration.swift */,
+			);
+			path = Pets;
 			sourceTree = "<group>";
 		};
 		CC22FAF32645B5DC00CBC8C7 /* Pet */ = {
@@ -392,33 +475,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */,
 				84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */,
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
+				C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
 				CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
+				C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
+				8495A864264C02A600A218DD /* DisclosureDetailsView.swift in Sources */,
+				8495A866264C042400A218DD /* CategoriesView.swift in Sources */,
 				CCEF446D264AFD120044547C /* Vaccine.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
+				2BD6DA552645D32300079010 /* Question.swift in Sources */,
+				8495A868264C04DF00A218DD /* MapMarkerView.swift in Sources */,
 				8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */,
 				CC56796E264D57C60037360D /* RegisterThirdScreen.swift in Sources */,
+				CC567968264C787F0037360D /* PetType.swift in Sources */,
+				2BD6DA572645D33A00079010 /* Category.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8408D614264564630044EB71 /* ProgressView.swift in Sources */,
-				CC567968264C787F0037360D /* PetType.swift in Sources */,
+				2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
 				8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */,
+				C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */,
 				8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */,
+				2BD6DA592645D35200079010 /* QuestionData.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
 				CC56796C264CCB7E0037360D /* ChooseButtons.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
+				8495A86C264C077A00A218DD /* DonationView.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
 				CC56796A264CC6F00037360D /* RoundedRectangleView.swift in Sources */,
 				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
+				84009FA1264C1BAD00A1256A /* Metrics.swift in Sources */,
 				84B040192645B0CA006E0589 /* SplashView.swift in Sources */,
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8408D62E26458E470044EB71 /* PreviousPageButton.swift in Sources */,
@@ -430,11 +526,15 @@
 				8408D60726447CDF0044EB71 /* SubtitleView.swift in Sources */,
 				8408D616264569450044EB71 /* NextPageButton.swift in Sources */,
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
+				8495A86A264C070B00A218DD /* TabItemView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
 				CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */,
+				C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */,
+				C0BC20932649AB81001B5681 /* ImagePartialDetailsView.swift in Sources */,
+				C0BC20912649A920001B5681 /* PartialDetailsView.swift in Sources */,
 				8408D62026456C480044EB71 /* SecondOnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
