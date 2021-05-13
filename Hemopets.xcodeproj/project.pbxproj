@@ -47,7 +47,14 @@
 		84B040192645B0CA006E0589 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B040182645B0CA006E0589 /* SplashView.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
+		CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567965264C61A00037360D /* RegisterSecondScreen.swift */; };
+		CC567968264C787F0037360D /* PetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567967264C787F0037360D /* PetType.swift */; };
+		CC56796A264CC6F00037360D /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567969264CC6F00037360D /* RoundedRectangleView.swift */; };
+		CC56796C264CCB7E0037360D /* ChooseButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56796B264CCB7E0037360D /* ChooseButtons.swift */; };
+		CC56796E264D57C60037360D /* RegisterThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56796D264D57C60037360D /* RegisterThirdScreen.swift */; };
 		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
+		CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4472264C3CC40044547C /* RegistrationData.swift */; };
+		CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +100,14 @@
 		84B040182645B0CA006E0589 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		CC567965264C61A00037360D /* RegisterSecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondScreen.swift; sourceTree = "<group>"; };
+		CC567967264C787F0037360D /* PetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetType.swift; sourceTree = "<group>"; };
+		CC567969264CC6F00037360D /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
+		CC56796B264CCB7E0037360D /* ChooseButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseButtons.swift; sourceTree = "<group>"; };
+		CC56796D264D57C60037360D /* RegisterThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterThirdScreen.swift; sourceTree = "<group>"; };
 		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		CCEF4472264C3CC40044547C /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
+		CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiterFirstScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +220,7 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF4471264C3C630044547C /* RegisterView */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
 				8408D62A264577470044EB71 /* MainContent */,
 				8408D60C26455D360044EB71 /* Onboarding */,
@@ -218,6 +233,7 @@
 		8492F24D2640811C00B9DF4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF446F264C3BFE0044547C /* Register */,
 				CCEF446B264AFCE10044547C /* Vaccines */,
 				CC22FAF32645B5DC00CBC8C7 /* Pet */,
 				84B040112645AA74006E0589 /* Shared */,
@@ -270,6 +286,7 @@
 		CC22FAF32645B5DC00CBC8C7 /* Pet */ = {
 			isa = PBXGroup;
 			children = (
+				CC567967264C787F0037360D /* PetType.swift */,
 				CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */,
 				CC22FAF52645B5DC00CBC8C7 /* Pet.swift */,
 			);
@@ -282,6 +299,26 @@
 				CCEF446C264AFD120044547C /* Vaccine.swift */,
 			);
 			path = Vaccines;
+			sourceTree = "<group>";
+		};
+		CCEF446F264C3BFE0044547C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF4472264C3CC40044547C /* RegistrationData.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CCEF4471264C3C630044547C /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */,
+				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
+				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
+				CC567969264CC6F00037360D /* RoundedRectangleView.swift */,
+				CC56796B264CCB7E0037360D /* ChooseButtons.swift */,
+			);
+			path = RegisterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +396,7 @@
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
+				CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
 				CCEF446D264AFD120044547C /* Vaccine.swift in Sources */,
@@ -366,15 +404,19 @@
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
 				8492F25826408EE800B9DF4A /* PinAnnotation.swift in Sources */,
 				8408D62526456F6C0044EB71 /* FourthOnboardingPage.swift in Sources */,
+				CC56796E264D57C60037360D /* RegisterThirdScreen.swift in Sources */,
 				84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */,
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8408D614264564630044EB71 /* ProgressView.swift in Sources */,
+				CC567968264C787F0037360D /* PetType.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
 				8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */,
 				8408D629264570CC0044EB71 /* ButtonAligned.swift in Sources */,
 				8408D612264563C00044EB71 /* ProgressCircle.swift in Sources */,
+				CC56796C264CCB7E0037360D /* ChooseButtons.swift in Sources */,
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
+				CC56796A264CC6F00037360D /* RoundedRectangleView.swift in Sources */,
 				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
 				84B040192645B0CA006E0589 /* SplashView.swift in Sources */,
@@ -390,7 +432,9 @@
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
+				CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
+				CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */,
 				8408D62026456C480044EB71 /* SecondOnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
