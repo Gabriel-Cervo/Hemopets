@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct VaccinesListView: View {
-    @State var vacsTest: [vacTest] = [vacTest(id: UUID.init(), name: "vac1", isTaken: false), vacTest(id: UUID.init(), name: "vac2", isTaken: true), vacTest(id: UUID.init(), name: "vac3", isTaken: false), vacTest(id: UUID.init(), name: "vac3", isTaken: true)]
+    let type: PetType = .cat
+    
+    @State var vacs = {
+        return type == .cat ? PetsContants.mandatoryVaccines["Cat"] : PetsContants.mandatoryVaccines["Dog"]
+    }
     
     var body: some View {
-        List(vacsTest.indices, id: \.self) { index in
-            Toggle("\(vacsTest[index].name)", isOn: $vacsTest[index].isTaken)
+        List(vacs.indices, id: \.self) { index in
+            Toggle("\(vacs[index].name)", isOn: $vacs[index].isTaken)
                 .foregroundColor(.gray)
         }
     }

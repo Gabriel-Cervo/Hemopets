@@ -15,4 +15,5 @@ struct Metrics {
     @ScaledMetric public static var fontSize: CGFloat = 1
     
     public static let cardPaddingTop: CGFloat = 40
+    public static let registerFieldPaddingTop: CGFloat = 25
 }

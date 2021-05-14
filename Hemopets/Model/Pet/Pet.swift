@@ -8,14 +8,12 @@
 import Foundation
 
 protocol Eligible {
-
     func checkAge() -> Bool
     func checkWeight() -> Bool
     func checkVaccinesNotTaken() -> [String]
 }
 
 extension Eligible {
-    
     func isEligible() -> Bool {
         return checkAge() && checkWeight() && checkVaccinesNotTaken().count == 0
     }
@@ -36,6 +34,7 @@ class Pet: Identifiable {
         self.imageName = imageName
         self.vaccines = [Vaccine]()
     }
+    
     func checkVaccinesNotTaken() -> [String] {
         let filterVaccines = self.vaccines.filter{ vaccine in
             return !vaccine.isTaken
@@ -47,7 +46,6 @@ class Pet: Identifiable {
 }
 
 class Dog: Pet, Eligible {
-    
     override init(name: String, age: Int, weight: Double, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsContants.mandatoryVaccines["Dog"]!
@@ -63,7 +61,6 @@ class Dog: Pet, Eligible {
 }
 
 class Cat: Pet, Eligible {
-    
     override init(name: String, age: Int, weight: Double, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsContants.mandatoryVaccines["Cat"]!

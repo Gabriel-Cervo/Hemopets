@@ -18,6 +18,7 @@ struct RegisterContainerContentView<Content: View>: View {
         ZStack {
             Color.init("Background")
                 .ignoresSafeArea()
+            
             VStack {
                 TitleView(text: "Cadastro")
                 RoundedRectangleView(content: content)

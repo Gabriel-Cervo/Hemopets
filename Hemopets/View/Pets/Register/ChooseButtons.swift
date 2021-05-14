@@ -26,11 +26,11 @@ struct ChooseButtons: View {
                         .font(.subheadline)
                         .fontWeight(.bold)
                         .foregroundColor(self.selectedButton == .firstButton ? .white : Color("ButtonPrimary"))
+                        .frame(height: 15)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(self.getButtonBackground(buttonId: .firstButton))
                 })
-                .frame(height: 15)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(self.getButtonBackground(buttonId: .firstButton))
             Spacer()
             Button(action: secondButtonAction,
                    label: {
@@ -38,11 +38,11 @@ struct ChooseButtons: View {
                         .font(.subheadline)
                         .fontWeight(.bold)
                         .foregroundColor(self.selectedButton == .secondButton ? .white : Color("ButtonPrimary"))
+                        .frame(height: 15)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(self.getButtonBackground(buttonId: .secondButton))
                 })
-                .frame(height: 15)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(self.getButtonBackground(buttonId: .secondButton))
         }
     }
     

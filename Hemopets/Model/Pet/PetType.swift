@@ -8,7 +8,6 @@
 import Foundation
 
 enum PetType {
-    
     case dog
     case cat
 }
