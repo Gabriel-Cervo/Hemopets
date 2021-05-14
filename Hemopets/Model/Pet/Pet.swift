@@ -48,7 +48,7 @@ class Pet: Identifiable {
 class Dog: Pet, Eligible {
     override init(name: String, age: Int, weight: Double, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
-        self.vaccines = PetsContants.mandatoryVaccines["Dog"]!
+        self.vaccines = PetsConstants.mandatoryVaccines["Dog"]!
     }
     
     func checkAge() -> Bool {
@@ -63,7 +63,7 @@ class Dog: Pet, Eligible {
 class Cat: Pet, Eligible {
     override init(name: String, age: Int, weight: Double, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
-        self.vaccines = PetsContants.mandatoryVaccines["Cat"]!
+        self.vaccines = PetsConstants.mandatoryVaccines["Cat"]!
     }
 
     func checkAge() -> Bool {

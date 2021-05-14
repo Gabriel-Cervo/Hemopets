@@ -9,7 +9,6 @@ import Foundation
 
 struct PetRegistration {
     //    var image: String
-
     static var name: String = ""
     static var type: PetType = .cat
     static var gender: GenderType = .male
@@ -18,7 +17,4 @@ struct PetRegistration {
     static var age: Int = 0
     static var haveSeriousIllness: Bool = false
     static var haveInfectionIllness: Bool = false
-    static var vaccines: [Vaccine] {
-        self.type == .cat ? PetsContants.mandatoryVaccines["Cat"]! : PetsContants.mandatoryVaccines["Dog"]!
-    }
 }

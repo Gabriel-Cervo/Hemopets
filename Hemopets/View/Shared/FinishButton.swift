@@ -11,6 +11,8 @@ struct FinishButton: View {
     var nextView: AnyView
     var width: Int?
     
+    var onClick: (() -> Void)?
+    
     var body: some View {
         NavigationLink(destination: nextView) {
             ZStack {
@@ -25,6 +27,9 @@ struct FinishButton: View {
             .frame(width: CGFloat(width ?? 170), height: 45)
             .cornerRadius(20)
         }
+        .simultaneousGesture(TapGesture().onEnded {
+            onClick?()
+        })
     }
 }
 

@@ -72,7 +72,7 @@
 		CCA63F3E264DBE910059113B /* RegisterFourthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */; };
 		CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F46264DD4420059113B /* RoundedRectangleView.swift */; };
 		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
-		CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4472264C3CC40044547C /* RegistrationData.swift */; };
+		CCEF4473264C3CC40044547C /* PetRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4472264C3CC40044547C /* PetRegistration.swift */; };
 		CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +144,7 @@
 		CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFourthScreen.swift; sourceTree = "<group>"; };
 		CCA63F46264DD4420059113B /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
-		CCEF4472264C3CC40044547C /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
+		CCEF4472264C3CC40044547C /* PetRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistration.swift; sourceTree = "<group>"; };
 		CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiterFirstScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,7 +402,7 @@
 		CCEF446F264C3BFE0044547C /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				CCEF4472264C3CC40044547C /* RegistrationData.swift */,
+				CCEF4472264C3CC40044547C /* PetRegistration.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -500,7 +500,7 @@
 				C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,
 				8408D62726456FC00044EB71 /* FinishButton.swift in Sources */,
-				CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */,
+				CCEF4473264C3CC40044547C /* PetRegistration.swift in Sources */,
 				8408D60926447DB70044EB71 /* FieldView.swift in Sources */,
 				C0EF5E20264B0BB2003AA5ED /* EditableDetail.swift in Sources */,
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,

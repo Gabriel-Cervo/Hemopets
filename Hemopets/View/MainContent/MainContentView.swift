@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct MainContentView: View {
+    @State var noPetsRegistered: Bool = true
+    
     var body: some View {
         TabView {
             Group {
-                NavigationView {
-                    NoPetsView()
-                }
-                .navigationViewStyle(StackNavigationViewStyle())
-                    .tabItem {
-                        TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                if noPetsRegistered {
+                    NavigationView {
+                        NoPetsView()
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                        .tabItem {
+                            TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                        }
+                } else {
+                    RegisteredPetsView()
+                        .navigationViewStyle(StackNavigationViewStyle())
+                            .tabItem {
+                                TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                            }
+                }
                 
                 MapView()
                     .tabItem {
@@ -35,6 +45,7 @@ struct MainContentView: View {
         .accentColor(Color.init("ButtonPrimary"))
         .onAppear() {
             self.updateOnboardValueInDefaults()
+            self.loadRegisteredPets()
             UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
         }
     }
@@ -45,6 +56,10 @@ struct MainContentView: View {
         } catch {
             print("Error while saving data: \(error)")
         }
+    }
+    
+    func loadRegisteredPets() {
+        self.noPetsRegistered = PetsConstants.registeredCats.count == 0 && PetsConstants.registeredDogs.count == 0
     }
 }
 

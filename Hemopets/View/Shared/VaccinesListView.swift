@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VaccinesListView: View {
-    @State var vacs: [Vaccine] = PetsContants.mandatoryVaccines["Cat"]!
+    @State var vacs: [Vaccine] = PetsConstants.mandatoryVaccines["Cat"]!
     
     @Binding var selectedIndexes: [Int]
     
@@ -20,10 +20,11 @@ struct VaccinesListView: View {
                 .foregroundColor(.gray)
                 .onTapGesture {
                     if selectedIndexes.contains(index) {
-                        selectedIndexes = selectedIndexes.filter({ $0 != index })
+                        let numberIndex = selectedIndexes.lastIndex(of: index)
+                        selectedIndexes.remove(at: numberIndex!)
                     } else {
                         selectedIndexes.append(index)
-                    }
+                    }                    
                 }
         }
         .onAppear() {
@@ -32,7 +33,7 @@ struct VaccinesListView: View {
     }
     
     func loadVaccinesData() {
-        vacs = self.petType == .cat ? PetsContants.mandatoryVaccines["Cat"]! : PetsContants.mandatoryVaccines["Dog"]!
+        vacs = self.petType == .cat ? PetsConstants.mandatoryVaccines["Cat"]! : PetsConstants.mandatoryVaccines["Dog"]!
     }
 }
 

@@ -24,16 +24,15 @@ struct RegisterFourthScreen: View {
                     .padding(.top, Metrics.registerFieldPaddingTop)
                     .padding(.leading)
                     
-                    VaccinesListView(selectedIndexes: $selectedIndexes, petType: .cat)
+                    VaccinesListView(selectedIndexes: $selectedIndexes, petType: PetRegistration.type)
                         .padding(.top)
                         .padding(.horizontal)
-                        .padding(.bottom, 150)
                     
                     HStack {
                         PreviousPageButton()
                         Spacer()
                        
-                        NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues)
+                        FinishButton(text: "Finalizar", nextView: AnyView(RegisteredPetsView()), onClick: registerPet)
                     }
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -45,8 +44,22 @@ struct RegisterFourthScreen: View {
         }
     }
     
-    func saveValues() {
-        print(selectedIndexes)
+    func registerPet() {        
+        let newPet = PetRegistration.type == .cat ?
+            Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
+            Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
+        
+        for i in 0..<PetsConstants.totalNumberOfVaccines {
+            if selectedIndexes.contains(i) {
+                newPet.vaccines[i].isTaken = true
+            }
+        }
+        
+        if newPet is Dog {
+            PetsConstants.registeredDogs.append(newPet as! Dog)
+        } else {
+            PetsConstants.registeredCats.append(newPet as! Cat)
+        }
     }
 }
 
