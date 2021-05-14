@@ -11,6 +11,7 @@ struct RegisterThirdScreen: View {
     @State var age: String = ""
     @State var selectedSeriousIllness: ButtonId?
     @State var selectedInfecctionIllness: ButtonId?
+    
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         RegisterContainerContentView {
@@ -76,7 +77,9 @@ struct RegisterThirdScreen: View {
                     HStack {
                         PreviousPageButton()
                         Spacer()
-                        NextPageButton(nextView: AnyView(RegisterFourthScreen()))
+                        Button(action: saveValues, label: {
+                            NextPageButton(nextView: AnyView(RegisterFourthScreen()))
+                        })
                     }
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -87,6 +90,13 @@ struct RegisterThirdScreen: View {
             .navigationBarHidden(true)
         }
     }
+    
+    func saveValues() {
+        PetRegistration.age = Int(age)!
+        PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
+        PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
+    }
+    
     func underlineTextField() -> some View {
         self
             .padding(.vertical, 10)

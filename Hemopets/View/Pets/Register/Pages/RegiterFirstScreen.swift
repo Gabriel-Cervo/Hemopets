@@ -53,8 +53,12 @@ struct RegiterFirstScreen: View {
                 Spacer()
                 
                 HStack {
+                    PreviousPageButton()
+                    
                     Spacer()
-                    NextPageButton.init(nextView: AnyView(RegisterSecondScreen()))
+                    Button(action: saveValues, label: {
+                        NextPageButton(nextView: AnyView(RegisterSecondScreen()))
+                    })
                 }
                 .padding(.bottom)
                 .padding(.horizontal)
@@ -63,6 +67,11 @@ struct RegiterFirstScreen: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
+    }
+    
+    func saveValues() {
+        PetRegistration.name = name
+        PetRegistration.type = selectedButton == .firstButton ? .dog : .cat
     }
 }
     

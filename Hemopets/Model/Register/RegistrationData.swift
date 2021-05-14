@@ -7,28 +7,18 @@
 
 import Foundation
 
-class PetRegistration {
-    var image: String
-    var name: String
-    var type: Bool
-    var gender: Bool
-    var isCastrated: Bool
-    var weight: Double
-    var age: Int
-    var haveSeriousIllness: Bool
-    var haveInfectionIllness: Bool
-    var vaccines: [String]
-    
-    init(image: String, name: String, type: Bool, gender: Bool, isCastrated: Bool, weight: Double, age: Int, haveSeriousIllness: Bool, haveInfectionIllness: Bool, vaccines: [String]) {
-        self.image = image
-        self.name = name
-        self.type = type
-        self.gender = gender
-        self.isCastrated = isCastrated
-        self.weight = weight
-        self.age = age
-        self.haveSeriousIllness = haveSeriousIllness
-        self.haveInfectionIllness = haveInfectionIllness
-        self.vaccines = vaccines
+struct PetRegistration {
+    //    var image: String
+
+    static var name: String = ""
+    static var type: PetType = .cat
+    static var gender: GenderType = .male
+    static var isCastrated: Bool = false
+    static var weight: Double = 0.0
+    static var age: Int = 0
+    static var haveSeriousIllness: Bool = false
+    static var haveInfectionIllness: Bool = false
+    static var vaccines: [Vaccine] {
+        self.type == .cat ? PetsContants.mandatoryVaccines["Cat"]! : PetsContants.mandatoryVaccines["Dog"]!
     }
 }

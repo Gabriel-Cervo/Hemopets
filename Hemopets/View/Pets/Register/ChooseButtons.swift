@@ -18,6 +18,7 @@ struct ChooseButtons: View {
     var firstButtonLabel: String
     var secondButtonLabel: String
     @Binding var selectedButton: ButtonId?
+    
     var body: some View {
         HStack{
             Button(action: firstButtonAction,

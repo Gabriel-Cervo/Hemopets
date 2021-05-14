@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct VaccinesListView: View {
-    let type: PetType = .cat
+    @State var vacs: [Vaccine] = PetsContants.mandatoryVaccines["Cat"]!
     
-    @State var vacs = {
-        return type == .cat ? PetsContants.mandatoryVaccines["Cat"] : PetsContants.mandatoryVaccines["Dog"]
-    }
+    @Binding var selectedIndexes: [Int]
+    
+    var petType: PetType = .cat
     
     var body: some View {
         List(vacs.indices, id: \.self) { index in
             Toggle("\(vacs[index].name)", isOn: $vacs[index].isTaken)
                 .foregroundColor(.gray)
+                .onTapGesture {
+                    if selectedIndexes.contains(index) {
+                        selectedIndexes = selectedIndexes.filter({ $0 != index })
+                    } else {
+                        selectedIndexes.append(index)
+                    }
+                }
         }
+        .onAppear() {
+            loadVaccinesData()
+        }
+    }
+    
+    func loadVaccinesData() {
+        vacs = self.petType == .cat ? PetsContants.mandatoryVaccines["Cat"]! : PetsContants.mandatoryVaccines["Dog"]!
     }
 }
 
@@ -30,6 +44,6 @@ struct vacTest {
 
 struct VaccinesListView_Previews: PreviewProvider {
     static var previews: some View {
-        VaccinesListView()
+        VaccinesListView(selectedIndexes: Binding.constant([0]))
     }
 }

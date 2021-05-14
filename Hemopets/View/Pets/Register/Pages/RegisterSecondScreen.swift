@@ -75,12 +75,13 @@ struct RegisterSecondScreen: View {
                 
                 Spacer()
                 
-                HStack{
+                HStack {
                     PreviousPageButton()
                     
                     Spacer()
-                    NextPageButton(nextView: AnyView(RegisterThirdScreen()))
-                        
+                    Button(action: saveValues, label: {
+                        NextPageButton(nextView: AnyView(RegisterThirdScreen()))
+                    })
                 }
                 .padding(.bottom)
                 .padding(.horizontal)
@@ -89,6 +90,13 @@ struct RegisterSecondScreen: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
+    }
+    
+    func saveValues() {
+        PetRegistration.gender = selectedGenderButton == .firstButton ? .male : .female
+        PetRegistration.isCastrated = selectedCastratedButton == .firstButton ? true : false
+        PetRegistration.weight = Double(weight)!
+
     }
     
     func underlineTextField() -> some View {

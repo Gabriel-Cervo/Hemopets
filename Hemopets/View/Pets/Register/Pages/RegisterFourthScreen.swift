@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftUIListSeparator
 
 struct RegisterFourthScreen: View {
+    @State var selectedIndexes: [Int] = [Int]()
+    
     var body: some View {
         RegisterContainerContentView {
             Group {
@@ -23,7 +25,7 @@ struct RegisterFourthScreen: View {
                     .padding(.top, Metrics.registerFieldPaddingTop)
                     .padding(.leading)
                     
-                    VaccinesListView()
+                    VaccinesListView(selectedIndexes: $selectedIndexes, petType: .cat)
                         .padding(.top)
                         .padding(.horizontal)
                         .padding(.bottom, 150)
@@ -31,7 +33,12 @@ struct RegisterFourthScreen: View {
                     HStack {
                         PreviousPageButton()
                         Spacer()
-                        FinishButton(text: "Finalizar", nextView: AnyView(RegisterFourthScreen()))
+                        Button(action: {
+                            print(selectedIndexes)
+                            print("AAAAAA")
+                        }, label: {
+                            NextPageButton(nextView: AnyView(RegisterFourthScreen()))
+                        })
                     }
                     .padding(.bottom)
                     .padding(.horizontal)

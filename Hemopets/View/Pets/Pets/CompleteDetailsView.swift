@@ -11,6 +11,8 @@ struct CompleteDetailsView: View {
     @State var cat: Cat //typecast
     @State var catAge: String = ""
     
+    @State var selectedIndexes: [Int] = [Int]()
+    
     var body: some View {
         ZStack {
             Color("Background")
@@ -63,7 +65,7 @@ struct CompleteDetailsView: View {
                                     .padding(.top, 15)
                                     .padding(.bottom, -10)
                                 
-                                VaccinesListView()
+                                VaccinesListView(selectedIndexes: $selectedIndexes)
                                     .frame(height: 180)
                                     .padding(.horizontal, 15)
                                     .colorScheme(.light)
