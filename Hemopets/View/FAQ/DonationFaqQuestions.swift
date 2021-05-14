@@ -13,8 +13,6 @@ struct DonationFaqQuestions: View {
     let questions: [Question]
     
     var body: some View {
-        
-        
         ZStack {
             Color("Background")
                 .ignoresSafeArea()

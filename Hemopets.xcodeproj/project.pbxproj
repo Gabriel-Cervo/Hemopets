@@ -73,7 +73,7 @@
 		CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F46264DD4420059113B /* RoundedRectangleView.swift */; };
 		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
 		CCEF4473264C3CC40044547C /* PetRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4472264C3CC40044547C /* PetRegistration.swift */; };
-		CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */; };
+		CCEF4475264C3CEC0044547C /* RegisterFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4474264C3CEC0044547C /* RegisterFirstScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +145,7 @@
 		CCA63F46264DD4420059113B /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		CCEF4472264C3CC40044547C /* PetRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistration.swift; sourceTree = "<group>"; };
-		CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiterFirstScreen.swift; sourceTree = "<group>"; };
+		CCEF4474264C3CEC0044547C /* RegisterFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,7 +383,7 @@
 		CCA63F3C264DB9890059113B /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */,
+				CCEF4474264C3CEC0044547C /* RegisterFirstScreen.swift */,
 				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
 				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
 				CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */,
@@ -550,7 +550,7 @@
 				CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
-				CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */,
+				CCEF4475264C3CEC0044547C /* RegisterFirstScreen.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
 				CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */,
 				C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */,

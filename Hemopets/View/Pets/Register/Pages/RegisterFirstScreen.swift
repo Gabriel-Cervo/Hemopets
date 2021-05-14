@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegiterFirstScreen: View {
+struct RegisterFirstScreen: View {
     @State var name: String = ""
     @State var selectedButton: ButtonId?
     
@@ -79,11 +79,11 @@ struct RegiterFirstScreen: View {
     
 struct RegistrationScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RegiterFirstScreen()
+        RegisterFirstScreen()
             .colorScheme(.dark)
             .previewDevice("iPhone 12")
         
-        RegiterFirstScreen()
+        RegisterFirstScreen()
             .colorScheme(.dark)
             .previewDevice("iPhone 8")
     }

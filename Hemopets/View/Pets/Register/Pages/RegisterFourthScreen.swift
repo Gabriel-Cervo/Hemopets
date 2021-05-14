@@ -10,6 +10,9 @@ import SwiftUI
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
     var body: some View {
         RegisterContainerContentView {
             Group {
@@ -31,8 +34,8 @@ struct RegisterFourthScreen: View {
                     HStack {
                         PreviousPageButton()
                         Spacer()
-                       
-                        FinishButton(text: "Finalizar", nextView: AnyView(RegisteredPetsView()), onClick: registerPet)
+                        
+                        FinishButton(text: "Finalizar", nextView: AnyView(MainContentView()), onClick: registerPet)
                     }
                     .padding(.bottom)
                     .padding(.horizontal)

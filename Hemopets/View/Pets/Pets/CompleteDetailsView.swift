@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CompleteDetailsView: View {
-    @State var cat: Cat //typecast
+    @State var pet: Pet
     @State var catAge: String = ""
     
     @State var selectedIndexes: [Int] = [Int]()
@@ -37,7 +37,7 @@ struct CompleteDetailsView: View {
                                 .padding(.top, 30)
                                 .shadow(radius: 2)
                             
-                            SubtitleView(text: cat.name)
+                            SubtitleView(text: pet.name)
                                 .padding()
                             
                             HStack {
@@ -81,7 +81,7 @@ struct CompleteDetailsView: View {
                 }
             }
             .onAppear() {
-                catAge = String(cat.age)
+                catAge = String(pet.age)
             }
             .navigationBarHidden(true)
         }
@@ -90,10 +90,10 @@ struct CompleteDetailsView: View {
 
 struct CompleteDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CompleteDetailsView(cat: Cat(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
+        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
             .previewDevice("iPhone 12")
         
-        CompleteDetailsView(cat: Cat(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
+        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
             .previewDevice("iPhone 8")
     }
 }

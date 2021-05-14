@@ -20,7 +20,7 @@ struct ChooseButtons: View {
     @Binding var selectedButton: ButtonId?
     
     var body: some View {
-        HStack{
+        HStack {
             Button(action: firstButtonAction,
                    label: {
                     Text(firstButtonLabel)

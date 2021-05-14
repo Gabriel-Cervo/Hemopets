@@ -11,45 +11,43 @@ struct MainContentView: View {
     @State var noPetsRegistered: Bool = true
     
     var body: some View {
-        TabView {
-            Group {
-                if noPetsRegistered {
-                    NavigationView {
-                        NoPetsView()
-                    }
-                    .navigationViewStyle(StackNavigationViewStyle())
+        NavigationView {
+            TabView {
+                Group {
+                    if noPetsRegistered {
+                            NoPetsView()
                         .tabItem {
                             TabItemView(iconName: "heart.fill", text: "Meus Pets")
                         }
-                } else {
-                    RegisteredPetsView()
-                        .navigationViewStyle(StackNavigationViewStyle())
+                    } else {
+                        RegisteredPetsView()
                             .tabItem {
                                 TabItemView(iconName: "heart.fill", text: "Meus Pets")
                             }
+                    }
+                    
+                    MapView()
+                        .tabItem {
+                            TabItemView(iconName: "drop.fill", text: "Hemocentros")
+                        }
+                        .colorScheme(.dark)
+                    
+                    DonationView()
+                        .tabItem {
+                            TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
+                        }
                 }
-                
-                MapView()
-                    .tabItem {
-                        TabItemView(iconName: "drop.fill", text: "Hemocentros")
-                    }
-                    .colorScheme(.dark)
-                
-                DonationView()
-                    .tabItem {
-                        TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
-                    }
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
-        }
-        .accentColor(Color.init("ButtonPrimary"))
-        .onAppear() {
-            self.updateOnboardValueInDefaults()
-            self.loadRegisteredPets()
-            UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
+            .accentColor(Color.init("ButtonPrimary"))
+            .onAppear() {
+                self.updateOnboardValueInDefaults()
+                self.loadRegisteredPets()
+                UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
+            }
         }
     }
-
+    
     func updateOnboardValueInDefaults() {
         do {
             try UserDefaultsManager.saveData(data: true, for: "sawOnboarding")
@@ -69,7 +67,7 @@ struct MainContentView_Previews: PreviewProvider {
             MainContentView()
                 .previewDevice("iPhone 12")
         }
-
+        
         
         MainContentView()
             .previewDevice("iPhone 8")

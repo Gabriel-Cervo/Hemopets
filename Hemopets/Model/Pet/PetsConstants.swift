@@ -22,6 +22,6 @@ struct PetsConstants {
         return PetRegistration.type == .cat ? PetsConstants.mandatoryVaccines["Cat"]!.count : PetsConstants.mandatoryVaccines["Dog"]!.count
     }
     
-    static var registeredDogs: [Dog] = [Dog]()
+    static var registeredDogs: [Dog] = [Dog(name: "A", age: 2, weight: 40.0, imageName: "DogPlaceholder")]
     static var registeredCats: [Cat] = [Cat]()
 }
