@@ -11,7 +11,9 @@ struct MainContentView: View {
     var body: some View {
         TabView {
             Group {
-                RegisteredPetsView()
+                NavigationView {
+                    NoPetsView()
+                }
                     .tabItem {
                         TabItemView(iconName: "heart.fill", text: "Meus Pets")
                     }

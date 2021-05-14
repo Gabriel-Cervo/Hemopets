@@ -51,7 +51,7 @@ struct NoPetsView: View {
                             
                             Spacer()
                             
-                            FinishButton(text: "Cadastrar meu Pet", nextView: AnyView(MapView()), width: 250)
+                            FinishButton(text: "Cadastrar meu Pet", nextView: AnyView(RegiterFirstScreen().background(Color("Background"))), width: 250)
                                 .padding(.bottom, 25)
                             
                         }

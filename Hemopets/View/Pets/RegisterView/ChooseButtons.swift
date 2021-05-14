@@ -25,10 +25,11 @@ struct ChooseButtons: View {
                     Text(firstButtonLabel)
                         .font(.subheadline)
                         .fontWeight(.bold)
-                        .foregroundColor(self.selectedButton == .firstButton ? .white : Color("RegisterColorPrimary"))
+                        .foregroundColor(self.selectedButton == .firstButton ? .white : Color("ButtonPrimary"))
                 })
-            .frame(width: 110, height: 15)
-            .padding()
+                .frame(height: 15)
+                .frame(maxWidth: .infinity)
+                .padding()
                 .background(self.getButtonBackground(buttonId: .firstButton))
             Spacer()
             Button(action: secondButtonAction,
@@ -36,21 +37,21 @@ struct ChooseButtons: View {
                     Text(secondButtonLabel)
                         .font(.subheadline)
                         .fontWeight(.bold)
-                        .foregroundColor(self.selectedButton == .secondButton ? .white : Color("RegisterColorPrimary"))
+                        .foregroundColor(self.selectedButton == .secondButton ? .white : Color("ButtonPrimary"))
                 })
-                .frame(width: 110, height: 15)
-            .padding()
+                .frame(height: 15)
+                .frame(maxWidth: .infinity)
+                .padding()
                 .background(self.getButtonBackground(buttonId: .secondButton))
-            }
-        .padding(.horizontal, 42)
+        }
     }
     
     @ViewBuilder
     func getButtonBackground(buttonId: ButtonId) -> some View {
         if buttonId == selectedButton {
-            RoundedRectangle(cornerRadius: 25).foregroundColor(Color("RegisterColorPrimary"))
+            RoundedRectangle(cornerRadius: 25).foregroundColor(Color("ButtonPrimary"))
         } else {
-            RoundedRectangle(cornerRadius: 25).stroke(Color("RegisterColorPrimary"), lineWidth: 2)
+            RoundedRectangle(cornerRadius: 25).stroke(Color("ButtonPrimary"), lineWidth: 2)
         }
     }
 }

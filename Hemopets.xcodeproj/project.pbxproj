@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -66,9 +66,13 @@
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
 		CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567965264C61A00037360D /* RegisterSecondScreen.swift */; };
 		CC567968264C787F0037360D /* PetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567967264C787F0037360D /* PetType.swift */; };
-		CC56796A264CC6F00037360D /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567969264CC6F00037360D /* RoundedRectangleView.swift */; };
+		CC56796A264CC6F00037360D /* RegisterContainerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567969264CC6F00037360D /* RegisterContainerContentView.swift */; };
 		CC56796C264CCB7E0037360D /* ChooseButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56796B264CCB7E0037360D /* ChooseButtons.swift */; };
 		CC56796E264D57C60037360D /* RegisterThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56796D264D57C60037360D /* RegisterThirdScreen.swift */; };
+		CCA63F3E264DBE910059113B /* RegisterFourthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */; };
+		CCA63F43264DC51A0059113B /* SwiftUIListSeparator in Frameworks */ = {isa = PBXBuildFile; productRef = CCA63F42264DC51A0059113B /* SwiftUIListSeparator */; };
+		CCA63F45264DC8220059113B /* VaccinesToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F44264DC8220059113B /* VaccinesToggle.swift */; };
+		CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA63F46264DD4420059113B /* RoundedRectangleView.swift */; };
 		CCEF446D264AFD120044547C /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF446C264AFD120044547C /* Vaccine.swift */; };
 		CCEF4473264C3CC40044547C /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4472264C3CC40044547C /* RegistrationData.swift */; };
 		CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */; };
@@ -136,9 +140,12 @@
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		CC567965264C61A00037360D /* RegisterSecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondScreen.swift; sourceTree = "<group>"; };
 		CC567967264C787F0037360D /* PetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetType.swift; sourceTree = "<group>"; };
-		CC567969264CC6F00037360D /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
+		CC567969264CC6F00037360D /* RegisterContainerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContainerContentView.swift; sourceTree = "<group>"; };
 		CC56796B264CCB7E0037360D /* ChooseButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseButtons.swift; sourceTree = "<group>"; };
 		CC56796D264D57C60037360D /* RegisterThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterThirdScreen.swift; sourceTree = "<group>"; };
+		CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFourthScreen.swift; sourceTree = "<group>"; };
+		CCA63F44264DC8220059113B /* VaccinesToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesToggle.swift; sourceTree = "<group>"; };
+		CCA63F46264DD4420059113B /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		CCEF446C264AFD120044547C /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		CCEF4472264C3CC40044547C /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
 		CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiterFirstScreen.swift; sourceTree = "<group>"; };
@@ -149,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA63F43264DC51A0059113B /* SwiftUIListSeparator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +297,6 @@
 		8492F24C2640811600B9DF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCEF4471264C3C630044547C /* RegisterView */,
 				2BD6DA5A2645D41300079010 /* FAQ */,
 				C0BC208D2649A1E6001B5681 /* Pets */,
 				84B040172645B0BC006E0589 /* SplashScreen */,
@@ -359,6 +366,7 @@
 		C0BC208D2649A1E6001B5681 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF4471264C3C630044547C /* RegisterView */,
 				8424F2F6264C536600E912EE /* RegisteredPets */,
 				8495A85F2649C61A00A218DD /* NoPetsView.swift */,
 				8495A8612649C69400A218DD /* NoPetsIllustration.swift */,
@@ -374,6 +382,17 @@
 				CC22FAF52645B5DC00CBC8C7 /* Pet.swift */,
 			);
 			path = Pet;
+			sourceTree = "<group>";
+		};
+		CCA63F3C264DB9890059113B /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */,
+				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
+				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
+				CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		CCEF446B264AFCE10044547C /* Vaccines */ = {
@@ -395,11 +414,11 @@
 		CCEF4471264C3C630044547C /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
-				CCEF4474264C3CEC0044547C /* RegiterFirstScreen.swift */,
-				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
-				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
-				CC567969264CC6F00037360D /* RoundedRectangleView.swift */,
+				CCA63F3C264DB9890059113B /* Pages */,
+				CC567969264CC6F00037360D /* RegisterContainerContentView.swift */,
 				CC56796B264CCB7E0037360D /* ChooseButtons.swift */,
+				CCA63F44264DC8220059113B /* VaccinesToggle.swift */,
+				CCA63F46264DD4420059113B /* RoundedRectangleView.swift */,
 			);
 			path = RegisterView;
 			sourceTree = "<group>";
@@ -420,6 +439,9 @@
 			dependencies = (
 			);
 			name = Hemopets;
+			packageProductDependencies = (
+				CCA63F42264DC51A0059113B /* SwiftUIListSeparator */,
+			);
 			productName = Hemopets;
 			productReference = 8492F239264080E400B9DF4A /* Hemopets.app */;
 			productType = "com.apple.product-type.application";
@@ -447,6 +469,9 @@
 				Base,
 			);
 			mainGroup = 8492F230264080E400B9DF4A;
+			packageReferences = (
+				CCA63F41264DC51A0059113B /* XCRemoteSwiftPackageReference "SwiftUIListSeparator" */,
+			);
 			productRefGroup = 8492F23A264080E400B9DF4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -487,6 +512,7 @@
 				CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */,
 				8495A864264C02A600A218DD /* DisclosureDetailsView.swift in Sources */,
 				8495A866264C042400A218DD /* CategoriesView.swift in Sources */,
+				CCA63F3E264DBE910059113B /* RegisterFourthScreen.swift in Sources */,
 				CCEF446D264AFD120044547C /* Vaccine.swift in Sources */,
 				8492F2502640835A00B9DF4A /* MapView.swift in Sources */,
 				8408D62C2645775D0044EB71 /* MainContentView.swift in Sources */,
@@ -511,7 +537,7 @@
 				8408D60526447C390044EB71 /* HemocenterImage.swift in Sources */,
 				8495A86C264C077A00A218DD /* DonationView.swift in Sources */,
 				8408D5FE264477E10044EB71 /* TitleView.swift in Sources */,
-				CC56796A264CC6F00037360D /* RoundedRectangleView.swift in Sources */,
+				CC56796A264CC6F00037360D /* RegisterContainerContentView.swift in Sources */,
 				8495A85E2649B1B700A218DD /* SplashIllustration.swift in Sources */,
 				8408D61E26456C1C0044EB71 /* FirstOnboardingPage.swift in Sources */,
 				84009FA1264C1BAD00A1256A /* Metrics.swift in Sources */,
@@ -527,6 +553,8 @@
 				8408D616264569450044EB71 /* NextPageButton.swift in Sources */,
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 				8495A86A264C070B00A218DD /* TabItemView.swift in Sources */,
+				CCA63F45264DC8220059113B /* VaccinesToggle.swift in Sources */,
+				CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				CCEF4475264C3CEC0044547C /* RegiterFirstScreen.swift in Sources */,
@@ -724,6 +752,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCA63F41264DC51A0059113B /* XCRemoteSwiftPackageReference "SwiftUIListSeparator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SchmidtyApps/SwiftUIListSeparator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCA63F42264DC51A0059113B /* SwiftUIListSeparator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCA63F41264DC51A0059113B /* XCRemoteSwiftPackageReference "SwiftUIListSeparator" */;
+			productName = SwiftUIListSeparator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8492F231264080E400B9DF4A /* Project object */;
 }
