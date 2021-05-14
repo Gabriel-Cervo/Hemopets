@@ -10,6 +10,8 @@ import SwiftUI
 struct NextPageButton: View {
     var nextView: AnyView
     
+    var onClick: (() -> Void)?
+    
     var body: some View {
         NavigationLink(destination: nextView) {
             ZStack {
@@ -23,11 +25,16 @@ struct NextPageButton: View {
             .frame(width: 55, height: 55)
             .cornerRadius(30)
         }
+        .simultaneousGesture(TapGesture().onEnded {
+            onClick?()
+        })
     }
 }
 
 struct NextPageButton_Previews: PreviewProvider {
     static var previews: some View {
-        NextPageButton(nextView: AnyView(FirstOnboardingPage()))
+        NextPageButton(nextView: AnyView(FirstOnboardingPage()), onClick: {
+            print("AAA")
+        })
     }
 }

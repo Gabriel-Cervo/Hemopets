@@ -57,7 +57,9 @@ struct RegiterFirstScreen: View {
                     
                     Spacer()
                     Button(action: saveValues, label: {
-                        NextPageButton(nextView: AnyView(RegisterSecondScreen()))
+                        NextPageButton(nextView: AnyView(RegisterSecondScreen()), onClick: {
+                            saveValues()
+                        })
                     })
                 }
                 .padding(.bottom)

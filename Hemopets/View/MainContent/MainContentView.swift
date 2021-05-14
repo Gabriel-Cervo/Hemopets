@@ -14,6 +14,7 @@ struct MainContentView: View {
                 NavigationView {
                     NoPetsView()
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         TabItemView(iconName: "heart.fill", text: "Meus Pets")
                     }

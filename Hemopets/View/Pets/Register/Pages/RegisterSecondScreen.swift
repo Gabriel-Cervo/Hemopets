@@ -80,7 +80,7 @@ struct RegisterSecondScreen: View {
                     
                     Spacer()
                     Button(action: saveValues, label: {
-                        NextPageButton(nextView: AnyView(RegisterThirdScreen()))
+                        NextPageButton(nextView: AnyView(RegisterThirdScreen()), onClick: saveValues)
                     })
                 }
                 .padding(.bottom)
@@ -95,8 +95,7 @@ struct RegisterSecondScreen: View {
     func saveValues() {
         PetRegistration.gender = selectedGenderButton == .firstButton ? .male : .female
         PetRegistration.isCastrated = selectedCastratedButton == .firstButton ? true : false
-        PetRegistration.weight = Double(weight)!
-
+        PetRegistration.weight = Double(weight) ?? 0.0
     }
     
     func underlineTextField() -> some View {

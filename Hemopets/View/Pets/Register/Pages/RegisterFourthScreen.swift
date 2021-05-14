@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIListSeparator
 
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
@@ -33,12 +32,8 @@ struct RegisterFourthScreen: View {
                     HStack {
                         PreviousPageButton()
                         Spacer()
-                        Button(action: {
-                            print(selectedIndexes)
-                            print("AAAAAA")
-                        }, label: {
-                            NextPageButton(nextView: AnyView(RegisterFourthScreen()))
-                        })
+                       
+                        NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues)
                     }
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -48,6 +43,10 @@ struct RegisterFourthScreen: View {
             }
             .padding(.horizontal, 15)
         }
+    }
+    
+    func saveValues() {
+        print(selectedIndexes)
     }
 }
 

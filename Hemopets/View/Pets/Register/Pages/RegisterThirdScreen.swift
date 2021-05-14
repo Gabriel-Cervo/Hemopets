@@ -78,7 +78,7 @@ struct RegisterThirdScreen: View {
                         PreviousPageButton()
                         Spacer()
                         Button(action: saveValues, label: {
-                            NextPageButton(nextView: AnyView(RegisterFourthScreen()))
+                            NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues)
                         })
                     }
                     .padding(.bottom)
@@ -92,7 +92,7 @@ struct RegisterThirdScreen: View {
     }
     
     func saveValues() {
-        PetRegistration.age = Int(age)!
+        PetRegistration.age = Int(age) ?? 0
         PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
         PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
     }
