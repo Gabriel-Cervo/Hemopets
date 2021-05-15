@@ -11,11 +11,18 @@ struct ContentView: View {
     @State private var hasNotLoadedDefaults: Bool = true
     @State private var hasSeenOnboarding: Bool = false
     
+    @State private var timeRemainingToExitSplash = 2
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        if hasNotLoadedDefaults {
+        if hasNotLoadedDefaults && timeRemainingToExitSplash > 0 {
             SplashView()
-                .onAppear() {
-                    checkOnboardDefaults()
+                .onReceive(timer) { _ in
+                    if timeRemainingToExitSplash > 0 {
+                        timeRemainingToExitSplash -= 1
+                    } else {
+                        checkOnboardDefaults()
+                    }
                 }
         } else {
             if hasSeenOnboarding {
@@ -29,7 +36,7 @@ struct ContentView: View {
     func checkOnboardDefaults() {
         do {
             let storedValue = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
-
+            
             DispatchQueue.main.async {
                 self.hasSeenOnboarding = storedValue
                 self.hasNotLoadedDefaults = false
