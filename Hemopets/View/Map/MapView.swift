@@ -21,6 +21,7 @@ struct MapView: View {
             
             VStack {
                 TitleView(text: "Hemocentros")
+                    .padding(.top, Metrics.cardPaddingTop)
                     .padding(.bottom, 20)
                 
                 Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: MapConstants.pins) { pin in
@@ -32,10 +33,9 @@ struct MapView: View {
                         })
                     }
                 }
-                .frame(width: 400, height: UIScreen.main.bounds.height * 0.77)
                 .edgesIgnoringSafeArea(.all)
-                .cornerRadius(20)
-                .shadow(radius: 5)
+                .frame(width: UIScreen.main.bounds.width)
+                .shadow(radius: 10)
                 .onAppear() {
                     requestUserLocation()
                     calculateMapSpan()
@@ -45,8 +45,6 @@ struct MapView: View {
                     LocationDetails(hemocenter: $0)
                 }
             }
-            .padding(.top, Metrics.cardPaddingTop)
-
         }
         .navigationBarHidden(true)
     }
@@ -107,5 +105,12 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
             .colorScheme(.dark)
+            .previewDevice("iPhone 12")
+        
+        MapView()
+            .colorScheme(.dark)
+            .previewDevice("iPhone 8")
+        
+        
     }
 }

@@ -38,6 +38,7 @@ struct MainContentView: View {
                                 TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
                             }
                     }
+                    .navigationBarHidden(true)
                 }
                 .accentColor(Color.init("ButtonPrimary"))
                 .onAppear() {
