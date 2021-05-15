@@ -26,9 +26,13 @@ struct RegisterFirstScreen: View {
                         if imageHasBeenSet {
                             Image(uiImage: inputImage!)
                                 .resizable()
+                                .shadow(radius: 2)
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                         } else {
                             Image("NewImage")
                                 .resizable()
+                                .shadow(radius: 2)
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.35)

@@ -15,18 +15,22 @@ struct ImagePartialDetailsView: View {
             if imageName.hasSuffix("Placeholder") {
                 Image(imageName)
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
-                    .frame(width: 75, height: 75)
+                    .shadow(radius: 2)
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                    .frame(width: 70, height: 70, alignment: .center)
             } else {
                 let imageURL = UserDefaultsManager.getDocumentsDirectory().appendingPathComponent(imageName)
                 let imageData = try? Data(contentsOf: imageURL)
                 
                 Image(uiImage: UIImage(data: imageData!)!)
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
-                    .cornerRadius(100)
-                    .frame(width: 75, height: 75)
-                
+                    .shadow(radius: 2)
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                    .frame(width: 105, height: 105, alignment: .center)
             }
             
             Image(systemName: isViable ? "checkmark.seal.fill" : "xmark.seal.fill")

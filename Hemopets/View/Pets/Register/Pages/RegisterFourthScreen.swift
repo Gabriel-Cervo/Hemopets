@@ -48,8 +48,9 @@ struct RegisterFourthScreen: View {
         
         if let image = PetRegistration.image {
             let imageName = saveImage(image)
-            guard let imageName = imageName else { return }
-            newPet.imageName = imageName
+            if let imageName = imageName {
+                newPet.imageName = imageName
+            }
         }
         
         for i in 0..<PetsConstants.totalNumberOfVaccines {
@@ -58,29 +59,32 @@ struct RegisterFourthScreen: View {
             }
         }
         
-        if newPet is Dog {
-            PetsConstants.registeredDogs.append(newPet as! Dog)
+        if let newDog = newPet as? Dog {
+            PetsConstants.registeredDogs.append(newDog)
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs as [Pet], for: "registeredDogs")
             } catch {
                 print(error.localizedDescription)
             }
-                
-        } else {
-            PetsConstants.registeredCats.append(newPet as! Cat)
+            
+        }
+        
+        if let newCat = newPet as? Cat {
+            PetsConstants.registeredCats.append(newCat)
+            
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
             } catch {
                 print(error.localizedDescription)
             }
-        }        
+        }
     }
     
     func saveImage(_ image: UIImage) -> String? {
         if let data = image.jpegData(compressionQuality: 0.8) {
             let imageName = "image\(uniqueFilename())"
             let filename = UserDefaultsManager.getDocumentsDirectory().appendingPathComponent(imageName)
-
+            
             if (try? data.write(to: filename)) != nil {
                 return imageName
             }

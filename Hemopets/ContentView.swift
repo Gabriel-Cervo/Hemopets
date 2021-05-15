@@ -17,11 +17,12 @@ struct ContentView: View {
     var body: some View {
         if hasNotLoadedDefaults || timeRemainingToExitSplash > 0 {
             SplashView()
+                .onAppear() {
+                    loadUserDefaults()
+                }
                 .onReceive(timer) { _ in
                     if timeRemainingToExitSplash > 0 {
                         timeRemainingToExitSplash -= 1
-                    } else {
-                        loadUserDefaults()
                     }
                 }
         } else {
@@ -35,17 +36,34 @@ struct ContentView: View {
     
     func loadUserDefaults() {
         do {
+            let registeredDogs = try UserDefaultsManager.loadData(for: "registeredDogs") as [Dog]
+
+            DispatchQueue.main.async {
+                PetsConstants.registeredDogs = registeredDogs
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        do {
+            let registeredCats = try UserDefaultsManager.loadData(for: "registeredCats") as [Cat]
+
+            DispatchQueue.main.async {
+                PetsConstants.registeredCats = registeredCats
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        do {
             let sawOnboarding = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
-            let registeredCats = try UserDefaultsManager.loadData(for: "registeredCats") as [Pet]
-            let registeredDogs = try UserDefaultsManager.loadData(for: "registeredDogs") as [Pet]
             
             DispatchQueue.main.async {
-                PetsConstants.registeredCats = registeredCats as! [Cat]
-                PetsConstants.registeredDogs = registeredDogs as! [Dog]
                 self.hasSeenOnboarding = sawOnboarding
                 self.hasNotLoadedDefaults = false
             }
         } catch {
+            print(error.localizedDescription)
             self.hasNotLoadedDefaults = false
         }
     }
