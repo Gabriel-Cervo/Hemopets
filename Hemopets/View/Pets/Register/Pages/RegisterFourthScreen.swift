@@ -23,6 +23,7 @@ struct RegisterFourthScreen: View {
                     VaccinesListView(selectedIndexes: $selectedIndexes, petType: PetRegistration.type)
                         .padding(.top)
                         .padding(.horizontal)
+                        .colorScheme(.light)
                     
                     HStack {
                         PreviousPageButton()

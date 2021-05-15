@@ -26,16 +26,18 @@ struct RegisterFirstScreen: View {
                         if imageHasBeenSet {
                             Image(uiImage: inputImage!)
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .shadow(radius: 2)
+                                .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.35)
-                                .cornerRadius(100)
+                                .frame(width: UIScreen.main.bounds.width * 0.32, height: UIScreen.main.bounds.width * 0.32)
                         } else {
                             Image("NewImage")
                                 .resizable()
                                 .shadow(radius: 2)
+                                .aspectRatio(contentMode: .fit)
                                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.35)
+                                .frame(width: UIScreen.main.bounds.width * 0.32, height: UIScreen.main.bounds.width * 0.32)
                                 .cornerRadius(100)
                         }
                     }

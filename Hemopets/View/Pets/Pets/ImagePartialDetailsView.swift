@@ -15,7 +15,6 @@ struct ImagePartialDetailsView: View {
             if imageName.hasSuffix("Placeholder") {
                 Image(imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
                     .shadow(radius: 2)
                     .overlay(Circle().stroke(Color.gray, lineWidth: 2))
