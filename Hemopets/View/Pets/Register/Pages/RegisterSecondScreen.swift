@@ -16,15 +16,9 @@ struct RegisterSecondScreen: View {
     var body: some View {
         RegisterContainerContentView {
             Group {
-                HStack {
-                    Text("Qual o sexo do seu pet?")
-                        .foregroundColor(Color("TextColorPrimary"))
-                        .font(.title3)
-                        .fontWeight(.medium)
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.top, Metrics.registerFieldPaddingTop + 10)
+                RegisterText(text: "Qual o sexo do seu pet?")
+                    .padding(.leading)
+                    .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
                 ChooseButtons(firstButtonAction: {
                     selectedGenderButton = .firstButton
@@ -34,16 +28,9 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
 
-                HStack {
-                    Text("É castrado?")
-                        .foregroundColor(Color("TextColorPrimary"))
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.top, Metrics.registerFieldPaddingTop + 10)
+                RegisterText(text: "Seu pet é castrado?")
+                    .padding(.leading)
+                    .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
                 ChooseButtons(firstButtonAction: {
                     selectedCastratedButton = .firstButton
@@ -53,16 +40,9 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                HStack {
-                    Text("Qual o peso?")
-                        .foregroundColor(Color("TextColorPrimary"))
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        
-                    Spacer()
-                }
-                .padding(.top, Metrics.registerFieldPaddingTop + 10)
-                .padding(.leading)
+                RegisterText(text: "Qual o peso dele/a?")
+                    .padding(.top, Metrics.registerFieldPaddingTop + 10)
+                    .padding(.leading)
                 
                 HStack {
                     TextField("", text: $weight)

@@ -17,15 +17,9 @@ struct RegisterThirdScreen: View {
         RegisterContainerContentView {
             Group {
                 VStack {
-                    HStack {
-                        Text("Quantos anos ele tem?")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("TextColorPrimary"))
-                        Spacer()
-                    }
-                    .padding(.leading)
-                    .padding(.top, Metrics.registerFieldPaddingTop)
+                    RegisterText(text: "Qual a idade dele(a)?")
+                        .padding(.leading)
+                        .padding(.top, Metrics.registerFieldPaddingTop)
                     
                     HStack {
                         TextField("", text: $age)
@@ -36,13 +30,8 @@ struct RegisterThirdScreen: View {
                     .underlineTextField()
                     .padding(.horizontal)
                     
-                    HStack {
-                        Text("Algum caso de doença grave?")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("TextColorPrimary"))
-                        Spacer()
-                    }
+                    RegisterText(text: "Ele(a) já teve algum caso de doença grave?")
+
                     .padding(.top, Metrics.registerFieldPaddingTop)
                     .padding(.leading)
                     
@@ -54,16 +43,10 @@ struct RegisterThirdScreen: View {
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     
-                    HStack {
-                        Text("Seu pet tem alguma doença infecciosa?")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("TextColorPrimary"))
-                        Spacer()
-                    }
-                    .padding(.top, Metrics.registerFieldPaddingTop)
-                    .padding(.leading)
-                    .padding(.vertical, 10)
+                    RegisterText(text: "Seu pet tem alguma doença infecciosa?")
+                        .padding(.top,  Metrics.registerFieldPaddingTop)
+                        .padding(.leading)
+                        .padding(.vertical, 10)
                     
                     ChooseButtons(firstButtonAction: {
                         selectedInfecctionIllness = .firstButton

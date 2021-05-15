@@ -17,15 +17,9 @@ struct RegisterFourthScreen: View {
         RegisterContainerContentView {
             Group {
                 VStack {
-                    HStack {
-                        Text("Quais vacinas seu pet já realizou?")
-                            .foregroundColor(Color("TextColorPrimary"))
-                            .font(.title3)
-                            .fontWeight(.medium)
-                        Spacer()
-                    }
-                    .padding(.top, Metrics.registerFieldPaddingTop)
-                    .padding(.leading)
+                    RegisterText(text: "Quais das vacinas abaixo seu pet tomou?")
+                        .padding(.top,  Metrics.registerFieldPaddingTop)
+                        .padding(.leading)
                     
                     VaccinesListView(selectedIndexes: $selectedIndexes, petType: PetRegistration.type)
                         .padding(.top)
