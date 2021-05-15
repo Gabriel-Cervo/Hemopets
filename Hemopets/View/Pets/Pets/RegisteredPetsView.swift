@@ -38,7 +38,7 @@ struct RegisteredPetsView: View {
                         Group {
                             ForEach(PetsConstants.registeredCats, id: \.id) { cat in
                                 ZStack {
-                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.checkWeight())
+                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.isEligible())
                                         .padding(.horizontal, 10)
                                     
                                     HStack {
@@ -61,7 +61,7 @@ struct RegisteredPetsView: View {
                             
                             ForEach(PetsConstants.registeredDogs, id: \.id) { dog in
                                 ZStack {
-                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: "Cachorro", isViable: dog.checkWeight())
+                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: "Cachorro", isViable: dog.isEligible())
                                         .padding(.horizontal, 10)
                                     
                                     HStack {

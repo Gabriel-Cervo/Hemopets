@@ -11,6 +11,9 @@ struct RegisterSecondScreen: View {
     @State private var selectedGenderButton: ButtonId?
     @State private var selectedCastratedButton: ButtonId?
     @State private var weight: WeightOptions = .first
+    private var selectedWeightDescription: String {
+        weight.description
+    }
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -27,7 +30,7 @@ struct RegisterSecondScreen: View {
                 }, firstButtonLabel: "MACHO", secondButtonLabel: "FÊMEA", selectedButton: $selectedGenderButton)
                 .padding(.horizontal)
                 .padding(.vertical, 10)
-
+                
                 RegisterText(text: "Seu pet é castrado?")
                     .padding(.leading)
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
@@ -40,21 +43,34 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                RegisterText(text: "Qual o peso dele/a?")
+                RegisterText(text: "Qual o peso dele(a)?")
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
+                    .padding(.bottom, 10)
                     .padding(.leading)
                 
-                Picker("Peso", selection: $weight) {
-                    Text("Não sei").tag(WeightOptions.first)
-                    Text("Menos de um kilo").tag(WeightOptions.second)
-                    Text("Entre 1 e 10kg").tag(WeightOptions.third)
-                    Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
-                    Text("Entre 20 e 25kg").tag(WeightOptions.five)
-                    Text("Mais de 28kg").tag(WeightOptions.sixth)
+                HStack(spacing: 3) {
+                    Image(systemName: "p.square")
+                        .foregroundColor(.red)
+                        .font(.title3)
+                        .padding(.top, 3)
+                    
+                    Picker(selectedWeightDescription, selection: $weight) {
+                        Text("Não sei").tag(WeightOptions.first)
+                        Text("Entre menos de um e 3kg").tag(WeightOptions.second)
+                        Text("Entre 4 e 10kg").tag(WeightOptions.third)
+                        Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
+                        Text("Entre 20 e 25kg").tag(WeightOptions.five)
+                        Text("Mais de 28kg").tag(WeightOptions.sixth)
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .frame(width: UIScreen.main.bounds.width * 0.65, alignment: .leading)
+                    .overlay(Rectangle().frame(height: 1).padding(.top, 25))
+                    .foregroundColor(.gray)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 10)
                 }
-                .pickerStyle(WheelPickerStyle())
-                .padding(.top, -15)
-//
+                .padding(.top, -3)
+                
                 Spacer()
                 
                 HStack {

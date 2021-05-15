@@ -59,3 +59,42 @@ enum WeightOptions: String, CaseIterable, Identifiable, Codable {
         }
     }
 }
+
+enum AgeOptions: String, CaseIterable, Identifiable, Codable {
+    case first
+    case second
+    case third
+    case fourth
+    case five
+    
+    var id: Int {
+        switch self {
+        case .first:
+            return 1
+        case .second:
+            return 2
+        case .third:
+            return 3
+        case .fourth:
+            return 4
+        case .five:
+            return 5
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .first:
+            return "Não informado"
+        case .second:
+            return "Menos de um ano"
+        case .third:
+            return "Entre 1 e 8 anos"
+        case .fourth:
+            return "Entre 9 e 15 anos"
+        case .five:
+            return "Mais de 15 anos"
+        }
+    }
+}
+

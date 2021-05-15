@@ -22,12 +22,12 @@ extension Eligible {
 class Pet: Identifiable, Codable {
     var id: String = UUID().uuidString
     var name: String
-    var age: Int
+    var age: AgeOptions
     var weight: WeightOptions
     var imageName: String
     var vaccines: [Vaccine]
     
-    init(name: String, age: Int, weight: WeightOptions, imageName: String) {
+    init(name: String, age: AgeOptions, weight: WeightOptions, imageName: String) {
         self.name = name
         self.age = age
         self.weight = weight
@@ -36,17 +36,18 @@ class Pet: Identifiable, Codable {
     }
     
     func checkVaccinesNotTaken() -> [String] {
-        let filterVaccines = self.vaccines.filter{ vaccine in
-            return !vaccine.isTaken
-        }
-        return filterVaccines.map { vaccine in
-            return vaccine.name
-        }
+        let filterVaccines = self.vaccines.filter { !$0.isTaken }
+        
+        return filterVaccines.map { $0.name }
+    }
+    
+    func checkAge() -> Bool {
+        return self.age == .third
     }
 }
 
 class Dog: Pet, Eligible {
-    override init(name: String, age: Int, weight: WeightOptions, imageName: String) {
+    override init(name: String, age: AgeOptions, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsConstants.mandatoryVaccines["Dog"]!
     }
@@ -55,9 +56,6 @@ class Dog: Pet, Eligible {
         try super.init(from: decoder)
     }
     
-    func checkAge() -> Bool {
-        return self.age >= 1 && self.age <= 8
-    }
     
     func checkWeight() -> Bool {
         return self.weight == .sixth
@@ -65,17 +63,13 @@ class Dog: Pet, Eligible {
 }
 
 class Cat: Pet, Eligible {
-    override init(name: String, age: Int, weight: WeightOptions, imageName: String) {
+    override init(name: String, age: AgeOptions, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsConstants.mandatoryVaccines["Cat"]!
     }
     
     required init(from decoder: Decoder) throws {
         try super.init(from: decoder)
-    }
-    
-    func checkAge() -> Bool {
-        return self.age >= 1 && self.age <= 7
     }
     
     func checkWeight() -> Bool {
