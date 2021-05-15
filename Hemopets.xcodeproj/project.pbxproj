@@ -39,6 +39,8 @@
 		84263CAD26417BF300CD4FAC /* Hemocenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAC26417BF300CD4FAC /* Hemocenter.swift */; };
 		84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84263CAF26417E7C00CD4FAC /* LocationDetails.swift */; };
 		8432EBAC2646AA7800A7CA8F /* ArrayFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */; };
+		8455AB47264F513800795CE4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB46264F513800795CE4 /* ImagePicker.swift */; };
+		8455AB49264F585100795CE4 /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB48264F585100795CE4 /* RegisterText.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
 		8492F23F264080E400B9DF4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23E264080E400B9DF4A /* ContentView.swift */; };
 		8492F241264080E400B9DF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F240264080E400B9DF4A /* Assets.xcassets */; };
@@ -109,6 +111,8 @@
 		84263CAC26417BF300CD4FAC /* Hemocenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemocenter.swift; sourceTree = "<group>"; };
 		84263CAF26417E7C00CD4FAC /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFieldView.swift; sourceTree = "<group>"; };
+		8455AB46264F513800795CE4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8455AB48264F585100795CE4 /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492F23C264080E400B9DF4A /* HemopetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HemopetsApp.swift; sourceTree = "<group>"; };
 		8492F23E264080E400B9DF4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				84B040122645AAA1006E0589 /* UserDefaultsManager.swift */,
+				8455AB46264F513800795CE4 /* ImagePicker.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
 				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
 				CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */,
+				8455AB48264F585100795CE4 /* RegisterText.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 				8492F2542640890100B9DF4A /* LocationFetcher.swift in Sources */,
 				8408D62E26458E470044EB71 /* PreviousPageButton.swift in Sources */,
 				8432EBAC2646AA7800A7CA8F /* ArrayFieldView.swift in Sources */,
+				8455AB47264F513800795CE4 /* ImagePicker.swift in Sources */,
 				8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */,
 				8408D61A26456A2E0044EB71 /* OnboardingIllustration.swift in Sources */,
 				8408D5F9264463BF0044EB71 /* MapConstants.swift in Sources */,
@@ -547,6 +554,7 @@
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 				8495A86A264C070B00A218DD /* TabItemView.swift in Sources */,
 				CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */,
+				8455AB49264F585100795CE4 /* RegisterText.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				CCEF4475264C3CEC0044547C /* RegisterFirstScreen.swift in Sources */,

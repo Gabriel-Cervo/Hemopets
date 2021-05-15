@@ -8,40 +8,59 @@
 import SwiftUI
 
 struct RegisterFirstScreen: View {
-    @State var name: String = ""
-    @State var selectedButton: ButtonId?
+    @State private var name: String = ""
+    @State private var selectedButton: ButtonId?
+    
+    @State private var showingImagePicker: Bool = false
+    @State private var inputImage: UIImage?
+    @State private var imageHasBeenSet: Bool = false
+    
     
     var body: some View {
         RegisterContainerContentView {
             Group {
-                Image("NewImage")
-                    .resizable()
+                ZStack {
+                    Button(action: {
+                            self.showingImagePicker = true
+                    }) {
+                        if imageHasBeenSet {
+                            Image(uiImage: inputImage!)
+                                .resizable()
+                        } else {
+                            Image("NewImage")
+                                .resizable()
+                        }
+                    }
                     .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.35)
+                    .cornerRadius(100)
+                    .opacity(imageHasBeenSet ? 1 : 0.6)
                     .padding(.top)
-                    
-                HStack {
-                    Text("Qual o nome do seu pet?")
-                        .foregroundColor(Color("TextColorPrimary"))
-                        .font(.title3)
-                        .fontWeight(.medium)
-                    Spacer()
                 }
-                .padding(.leading)
-                .padding(.top, Metrics.registerFieldPaddingTop)
+                
+                HStack(spacing: 0) {
+                    Text("Toque")
+                        .bold()
+                    
+                    Text(" na imagem para mudar a foto")
+                }
+                .foregroundColor(Color("TextColorPrimary"))
+                .font(.subheadline)
+                .padding(.top, 5)
+                .padding(.bottom, 10)
+                
+                Divider()
+                
+                RegisterText(text: "Qual o nome do seu pet?")
+                    .padding(.leading)
+                    .padding(.top, 10)
                 
                 TextField("", text: $name)
                     .underlineTextField()
                     .padding(.horizontal)
                 
-                HStack {
-                    Text("Seu pet é um...")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color("TextColorPrimary"))
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.top, Metrics.registerFieldPaddingTop)
+                RegisterText(text: "Seu pet é um...")
+                    .padding(.leading)
+                    .padding(.top, Metrics.registerFieldPaddingTop - 5)
                 
                 ChooseButtons(firstButtonAction: {
                     selectedButton = .firstButton
@@ -67,6 +86,9 @@ struct RegisterFirstScreen: View {
             }
             .padding(.horizontal, 15)
         }
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: self.$inputImage)
+        }
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }
@@ -74,6 +96,10 @@ struct RegisterFirstScreen: View {
     func saveValues() {
         PetRegistration.name = name
         PetRegistration.type = selectedButton == .firstButton ? .dog : .cat
+    }
+    
+    func loadImage() {
+        imageHasBeenSet = true
     }
 }
     
@@ -93,8 +119,7 @@ struct RegistrationScreen_Previews: PreviewProvider {
 extension View {
     func underlineTextField() -> some View {
         self
-            .padding(.vertical, 10)
-            .overlay(Rectangle().frame(height: 1).padding(.top, 35))
+            .overlay(Rectangle().frame(height: 1).padding(.top, 25))
             .foregroundColor(Color("ButtonPrimary"))
     }
 }
