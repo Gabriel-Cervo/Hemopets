@@ -41,6 +41,7 @@
 		8432EBAC2646AA7800A7CA8F /* ArrayFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */; };
 		8455AB47264F513800795CE4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB46264F513800795CE4 /* ImagePicker.swift */; };
 		8455AB49264F585100795CE4 /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB48264F585100795CE4 /* RegisterText.swift */; };
+		8455AB4B265029EE00795CE4 /* FormPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB4A265029ED00795CE4 /* FormPickerView.swift */; };
 		8492F23D264080E400B9DF4A /* HemopetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23C264080E400B9DF4A /* HemopetsApp.swift */; };
 		8492F23F264080E400B9DF4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F23E264080E400B9DF4A /* ContentView.swift */; };
 		8492F241264080E400B9DF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492F240264080E400B9DF4A /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFieldView.swift; sourceTree = "<group>"; };
 		8455AB46264F513800795CE4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8455AB48264F585100795CE4 /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
+		8455AB4A265029ED00795CE4 /* FormPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerView.swift; sourceTree = "<group>"; };
 		8492F239264080E400B9DF4A /* Hemopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hemopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492F23C264080E400B9DF4A /* HemopetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HemopetsApp.swift; sourceTree = "<group>"; };
 		8492F23E264080E400B9DF4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				CC567969264CC6F00037360D /* RegisterContainerContentView.swift */,
 				CC56796B264CCB7E0037360D /* ChooseButtons.swift */,
 				CCA63F46264DD4420059113B /* RoundedRectangleView.swift */,
+				8455AB4A265029ED00795CE4 /* FormPickerView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 			files = (
 				2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */,
 				84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */,
+				8455AB4B265029EE00795CE4 /* FormPickerView.swift in Sources */,
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
 				C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */,
 				8492F23F264080E400B9DF4A /* ContentView.swift in Sources */,

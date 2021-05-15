@@ -48,28 +48,18 @@ struct RegisterSecondScreen: View {
                     .padding(.bottom, 10)
                     .padding(.leading)
                 
-                HStack(spacing: 3) {
-                    Image(systemName: "p.square")
-                        .foregroundColor(.red)
-                        .font(.title3)
-                        .padding(.top, 3)
-                    
-                    Picker(selectedWeightDescription, selection: $weight) {
-                        Text("Não sei").tag(WeightOptions.first)
-                        Text("Entre menos de um e 3kg").tag(WeightOptions.second)
-                        Text("Entre 4 e 10kg").tag(WeightOptions.third)
-                        Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
-                        Text("Entre 20 e 25kg").tag(WeightOptions.five)
-                        Text("Mais de 28kg").tag(WeightOptions.sixth)
-                    }
-                    .pickerStyle(MenuPickerStyle())
-                    .frame(width: UIScreen.main.bounds.width * 0.65, alignment: .leading)
-                    .overlay(Rectangle().frame(height: 1).padding(.top, 25))
-                    .foregroundColor(.gray)
-                    .padding(.leading, 5)
-                    .padding(.trailing, 10)
-                }
+                Picker(selection: $weight, label: FormPickerView(text: selectedWeightDescription), content: {
+                    Text("Não sei").tag(WeightOptions.first)
+                    Text("Entre menos de um e 3kg").tag(WeightOptions.second)
+                    Text("Entre 4 e 10kg").tag(WeightOptions.third)
+                    Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
+                    Text("Entre 20 e 25kg").tag(WeightOptions.five)
+                    Text("Mais de 28kg").tag(WeightOptions.sixth)
+                })
+                .pickerStyle(MenuPickerStyle())
+                .foregroundColor(.gray)
                 .padding(.top, -3)
+                .padding(.horizontal, 25)
                 
                 Spacer()
                 

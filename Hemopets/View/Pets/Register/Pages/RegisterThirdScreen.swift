@@ -49,44 +49,26 @@ struct RegisterThirdScreen: View {
                         .padding(.top, Metrics.registerFieldPaddingTop + 10)
                         .padding(.bottom, 10)
                     
-                    HStack(spacing: 3) {
-                        Image(systemName: "hourglass")
-                            .foregroundColor(.red)
-                            .font(.title3)
-                            .padding(.top, 3)
-                        
-                        Picker(selectedAgeDescription, selection: $age) {
-                            Text("Não sei").tag(AgeOptions.first)
-                            Text("Menos de um ano").tag(AgeOptions.second)
-                            Text("Entre 1 e 8 anos").tag(AgeOptions.third)
-                            Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
-                            Text("Mais de 15 anos").tag(AgeOptions.five)
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .frame(width: UIScreen.main.bounds.width * 0.65, alignment: .leading)
-                        .overlay(Rectangle().frame(height: 1).padding(.top, 25))
-                        .foregroundColor(.gray)
-                        .padding(.leading, 5)
-                        .padding(.trailing, 10)
-                    }
-                    .padding(.top, -3)
-
                     
-                    //                    Picker($age.description, selection: $age) {
-                    //                        Text("Não sei").tag(AgeOptions.first)
-                    //                        Text("Menos de um ano").tag(AgeOptions.second)
-                    //                        Text("Entre 1 e 8 anos").tag(AgeOptions.third)
-                    //                        Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
-                    //                        Text("Mais de 15 anos").tag(AgeOptions.five)
-                    //                    }
-                    //                    .pickerStyle(MenuPickerStyle())
-                    //                    .padding(.top, -15)
+                    Picker(selection: $age, label: FormPickerView(text: selectedAgeDescription), content: {
+                        Text("Não sei").tag(AgeOptions.first)
+                        Text("Menos de um ano").tag(AgeOptions.second)
+                        Text("Entre 1 e 8 anos").tag(AgeOptions.third)
+                        Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
+                        Text("Mais de 15 anos").tag(AgeOptions.five)
+                    })
+                    .pickerStyle(MenuPickerStyle())
+                    .foregroundColor(.gray)
+                    .padding(.top, -3)
+                    .padding(.horizontal, 25)
                     
                     Spacer()
                     
                     HStack {
                         PreviousPageButton()
+                        
                         Spacer()
+                        
                         Button(action: saveValues, label: {
                             NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues)
                         })
