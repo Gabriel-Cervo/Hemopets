@@ -14,7 +14,7 @@ struct PetRegistration {
     static var type: PetType = .cat
     static var gender: GenderType = .male
     static var isCastrated: Bool = false
-    static var weight: Double = 0.0
+    static var weight: WeightOptions = .first
     static var age: Int = 0
     static var haveSeriousIllness: Bool = false
     static var haveInfectionIllness: Bool = false

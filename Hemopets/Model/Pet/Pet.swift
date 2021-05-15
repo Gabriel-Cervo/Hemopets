@@ -23,11 +23,11 @@ class Pet: Identifiable, Codable {
     var id: String = UUID().uuidString
     var name: String
     var age: Int
-    var weight: Double
+    var weight: WeightOptions
     var imageName: String
     var vaccines: [Vaccine]
     
-    init(name: String, age: Int, weight: Double, imageName: String) {
+    init(name: String, age: Int, weight: WeightOptions, imageName: String) {
         self.name = name
         self.age = age
         self.weight = weight
@@ -46,7 +46,7 @@ class Pet: Identifiable, Codable {
 }
 
 class Dog: Pet, Eligible {
-    override init(name: String, age: Int, weight: Double, imageName: String) {
+    override init(name: String, age: Int, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsConstants.mandatoryVaccines["Dog"]!
     }
@@ -60,12 +60,12 @@ class Dog: Pet, Eligible {
     }
     
     func checkWeight() -> Bool {
-        return self.weight >= 27
+        return self.weight == .sixth
     }
 }
 
 class Cat: Pet, Eligible {
-    override init(name: String, age: Int, weight: Double, imageName: String) {
+    override init(name: String, age: Int, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsConstants.mandatoryVaccines["Cat"]!
     }
@@ -79,6 +79,6 @@ class Cat: Pet, Eligible {
     }
     
     func checkWeight() -> Bool {
-        return self.weight >= 4
+        return self.weight.id >= 2
     }
 }

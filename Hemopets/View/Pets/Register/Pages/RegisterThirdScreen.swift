@@ -79,15 +79,6 @@ struct RegisterThirdScreen: View {
         PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
         PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
     }
-    
-    func underlineTextField() -> some View {
-        self
-            .padding(.vertical, 10)
-            .overlay(Rectangle()
-                        .frame(height: 1)
-                        .padding(.top, 35))
-            .foregroundColor(Color("ButtonPrimary"))
-    }
 }
 
 struct RegisterThirdScreen_Previews: PreviewProvider {

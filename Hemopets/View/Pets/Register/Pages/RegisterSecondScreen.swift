@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RegisterSecondScreen: View {
-    @State var selectedGenderButton: ButtonId?
-    @State var selectedCastratedButton: ButtonId?
-    @State var weight: String = ""
+    @State private var selectedGenderButton: ButtonId?
+    @State private var selectedCastratedButton: ButtonId?
+    @State private var weight: WeightOptions = .first
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -44,15 +44,17 @@ struct RegisterSecondScreen: View {
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                     .padding(.leading)
                 
-                HStack {
-                    TextField("", text: $weight)
-                        .foregroundColor(Color("TextColorPrimary"))
-                    Image(systemName: "chevron.down")
-                        .foregroundColor(Color("TextColorPrimary"))
+                Picker("Peso", selection: $weight) {
+                    Text("Não sei").tag(WeightOptions.first)
+                    Text("Menos de um kilo").tag(WeightOptions.second)
+                    Text("Entre 1 e 10kg").tag(WeightOptions.third)
+                    Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
+                    Text("Entre 20 e 25kg").tag(WeightOptions.five)
+                    Text("Mais de 28kg").tag(WeightOptions.sixth)
                 }
-                .underlineTextField()
-                .padding()
-                
+                .pickerStyle(WheelPickerStyle())
+                .padding(.top, -15)
+//
                 Spacer()
                 
                 HStack {
@@ -75,14 +77,7 @@ struct RegisterSecondScreen: View {
     func saveValues() {
         PetRegistration.gender = selectedGenderButton == .firstButton ? .male : .female
         PetRegistration.isCastrated = selectedCastratedButton == .firstButton ? true : false
-        PetRegistration.weight = Double(weight) ?? 0.0
-    }
-    
-    func underlineTextField() -> some View {
-        self
-            .padding(.vertical, 10)
-            .overlay(Rectangle().frame(height: 1).padding(.top, 35))
-            .foregroundColor(Color("ButtonPrimary"))
+        PetRegistration.weight = weight
     }
 }
 

@@ -90,10 +90,10 @@ struct CompleteDetailsView: View {
 
 struct CompleteDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
+        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: .second, imageName: "testeHemo"))
             .previewDevice("iPhone 12")
         
-        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: 30, imageName: "testeHemo"))
+        CompleteDetailsView(pet: Pet(name: "Gato1", age: 20, weight: .third, imageName: "testeHemo"))
             .previewDevice("iPhone 8")
     }
 }
