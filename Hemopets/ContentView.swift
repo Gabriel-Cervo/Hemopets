@@ -15,13 +15,13 @@ struct ContentView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        if hasNotLoadedDefaults && timeRemainingToExitSplash > 0 {
+        if hasNotLoadedDefaults || timeRemainingToExitSplash > 0 {
             SplashView()
                 .onReceive(timer) { _ in
                     if timeRemainingToExitSplash > 0 {
                         timeRemainingToExitSplash -= 1
                     } else {
-                        checkOnboardDefaults()
+                        loadUserDefaults()
                     }
                 }
         } else {
@@ -33,12 +33,16 @@ struct ContentView: View {
         }
     }
     
-    func checkOnboardDefaults() {
+    func loadUserDefaults() {
         do {
-            let storedValue = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
+            let sawOnboarding = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
+            let registeredCats = try UserDefaultsManager.loadData(for: "registeredCats") as [Pet]
+            let registeredDogs = try UserDefaultsManager.loadData(for: "registeredDogs") as [Pet]
             
             DispatchQueue.main.async {
-                self.hasSeenOnboarding = storedValue
+                PetsConstants.registeredCats = registeredCats as! [Cat]
+                PetsConstants.registeredDogs = registeredDogs as! [Dog]
+                self.hasSeenOnboarding = sawOnboarding
                 self.hasNotLoadedDefaults = false
             }
         } catch {

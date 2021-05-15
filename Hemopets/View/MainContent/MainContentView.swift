@@ -11,39 +11,40 @@ struct MainContentView: View {
     @State var noPetsRegistered: Bool = true
     
     var body: some View {
-        NavigationView {
-            TabView {
-                Group {
-                    if noPetsRegistered {
+        Group {
+            NavigationView {
+                TabView {
+                    Group {
+                        if noPetsRegistered {
                             NoPetsView()
-                        .tabItem {
-                            TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                                .tabItem {
+                                    TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                                }
+                        } else {
+                            RegisteredPetsView()
+                                .tabItem {
+                                    TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                                }
                         }
-                    } else {
-                        RegisteredPetsView()
+                        
+                        MapView()
                             .tabItem {
-                                TabItemView(iconName: "heart.fill", text: "Meus Pets")
+                                TabItemView(iconName: "drop.fill", text: "Hemocentros")
+                            }
+                            .colorScheme(.dark)
+                        
+                        DonationView()
+                            .tabItem {
+                                TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
                             }
                     }
-                    
-                    MapView()
-                        .tabItem {
-                            TabItemView(iconName: "drop.fill", text: "Hemocentros")
-                        }
-                        .colorScheme(.dark)
-                    
-                    DonationView()
-                        .tabItem {
-                            TabItemView(iconName: "questionmark.circle.fill", text: "Dúvidas")
-                        }
                 }
-                .navigationBarHidden(true)
-            }
-            .accentColor(Color.init("ButtonPrimary"))
-            .onAppear() {
-                self.updateOnboardValueInDefaults()
-                self.loadRegisteredPets()
-                UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
+                .accentColor(Color.init("ButtonPrimary"))
+                .onAppear() {
+                    self.updateOnboardValueInDefaults()
+                    self.loadRegisteredPets()
+                    UITabBar.appearance().barTintColor = UIColor(named: "BackgroundTabBar")
+                }
             }
         }
     }

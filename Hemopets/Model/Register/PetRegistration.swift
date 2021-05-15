@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct PetRegistration {
     //    var image: String
@@ -17,4 +18,5 @@ struct PetRegistration {
     static var age: Int = 0
     static var haveSeriousIllness: Bool = false
     static var haveInfectionIllness: Bool = false
+    static var image: UIImage?
 }

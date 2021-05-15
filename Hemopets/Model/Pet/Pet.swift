@@ -19,7 +19,7 @@ extension Eligible {
     }
 }
 
-class Pet: Identifiable {
+class Pet: Identifiable, Codable {
     var id: String = UUID().uuidString
     var name: String
     var age: Int
@@ -51,6 +51,10 @@ class Dog: Pet, Eligible {
         self.vaccines = PetsConstants.mandatoryVaccines["Dog"]!
     }
     
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    
     func checkAge() -> Bool {
         return self.age >= 1 && self.age <= 8
     }
@@ -65,7 +69,11 @@ class Cat: Pet, Eligible {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
         self.vaccines = PetsConstants.mandatoryVaccines["Cat"]!
     }
-
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    
     func checkAge() -> Bool {
         return self.age >= 1 && self.age <= 7
     }

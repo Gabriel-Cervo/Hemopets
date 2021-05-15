@@ -27,15 +27,15 @@ struct FourthOnboardingPage: View {
 
                     ProgressView(activeCircle: 4)
                     
-                    FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView()))
+                    FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView().navigationBarHidden(true)))
                         .frame(width: 300, alignment: .center)
                         .padding(.top, 30)
                         .padding(.leading, 10)
                 }
                 Spacer()
             }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
     }
 }
 

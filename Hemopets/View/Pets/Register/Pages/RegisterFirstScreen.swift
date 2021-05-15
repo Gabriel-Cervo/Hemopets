@@ -96,6 +96,10 @@ struct RegisterFirstScreen: View {
     func saveValues() {
         PetRegistration.name = name
         PetRegistration.type = selectedButton == .firstButton ? .dog : .cat
+        if imageHasBeenSet {
+            guard let inputImage = inputImage else { return }
+            PetRegistration.image = inputImage
+        }
     }
     
     func loadImage() {

@@ -12,10 +12,22 @@ struct ImagePartialDetailsView: View {
     var isViable: Bool
     var body: some View {
         ZStack {
-            Image(imageName)
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 75, height: 75)
+            if imageName.hasSuffix("Placeholder") {
+                Image(imageName)
+                    .resizable()
+                    .clipShape(Circle())
+                    .frame(width: 75, height: 75)
+            } else {
+                let imageURL = UserDefaultsManager.getDocumentsDirectory().appendingPathComponent(imageName)
+                let imageData = try? Data(contentsOf: imageURL)
+                
+                Image(uiImage: UIImage(data: imageData!)!)
+                    .resizable()
+                    .clipShape(Circle())
+                    .cornerRadius(100)
+                    .frame(width: 75, height: 75)
+                
+            }
             
             Image(systemName: isViable ? "checkmark.seal.fill" : "xmark.seal.fill")
                 .font(.largeTitle)

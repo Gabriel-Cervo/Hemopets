@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Vaccine {
+class Vaccine: Codable {
     var name: String
     var isTaken: Bool
     
