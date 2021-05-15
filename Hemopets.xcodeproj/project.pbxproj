@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -464,7 +464,6 @@
 			);
 			mainGroup = 8492F230264080E400B9DF4A;
 			packageReferences = (
-				CCA63F41264DC51A0059113B /* XCRemoteSwiftPackageReference "SwiftUIListSeparator" */,
 			);
 			productRefGroup = 8492F23A264080E400B9DF4A /* Products */;
 			projectDirPath = "";
@@ -745,17 +744,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CCA63F41264DC51A0059113B /* XCRemoteSwiftPackageReference "SwiftUIListSeparator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SchmidtyApps/SwiftUIListSeparator";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 8492F231264080E400B9DF4A /* Project object */;
 }
