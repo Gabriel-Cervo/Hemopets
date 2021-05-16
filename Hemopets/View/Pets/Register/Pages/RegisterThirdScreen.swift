@@ -15,6 +15,8 @@ struct RegisterThirdScreen: View {
         age.description
     }
     
+    @State private var isNextPageButtonActive: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         RegisterContainerContentView {
@@ -26,8 +28,10 @@ struct RegisterThirdScreen: View {
                     
                     ChooseButtons(firstButtonAction: {
                         selectedSeriousIllness = .firstButton
+                        checkIfShouldActivateButton()
                     }, secondButtonAction: {
                         selectedSeriousIllness = .secondButton
+                        checkIfShouldActivateButton()
                     }, firstButtonLabel: "SIM", secondButtonLabel: "NÃO", selectedButton: $selectedSeriousIllness)
                     .padding(.horizontal)
                     .padding(.vertical, 10)
@@ -39,8 +43,10 @@ struct RegisterThirdScreen: View {
                     
                     ChooseButtons(firstButtonAction: {
                         selectedInfecctionIllness = .firstButton
+                        checkIfShouldActivateButton()
                     }, secondButtonAction: {
                         selectedInfecctionIllness = .secondButton
+                        checkIfShouldActivateButton()
                     }, firstButtonLabel: "SIM", secondButtonLabel: "NÃO", selectedButton: $selectedInfecctionIllness)
                     .padding(.horizontal)
                     
@@ -70,7 +76,7 @@ struct RegisterThirdScreen: View {
                         Spacer()
                         
                         Button(action: saveValues, label: {
-                            NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues)
+                            NextPageButton(nextView: AnyView(RegisterFourthScreen()), onClick: saveValues, isActive: isNextPageButtonActive)
                         })
                     }
                     .padding(.bottom)
@@ -87,6 +93,16 @@ struct RegisterThirdScreen: View {
         PetRegistration.age = age
         PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
         PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
+    }
+    
+    func checkIfShouldActivateButton() {
+        if selectedSeriousIllness != nil &&
+            selectedInfecctionIllness != nil {
+            isNextPageButtonActive = true
+            return
+        }
+
+        isNextPageButtonActive = false
     }
 }
 

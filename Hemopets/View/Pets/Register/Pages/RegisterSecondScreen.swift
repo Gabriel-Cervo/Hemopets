@@ -14,6 +14,9 @@ struct RegisterSecondScreen: View {
     private var selectedWeightDescription: String {
         weight.description
     }
+    
+    @State private var isNextPageButtonActive: Bool = false
+
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -25,8 +28,10 @@ struct RegisterSecondScreen: View {
                 
                 ChooseButtons(firstButtonAction: {
                     selectedGenderButton = .firstButton
+                    checkIfShouldActivateButton()
                 }, secondButtonAction: {
                     selectedGenderButton = .secondButton
+                    checkIfShouldActivateButton()
                 }, firstButtonLabel: "MACHO", secondButtonLabel: "FÊMEA", selectedButton: $selectedGenderButton)
                 .padding(.horizontal)
                 .padding(.vertical, 10)
@@ -37,8 +42,10 @@ struct RegisterSecondScreen: View {
                 
                 ChooseButtons(firstButtonAction: {
                     selectedCastratedButton = .firstButton
+                    checkIfShouldActivateButton()
                 }, secondButtonAction: {
                     selectedCastratedButton = .secondButton
+                    checkIfShouldActivateButton()
                 }, firstButtonLabel: "SIM", secondButtonLabel: "NÃO", selectedButton: $selectedCastratedButton)
                 .padding(.horizontal)
                 .padding(.vertical, 10)
@@ -68,7 +75,7 @@ struct RegisterSecondScreen: View {
                     
                     Spacer()
                     Button(action: saveValues, label: {
-                        NextPageButton(nextView: AnyView(RegisterThirdScreen()), onClick: saveValues)
+                        NextPageButton(nextView: AnyView(RegisterThirdScreen()), onClick: saveValues, isActive: isNextPageButtonActive)
                     })
                 }
                 .padding(.bottom)
@@ -84,6 +91,16 @@ struct RegisterSecondScreen: View {
         PetRegistration.gender = selectedGenderButton == .firstButton ? .male : .female
         PetRegistration.isCastrated = selectedCastratedButton == .firstButton ? true : false
         PetRegistration.weight = weight
+    }
+    
+    func checkIfShouldActivateButton() {
+        if selectedGenderButton != nil &&
+            selectedCastratedButton != nil {
+            isNextPageButtonActive = true
+            return
+        }
+
+        isNextPageButtonActive = false
     }
 }
 
