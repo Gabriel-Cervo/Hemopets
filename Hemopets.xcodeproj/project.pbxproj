@@ -394,7 +394,6 @@
 				CC567965264C61A00037360D /* RegisterSecondScreen.swift */,
 				CC56796D264D57C60037360D /* RegisterThirdScreen.swift */,
 				CCA63F3D264DBE910059113B /* RegisterFourthScreen.swift */,
-				8455AB48264F585100795CE4 /* RegisterText.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -423,6 +422,7 @@
 				CC56796B264CCB7E0037360D /* ChooseButtons.swift */,
 				CCA63F46264DD4420059113B /* RoundedRectangleView.swift */,
 				8455AB4A265029ED00795CE4 /* FormPickerView.swift */,
+				8455AB48264F585100795CE4 /* RegisterText.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
