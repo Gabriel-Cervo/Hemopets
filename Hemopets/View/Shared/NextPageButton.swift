@@ -9,25 +9,38 @@ import SwiftUI
 
 struct NextPageButton: View {
     var nextView: AnyView
-    
     var onClick: (() -> Void)?
+    var isActive: Bool = true
     
     var body: some View {
-        NavigationLink(destination: nextView) {
-            ZStack {
-                Color.init("ButtonPrimary")
-                
-                Image(systemName: "chevron.right")
-                    .resizable()
-                    .frame(width: 15, height: 20)
-                    .foregroundColor(.white)
+        if isActive {
+            NavigationLink(destination: nextView) {
+                NextPageButtonDesign()
             }
-            .frame(width: 55, height: 55)
-            .cornerRadius(30)
+            .simultaneousGesture(TapGesture().onEnded {
+                onClick?()
+            })
+        } else {
+            NextPageButtonDesign(backgroundColor: "ButtonSecondary")
+                .opacity(0.6)
         }
-        .simultaneousGesture(TapGesture().onEnded {
-            onClick?()
-        })
+    }
+}
+
+struct NextPageButtonDesign: View {
+    var backgroundColor: String = "ButtonPrimary"
+    
+    var body: some View {
+        ZStack {
+            Color(backgroundColor)
+            
+            Image(systemName: "chevron.right")
+                .resizable()
+                .frame(width: 15, height: 20)
+                .foregroundColor(.white)
+        }
+        .frame(width: 55, height: 55)
+        .cornerRadius(30)
     }
 }
 
@@ -35,6 +48,6 @@ struct NextPageButton_Previews: PreviewProvider {
     static var previews: some View {
         NextPageButton(nextView: AnyView(FirstOnboardingPage()), onClick: {
             print("AAA")
-        })
+        }, isActive: false)
     }
 }

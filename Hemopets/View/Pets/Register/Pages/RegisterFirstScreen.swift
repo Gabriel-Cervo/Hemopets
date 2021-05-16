@@ -15,6 +15,8 @@ struct RegisterFirstScreen: View {
     @State private var inputImage: UIImage?
     @State private var imageHasBeenSet: Bool = false
     
+    @State private var isNextPageButtonActive: Bool = false
+    
     
     var body: some View {
         RegisterContainerContentView {
@@ -65,6 +67,9 @@ struct RegisterFirstScreen: View {
                 TextField("", text: $name)
                     .underlineTextField()
                     .padding(.horizontal)
+                    .onChange(of: name) { _ in
+                        checkIfShouldActivateButton()
+                    }
                 
                 RegisterText(text: "Seu pet é um...")
                     .padding(.leading)
@@ -72,8 +77,10 @@ struct RegisterFirstScreen: View {
                 
                 ChooseButtons(firstButtonAction: {
                     selectedButton = .firstButton
+                    checkIfShouldActivateButton()
                 }, secondButtonAction: {
                     selectedButton = .secondButton
+                    checkIfShouldActivateButton()
                 }, firstButtonLabel: "CACHORRO", secondButtonLabel: "GATO", selectedButton: $selectedButton)
                 .padding()
 
@@ -86,7 +93,7 @@ struct RegisterFirstScreen: View {
                     Button(action: saveValues, label: {
                         NextPageButton(nextView: AnyView(RegisterSecondScreen()), onClick: {
                             saveValues()
-                        })
+                        }, isActive: isNextPageButtonActive)
                     })
                 }
                 .padding(.bottom)
@@ -112,6 +119,15 @@ struct RegisterFirstScreen: View {
     
     func loadImage() {
         imageHasBeenSet = true
+    }
+    
+    func checkIfShouldActivateButton() {
+        if name != "" && selectedButton != nil {
+            isNextPageButtonActive = true
+            return
+        }
+
+        isNextPageButtonActive = false
     }
 }
     
