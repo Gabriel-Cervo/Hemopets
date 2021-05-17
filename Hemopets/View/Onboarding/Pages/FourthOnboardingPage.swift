@@ -27,7 +27,7 @@ struct FourthOnboardingPage: View {
 
                     ProgressView(activeCircle: 4)
                     
-                    FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView().navigationBarHidden(true)))
+                    FinishButton(text: "Vamos lá!", nextView: AnyView(MainContentView()))
                         .frame(width: 300, alignment: .center)
                         .padding(.top, 30)
                         .padding(.leading, 10)

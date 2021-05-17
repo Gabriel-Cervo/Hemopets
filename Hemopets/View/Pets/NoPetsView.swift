@@ -61,8 +61,10 @@ struct NoPetsView: View {
                 }
                 .shadow(radius: 2)
                 .padding()
+                .navigationTitle("")
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
         }
     }
 }

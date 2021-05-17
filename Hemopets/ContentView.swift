@@ -27,7 +27,9 @@ struct ContentView: View {
                 }
         } else {
             if hasSeenOnboarding {
-                MainContentView()
+                NavigationView {
+                    MainContentView()
+                }
             } else {
                 OnboardingView()
             }
