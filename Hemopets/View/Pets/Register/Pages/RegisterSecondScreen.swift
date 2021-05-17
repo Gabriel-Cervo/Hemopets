@@ -64,7 +64,7 @@ struct RegisterSecondScreen: View {
                     Text("Mais de 28kg").tag(WeightOptions.sixth)
                 })
                 .pickerStyle(MenuPickerStyle())
-                .foregroundColor(.gray)
+                .foregroundColor(weight != .first ? .black : .gray)
                 .padding(.top, -3)
                 .padding(.horizontal, 25)
                 

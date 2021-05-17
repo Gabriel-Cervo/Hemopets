@@ -64,7 +64,7 @@ struct RegisterThirdScreen: View {
                         Text("Mais de 15 anos").tag(AgeOptions.five)
                     })
                     .pickerStyle(MenuPickerStyle())
-                    .foregroundColor(.gray)
+                    .foregroundColor(age != .first ? .black : .gray)
                     .padding(.top, -3)
                     .padding(.horizontal, 25)
                     
