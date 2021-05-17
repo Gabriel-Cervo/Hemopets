@@ -25,6 +25,11 @@ struct MapConstants {
         
         PinAnnotation(info: Hemocenter(name: "Transfucão", telephoneNumbers: ["(11) 3624-3958", "(11) 94595-6141 - Whatsapp"], address: "R. Mariquinha Viana, 865 - Mandaqui, São Paulo - SP, 02408-131", coordinate: .init(latitude: -23.4822336, longitude:  -46.6290257), openingHours: ["Segunda a Sexta: 08:00 às 20:00", "Sábados: 09:00 as 20:00", "Domingos e feriados: 10:00 às 16:00"], websites: ["https://www.transfucao.com.br", "https://www.facebook.com/transfucao/", "https://www.instagram.com/transfucao/?hl=en"])),
         
+        PinAnnotation(info: Hemocenter(name: "Canne & Gatto", telephoneNumbers: ["(21) 2293 0953", "(21) 2213 1923"], address: "R. Radmacker, 20 - Tijuca, Rio de Janeiro - RJ", coordinate: .init(latitude: -23.4822336, longitude:  -46.6290257), openingHours: ["Segunda a Domingo: 24 horas"], websites: ["http://www.cannegatto.com.br"])),
+
+        
+                                                                                                                                                                                                                                                                                                              
+        
         
         ]
 }
