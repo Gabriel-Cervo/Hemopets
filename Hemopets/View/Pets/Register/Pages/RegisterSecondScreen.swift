@@ -65,6 +65,7 @@ struct RegisterSecondScreen: View {
                 })
                 .pickerStyle(MenuPickerStyle())
                 .foregroundColor(weight != .first ? .black : .gray)
+                .underlineTextField(isActive: weight != .first)
                 .padding(.top, -3)
                 .padding(.horizontal, 25)
                 

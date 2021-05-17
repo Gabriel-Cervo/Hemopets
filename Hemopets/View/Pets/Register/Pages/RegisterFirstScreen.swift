@@ -65,7 +65,7 @@ struct RegisterFirstScreen: View {
                     .padding(.top, 10)
                 
                 TextField("", text: $name)
-                    .underlineTextField()
+                    .underlineTextField(isActive: name != "")
                     .padding(.horizontal)
                     .onChange(of: name) { _ in
                         checkIfShouldActivateButton()
@@ -145,9 +145,9 @@ struct RegistrationScreen_Previews: PreviewProvider {
 }
 
 extension View {
-    func underlineTextField() -> some View {
+    func underlineTextField(isActive: Bool) -> some View {
         self
-            .overlay(Rectangle().frame(height: 1).padding(.top, 25))
-            .foregroundColor(Color("ButtonPrimary"))
+            .overlay(Rectangle().frame(height: 1).foregroundColor(isActive ? Color("ButtonPrimary") : .gray).padding(.top, 25))
+            .foregroundColor(.black)
     }
 }

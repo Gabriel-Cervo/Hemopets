@@ -34,7 +34,7 @@ struct FirstOnboardingPage: View {
 
                         ProgressView(activeCircle: 1)
                         
-                        ButtonAligned(nextPage: AnyView(SecondOnboardingPage()))
+                        ButtonAligned(nextPage: AnyView(SecondOnboardingPage()), showPrevious: false)
                     }
                     Spacer()
                 }

@@ -10,12 +10,12 @@ import Foundation
 protocol Eligible {
     func checkAge() -> Bool
     func checkWeight() -> Bool
-    func checkVaccinesNotTaken() -> [String]
+    func checkVaccines() -> Bool
 }
 
 extension Eligible {
     func isEligible() -> Bool {
-        return checkAge() && checkWeight() && checkVaccinesNotTaken().count == 0
+        return checkAge() && checkWeight() && checkVaccines()
     }
 }
 
@@ -35,10 +35,20 @@ class Pet: Identifiable, Codable {
         self.vaccines = [Vaccine]()
     }
     
-    func checkVaccinesNotTaken() -> [String] {
-        let filterVaccines = self.vaccines.filter { !$0.isTaken }
+    func checkVaccines() -> Bool {
+        var oneOfFirstThreeTaken: Bool = false
         
-        return filterVaccines.map { $0.name }
+        for index in 0..<3 {
+            if vaccines[index].isTaken {
+                oneOfFirstThreeTaken = true
+            }
+        }
+        
+        if oneOfFirstThreeTaken && vaccines.last!.isTaken {
+            return true
+        }
+        
+        return false
     }
     
     func checkAge() -> Bool {

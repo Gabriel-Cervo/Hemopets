@@ -65,6 +65,7 @@ struct RegisterThirdScreen: View {
                     })
                     .pickerStyle(MenuPickerStyle())
                     .foregroundColor(age != .first ? .black : .gray)
+                    .underlineTextField(isActive: age != .first)
                     .padding(.top, -3)
                     .padding(.horizontal, 25)
                     
