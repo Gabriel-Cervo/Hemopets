@@ -66,7 +66,6 @@ class Dog: Pet, Eligible {
         try super.init(from: decoder)
     }
     
-    
     func checkWeight() -> Bool {
         return self.weight == .sixth
     }

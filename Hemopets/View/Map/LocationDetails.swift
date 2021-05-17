@@ -33,6 +33,21 @@ struct LocationDetails: View {
                             .padding(.vertical, 15)
                             .frame(width: 350, alignment: .leading)
                         
+                        HStack {
+                            HemocenterButtonView(icon: "phone.fill", text: "Ligar") {
+                                let telephone = "tel://"
+                                
+                                let cleanString = cleanTelephoneString(number: hemocenter.telephoneNumbers.first!)
+                                
+                                let formattedString = telephone + cleanString
+                                guard let url = URL(string: formattedString) else { return }
+                                
+                                UIApplication.shared.open(url)
+                            }
+                            
+                            HemocenterButtonView(icon: "car.fill", text: "Como chegar", needsMoreSpace: true, onTap: {})
+                        }
+                        
                         ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
                         
                         ArrayFieldView(iconName: "clock.fill", fieldName: "Horário:", fieldDescription: hemocenter.openingHours)
@@ -47,6 +62,11 @@ struct LocationDetails: View {
             }
             .padding()
         }
+    }
+    
+    func cleanTelephoneString(number: String) -> String {
+        return number.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "-", with: "")
+            .replacingOccurrences(of: " ", with: "")
     }
 }
 

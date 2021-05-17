@@ -10,7 +10,6 @@ import MapKit
 
 struct MapConstants {
     static let defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.045382, longitude: -51.191168), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
-//    static let defaultRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -30.045382, longitude: -51.191168), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
     
     static let pins = [
         PinAnnotation(info: Hemocenter(name: "Blut's Centro de Diagnósticos Veterinários", telephoneNumbers: ["(51) 3072-0427", "(51) 99565-5765 - Whatsapp"], address: "R. Dr. Florêncio Ygartua, 429 - Moinhos de Vento, Porto Alegre - RS, 90430-010", coordinate: .init(latitude: -30.0304523, longitude:  -51.2030922), openingHours: ["Segunda a Sexta: 09:00 às 18:30", "Sábado: 9:00 às 17:30"], websites: ["http://bluts.com.br/", "https://www.facebook.com/blutscentro/"])),
