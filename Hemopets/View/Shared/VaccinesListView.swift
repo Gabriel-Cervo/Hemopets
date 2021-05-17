@@ -24,7 +24,8 @@ struct VaccinesListView: View {
                         selectedIndexes.remove(at: numberIndex!)
                     } else {
                         selectedIndexes.append(index)
-                    }                    
+                    }
+                    print(selectedIndexes)
                 }
         }
         .onAppear() {

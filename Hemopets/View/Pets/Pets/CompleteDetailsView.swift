@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CompleteDetailsView: View {
     var petType: PetType
-    
+    @State var isEditingName: Bool = true
     @State var pet: Pet
-    
+    @State var name: String = ""
     @State var selectedIndexes: [Int] = [Int]()
     
     @State private var weight: WeightOptions = .first
@@ -59,14 +59,17 @@ struct CompleteDetailsView: View {
                         Color("Card")
                         
                         VStack {
-                            Image("NewImage")
+                            Image(pet.imageName)
                                 .resizable()
                                 .clipShape(Circle())
                                 .frame(width: 120, height: 120)
                                 .padding(.top, 30)
                                 .shadow(radius: 2)
                             
-                            SubtitleView(text: pet.name)
+                            TextField("Nome", text: $name)
+                                .font(.custom("Mithella-Bold", size: CGFloat(25) + Metrics.fontSize))
+                                .foregroundColor(.init("ButtonPrimary"))
+                                .multilineTextAlignment(.center)
                                 .padding()
                             
                             HStack {
@@ -142,6 +145,7 @@ struct CompleteDetailsView: View {
                 }
             }
             .onAppear() {
+                name = pet.name
                 age = pet.age
                 weight = pet.weight
                 selectedIndexes = PetsConstants.getTakenVacinesIndexes(by: pet)
@@ -160,6 +164,14 @@ struct CompleteDetailsView: View {
                     PetsConstants.mandatoryVaccines["Cat"]![index].isTaken = false
                 }
             }
+        } else {
+            for index in 0..<PetsConstants.totalNumberOfVaccines  {
+                if selectedIndexes.contains(index) {
+                    PetsConstants.mandatoryVaccines["Dog"]![index].isTaken = true
+                } else {
+                    PetsConstants.mandatoryVaccines["Dog"]![index].isTaken = false
+                }
+            }
         }
     }
     
@@ -167,10 +179,10 @@ struct CompleteDetailsView: View {
         if petType == .cat {
             for cat in PetsConstants.registeredCats {
                 if cat.id == pet.id {
+                    cat.name = name
                     cat.age = age
                     cat.weight = weight
                     for i in 0..<PetsConstants.totalNumberOfVaccines {
-                        print(cat.vaccines[i])
                         if selectedIndexes.contains(i) {
                             cat.vaccines[i].isTaken = true
                         } else {
@@ -184,6 +196,26 @@ struct CompleteDetailsView: View {
                     }
                     return
                 }
+            }
+        }
+        for dog in PetsConstants.registeredCats {
+            if dog.id == pet.id {
+                dog.name = name
+                dog.age = age
+                dog.weight = weight
+                for i in 0..<PetsConstants.totalNumberOfVaccines {
+                    if selectedIndexes.contains(i) {
+                        dog.vaccines[i].isTaken = true
+                    } else {
+                        dog.vaccines[i].isTaken = false
+                    }
+                }
+                do {
+                    try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                } catch {
+                    print(error.localizedDescription)
+                }
+                return
             }
         }
     }
