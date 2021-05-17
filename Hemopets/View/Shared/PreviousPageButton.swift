@@ -10,8 +10,10 @@ import SwiftUI
 struct PreviousPageButton: View {
     @Environment(\.presentationMode) var presentationMode
     var title: String?
+    var addtionalAction: (() -> Void)?
     var body: some View {
         Button(action: {
+            addtionalAction?()
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             HStack (spacing: -5){

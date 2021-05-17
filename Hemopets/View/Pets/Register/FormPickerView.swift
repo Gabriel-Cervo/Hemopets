@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FormPickerView: View {
     var text: String
-    
+    var hasUnderline: Bool = true
     var body: some View {
         HStack(spacing: 0) {
             Text(text)
@@ -20,7 +20,7 @@ struct FormPickerView: View {
                 .foregroundColor(Color("ButtonPrimary"))
                 .font(.title3)
         }
-        .overlay(Rectangle().frame(height: 1).padding(.top, 25))
+        .overlay(Rectangle().frame(height: hasUnderline ? 1 : 0).padding(.top, hasUnderline ? 25 : 0))
     }
 }
 

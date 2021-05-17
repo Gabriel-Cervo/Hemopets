@@ -44,7 +44,7 @@ struct RegisteredPetsView: View {
                                     HStack {
                                         Spacer()
                                         
-                                        NavigationLink(destination: CompleteDetailsView(pet: cat as Pet)) {
+                                        NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
                                             Image(systemName: "square.and.pencil")
                                                 .font(.title3)
                                         }
@@ -67,7 +67,7 @@ struct RegisteredPetsView: View {
                                     HStack {
                                         Spacer()
                                         
-                                        NavigationLink(destination: CompleteDetailsView(pet: dog as Pet)) {
+                                        NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
                                             Image(systemName: "square.and.pencil")
                                                 .font(.title3)
                                         }
