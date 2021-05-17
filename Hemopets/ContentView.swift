@@ -35,6 +35,12 @@ struct ContentView: View {
     }
     
     func loadUserDefaults() {
+        loadRegisteredDogs()
+        loadRegisteredCats()
+        loadOnboardingValue()
+    }
+    
+    func loadRegisteredDogs() {
         do {
             let registeredDogs = try UserDefaultsManager.loadData(for: "registeredDogs") as [Dog]
 
@@ -44,7 +50,9 @@ struct ContentView: View {
         } catch {
             print(error.localizedDescription)
         }
-        
+    }
+    
+    func loadRegisteredCats() {
         do {
             let registeredCats = try UserDefaultsManager.loadData(for: "registeredCats") as [Cat]
 
@@ -54,7 +62,9 @@ struct ContentView: View {
         } catch {
             print(error.localizedDescription)
         }
-        
+    }
+    
+    func loadOnboardingValue() {
         do {
             let sawOnboarding = try UserDefaultsManager.loadData(for: "sawOnboarding") as Bool
             
