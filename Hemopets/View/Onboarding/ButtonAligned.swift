@@ -9,12 +9,20 @@ import SwiftUI
 
 struct ButtonAligned: View {
     var nextPage: AnyView
+    var showPrevious: Bool = true
     
     var body: some View {
-        NextPageButton(nextView: nextPage)
-            .frame(width: 300, alignment: .trailing)
-            .padding(.top, 30)
-            .padding(.leading, 10)
+        HStack {
+            if showPrevious {
+                PreviousPageButton()
+            }
+            
+            Spacer()
+            
+            NextPageButton(nextView: nextPage)
+        }
+        .frame(width: 300)
+        .padding(.top, 40)
     }
 }
 
