@@ -18,6 +18,16 @@ struct PetsConstants {
                   Vaccine(name: "V5", isTaken: false),
                   Vaccine(name: "Antirrábica", isTaken: false)]]
     
+    static func clearVaccinesValues() {
+        for vaccine in PetsConstants.mandatoryVaccines["Cat"]! {
+            vaccine.isTaken = false
+        }
+        
+        for vaccine in PetsConstants.mandatoryVaccines["Dog"]! {
+            vaccine.isTaken = false
+        }
+    }
+    
     static var totalNumberOfVaccines: Int {
         return PetRegistration.type == .cat ? PetsConstants.mandatoryVaccines["Cat"]!.count : PetsConstants.mandatoryVaccines["Dog"]!.count
     }
