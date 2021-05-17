@@ -37,12 +37,6 @@ struct VaccinesListView: View {
     }
 }
 
-struct vacTest {
-    var id: UUID
-    var name: String
-    var isTaken: Bool
-}
-
 struct VaccinesListView_Previews: PreviewProvider {
     static var previews: some View {
         VaccinesListView(selectedIndexes: Binding.constant([0]))
