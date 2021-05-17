@@ -34,19 +34,11 @@ struct LocationDetails: View {
                             .frame(width: 350, alignment: .leading)
                         
                         HStack {
-                            HemocenterButtonView(icon: "phone.fill", text: "Ligar") {
-                                let telephone = "tel://"
-                                
-                                let cleanString = cleanTelephoneString(number: hemocenter.telephoneNumbers.first!)
-                                
-                                let formattedString = telephone + cleanString
-                                guard let url = URL(string: formattedString) else { return }
-                                
-                                UIApplication.shared.open(url)
-                            }
+                            HemocenterButtonView(icon: "phone.fill", text: "Ligar", onTap: callHemocenter)
                             
-                            HemocenterButtonView(icon: "car.fill", text: "Como chegar", needsMoreSpace: true, onTap: {})
+                            HemocenterButtonView(icon: "car.fill", text: "Como chegar", needsMoreSpace: true, onTap: openHemocenterInMaps)
                         }
+                        .padding(.bottom, 15)
                         
                         ArrayFieldView(iconName: "phone.circle.fill", fieldName: "Telefone:", fieldDescription: hemocenter.telephoneNumbers)
                         
@@ -64,9 +56,26 @@ struct LocationDetails: View {
         }
     }
     
+    func callHemocenter() {
+        let telephone = "tel://"
+        
+        let cleanString = cleanTelephoneString(number: hemocenter.telephoneNumbers.first!)
+        
+        let formattedString = telephone + cleanString
+        guard let url = URL(string: formattedString) else { return }
+        
+        UIApplication.shared.open(url)
+    }
+    
     func cleanTelephoneString(number: String) -> String {
         return number.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "-", with: "")
             .replacingOccurrences(of: " ", with: "")
+    }
+    
+    func openHemocenterInMaps() {
+        guard let url = URL(string:"http://maps.apple.com/?daddr=\(hemocenter.coordinate.latitude),\(hemocenter.coordinate.longitude)") else { return }
+        
+        UIApplication.shared.open(url)
     }
 }
 
