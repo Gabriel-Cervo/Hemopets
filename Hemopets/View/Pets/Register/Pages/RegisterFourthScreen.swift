@@ -10,8 +10,6 @@ import SwiftUI
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     var body: some View {
         RegisterContainerContentView {
             Group {
