@@ -41,6 +41,8 @@ struct RegisterFourthScreen: View {
     }
     
     func registerPet() {
+        PetsConstants.clearVaccinesValues()
+        
         let newPet = PetRegistration.type == .cat ?
             Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
             Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
