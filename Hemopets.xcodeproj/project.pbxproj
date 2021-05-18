@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B31A964265430D10027C2EC /* ShowPetEligibleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */; };
+		2B65314C2653127700F79E74 /* EligiblePetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B65314B2653127700F79E74 /* EligiblePetScreen.swift */; };
+		2B65314E2653128500F79E74 /* NotEligiblePetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */; };
 		2BD6DA552645D32300079010 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA542645D32300079010 /* Question.swift */; };
 		2BD6DA572645D33A00079010 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA562645D33A00079010 /* Category.swift */; };
 		2BD6DA592645D35200079010 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA582645D35200079010 /* QuestionData.swift */; };
@@ -81,6 +84,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPetEligibleStatus.swift; sourceTree = "<group>"; };
+		2B65314B2653127700F79E74 /* EligiblePetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EligiblePetScreen.swift; sourceTree = "<group>"; };
+		2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEligiblePetScreen.swift; sourceTree = "<group>"; };
 		2BD6DA542645D32300079010 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2BD6DA562645D33A00079010 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2BD6DA582645D35200079010 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
@@ -167,6 +173,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B65314A2653126000F79E74 /* EligiblePet */ = {
+			isa = PBXGroup;
+			children = (
+				2B65314B2653127700F79E74 /* EligiblePetScreen.swift */,
+				2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */,
+				2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */,
+			);
+			path = EligiblePet;
+			sourceTree = "<group>";
+		};
 		2BD6DA532645D30200079010 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +436,7 @@
 		CCEF4471264C3C630044547C /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				2B65314A2653126000F79E74 /* EligiblePet */,
 				CCA63F3C264DB9890059113B /* Pages */,
 				CC567969264CC6F00037360D /* RegisterContainerContentView.swift */,
 				CC56796B264CCB7E0037360D /* ChooseButtons.swift */,
@@ -506,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BD6DA5C2645D5BB00079010 /* DonationFaqCategories.swift in Sources */,
+				2B65314E2653128500F79E74 /* NotEligiblePetScreen.swift in Sources */,
 				84B040132645AAA1006E0589 /* UserDefaultsManager.swift in Sources */,
 				8455AB4B265029EE00795CE4 /* FormPickerView.swift in Sources */,
 				8408D62326456EA50044EB71 /* ThirdOnboardingPage.swift in Sources */,
@@ -533,6 +551,7 @@
 				84263CB026417E7C00CD4FAC /* LocationDetails.swift in Sources */,
 				8448B18F2652FC89004F3B1E /* HemocenterButtonView.swift in Sources */,
 				8408D614264564630044EB71 /* ProgressView.swift in Sources */,
+				2B65314C2653127700F79E74 /* EligiblePetScreen.swift in Sources */,
 				2BD6DA5E2645D5C900079010 /* DonationFaqQuestions.swift in Sources */,
 				CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */,
 				8495A8622649C69400A218DD /* NoPetsIllustration.swift in Sources */,
@@ -566,6 +585,7 @@
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				CCEF4475264C3CEC0044547C /* RegisterFirstScreen.swift in Sources */,
+				2B31A964265430D10027C2EC /* ShowPetEligibleStatus.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
 				CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */,
 				C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct PartialDetailsView: View {
     var name: String
     var imageName: String
-    var type: String
+    var type: PetType
     var isViable: Bool
     
     var body: some View {
@@ -24,7 +24,7 @@ struct PartialDetailsView: View {
                     SubtitleView(text: name)
                         .lineLimit(2)
                     
-                    Text("\(type)")
+                    Text(type == .cat ? "Gato" : "Cachorro")
                         .foregroundColor(.gray)
                     
                     Text(isViable ? "Doador" : "Não Doador")
@@ -44,6 +44,6 @@ struct PartialDetailsView: View {
 
 struct PartialDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PartialDetailsView(name: "Felino", imageName: "testeHemo", type: "gato", isViable: true)
+        PartialDetailsView(name: "Felino", imageName: "testeHemo", type: .cat, isViable: true)
     }
 }
