@@ -33,6 +33,9 @@ struct CompleteDetailsView: View {
     private var selectedGenderDescription: String {
         gender.description
     }
+    
+    @State var vacs: [Vaccine] = []
+
     var body: some View {
         ZStack {
             Color("Background")
@@ -41,7 +44,7 @@ struct CompleteDetailsView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    PreviousPageButton(title: "Meus Pets", addtionalAction: PetsConstants.clearVaccinesValues)
+                    PreviousPageButton(title: "Meus Pets")
                         .foregroundColor(.gray)
                         .padding(.top, Metrics.cardPaddingTop - 30)
                         .padding(.bottom, -10)
@@ -148,7 +151,7 @@ struct CompleteDetailsView: View {
                 }
             }
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text(alertTitle), message: Text(alertText), dismissButton: .default(Text("Ok.")))
+                Alert(title: Text(alertTitle), message: Text(alertText), dismissButton: .default(Text("Ok")))
             }
             .onAppear() {
                 name = pet.name
@@ -186,11 +189,13 @@ struct CompleteDetailsView: View {
         alertText = "Alterações salvas com sucesso."
         showingAlert = true
     }
+    
     func failAlert() {
         alertTitle =  "Ocorreu um Problema!"
         alertText = "As alterações não forem salvas, tente novamente."
         showingAlert = true
     }
+    
     func saveInfo() {
         if petType == .cat {
             for cat in PetsConstants.registeredCats {
@@ -206,7 +211,7 @@ struct CompleteDetailsView: View {
                         }
                     }
                     do {
-                        try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                        try UserDefaultsManager.saveData(data: PetsConstants.registeredCats, for: "registeredCats")
                         successAlert()
                     } catch {
                         failAlert()
@@ -215,7 +220,7 @@ struct CompleteDetailsView: View {
                 }
             }
         }
-        for dog in PetsConstants.registeredCats {
+        for dog in PetsConstants.registeredDogs {
             if dog.id == pet.id {
                 dog.name = name
                 dog.age = age
@@ -228,7 +233,7 @@ struct CompleteDetailsView: View {
                     }
                 }
                 do {
-                    try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                    try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs, for: "registeredDogs")
                     successAlert()
                 } catch {
                     failAlert()

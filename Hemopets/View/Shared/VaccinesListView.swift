@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VaccinesListView: View {
-    @State var vacs: [Vaccine] = PetsConstants.mandatoryVaccines["Cat"]!
+    @State var vacs: [Vaccine] = []
     
     @Binding var selectedIndexes: [Int]
     
@@ -33,7 +33,10 @@ struct VaccinesListView: View {
     }
     
     func loadVaccinesData() {
-        vacs = self.petType == .cat ? PetsConstants.mandatoryVaccines["Cat"]! : PetsConstants.mandatoryVaccines["Dog"]!
+        vacs.append(contentsOf: self.petType == .cat ? PetsConstants.mandatoryVaccines["Cat"]! : PetsConstants.mandatoryVaccines["Dog"]!)
+        for vaccine in vacs {
+            vaccine.isTaken = false
+        }
     }
 }
 

@@ -41,9 +41,7 @@ struct RegisterFourthScreen: View {
         }
     }
     
-    func registerPet() {
-        PetsConstants.clearVaccinesValues()
-        
+    func registerPet() {        
         let newPet = PetRegistration.type == .cat ?
             Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
             Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
@@ -66,7 +64,7 @@ struct RegisterFourthScreen: View {
             isEligible = newDog.isEligible()
             
             do {
-                try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs as [Pet], for: "registeredDogs")
+                try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs, for: "registeredDogs")
             } catch {
                 print(error.localizedDescription)
             }
@@ -78,13 +76,11 @@ struct RegisterFourthScreen: View {
             isEligible = newCat.isEligible()
             
             do {
-                try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                try UserDefaultsManager.saveData(data: PetsConstants.registeredCats, for: "registeredCats")
             } catch {
                 print(error.localizedDescription)
             }
         }
-        
-        
     }
     
     func saveImage(_ image: UIImage) -> String? {
