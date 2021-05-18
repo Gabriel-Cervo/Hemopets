@@ -22,8 +22,8 @@ struct EligiblePetScreen: View {
                         Color.init("Card")
 
                         VStack {
-                            NoPetsIllustration(illustrationName: "PetEligible")
-                                .padding(.top, 5)
+                            NoPetsIllustration(illustrationName: "PetEligible", width: 0.55, height: 0.45)
+                                .padding(.top)
                                 .padding(.bottom, 15)
                             
                             Text("Maravilha!")
@@ -34,19 +34,23 @@ struct EligiblePetScreen: View {
                             
                             VStack(alignment: .center, spacing: 15) {
                                 Text("Seu pet está previamente aprovado para se tornar um doador de sangue!")
+                                    .bold()
+                                    .multilineTextAlignment(.center)
                                     .font(.title2)
                                     .foregroundColor(.black)
-                                    .bold()
                                     .lineLimit(3)
                                 
                                 Text("Entre em contato com o hemocentro de sua preferência e consulte maiores informações.")
                                     .font(.body)
+                                    .multilineTextAlignment(.center)
                                     .foregroundColor(.black)
                                     .frame(width: 280)
                             }
                             .padding(.top, 10)
                             .frame(width: 300)
                             
+                            FinishButton(text: "Hemocentros", nextView: AnyView(MainContentView().background(Color("Background"))), width: 250)
+                                .padding(.bottom, 25)
                             
                         }
                         

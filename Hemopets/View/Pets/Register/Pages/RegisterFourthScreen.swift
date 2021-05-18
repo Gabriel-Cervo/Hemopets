@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
+    @State var isEligible: Bool = false
     
     var body: some View {
         RegisterContainerContentView {
@@ -27,7 +28,7 @@ struct RegisterFourthScreen: View {
                         PreviousPageButton()
                         Spacer()
                         
-                        FinishButton(text: "Finalizar", nextView: AnyView(MainContentView()), onClick: registerPet)
+                        FinishButton(text: "Finalizar", nextView: AnyView(ShowPetEligibleStatus(isEligible: $isEligible)), onClick: registerPet)
                     }
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -64,6 +65,8 @@ struct RegisterFourthScreen: View {
             PetsConstants.registeredDogs.append(newDog)
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs as [Pet], for: "registeredDogs")
+                
+                isEligible = newDog.isEligible()
             } catch {
                 print(error.localizedDescription)
             }
@@ -75,10 +78,15 @@ struct RegisterFourthScreen: View {
             
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                
+                isEligible = newCat.isEligible()
+
             } catch {
                 print(error.localizedDescription)
             }
         }
+        
+        
     }
     
     func saveImage(_ image: UIImage) -> String? {

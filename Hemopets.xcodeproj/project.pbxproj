@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B31A964265430D10027C2EC /* ShowPetEligibleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */; };
 		2B65314C2653127700F79E74 /* EligiblePetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B65314B2653127700F79E74 /* EligiblePetScreen.swift */; };
 		2B65314E2653128500F79E74 /* NotEligiblePetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */; };
 		2BD6DA552645D32300079010 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6DA542645D32300079010 /* Question.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPetEligibleStatus.swift; sourceTree = "<group>"; };
 		2B65314B2653127700F79E74 /* EligiblePetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EligiblePetScreen.swift; sourceTree = "<group>"; };
 		2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEligiblePetScreen.swift; sourceTree = "<group>"; };
 		2BD6DA542645D32300079010 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				2B65314B2653127700F79E74 /* EligiblePetScreen.swift */,
 				2B65314D2653128500F79E74 /* NotEligiblePetScreen.swift */,
+				2B31A963265430D10027C2EC /* ShowPetEligibleStatus.swift */,
 			);
 			path = EligiblePet;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
 				8408D61826456A0F0044EB71 /* OnboardingBackgroundView.swift in Sources */,
 				CCEF4475264C3CEC0044547C /* RegisterFirstScreen.swift in Sources */,
+				2B31A964265430D10027C2EC /* ShowPetEligibleStatus.swift in Sources */,
 				8495A8602649C61A00A218DD /* NoPetsView.swift in Sources */,
 				CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */,
 				C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */,

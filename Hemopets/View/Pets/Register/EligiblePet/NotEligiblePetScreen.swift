@@ -22,30 +22,37 @@ struct NotEligiblePetScreen: View {
                         Color.init("Card")
 
                         VStack {
-                            NoPetsIllustration(illustrationName: "PetNotEligible")
-                                .padding(.top, 45)
+                            NoPetsIllustration(illustrationName: "PetNotEligible", width: 0.55, height: 0.45)
+                                .padding(.top)
                                 .padding(.bottom, 15)
                             
                             Text("Opa!")
                                 .font(.custom("Mithella-Bold", size: 40))
                                 .foregroundColor(.yellow)
-                                .padding(.bottom, 5)
+                                .padding(.bottom, 0)
 
                             
                             VStack(alignment: .center, spacing: 15) {
                                 Text("Infelizmente o seu pet não cumpriu os requisitos para se tornar um doador")
                                     .font(.title2)
-                                    .foregroundColor(.black)
                                     .bold()
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.black)
                                     .lineLimit(3)
                                 
                                 Text("Você pode conferir os requisitos mínimos na aba Dúvidas > Pré-requisitos.")
                                     .font(.body)
+                                    .multilineTextAlignment(.center)
                                     .foregroundColor(.black)
                                     .frame(width: 280)
+                                    .lineLimit(3)
+
                             }
                             .padding(.top, 10)
                             .frame(width: 300)
+                            
+                            FinishButton(text: "Meus Pets", nextView: AnyView(MainContentView().background(Color("Background"))), width: 250)
+                                .padding(.bottom, 25)
                             
                         }
                         
