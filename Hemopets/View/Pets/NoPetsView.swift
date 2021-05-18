@@ -72,5 +72,6 @@ struct NoPetsView: View {
 struct NoPetsView_Previews: PreviewProvider {
     static var previews: some View {
         NoPetsView()
+            .previewDevice("iPhone SE")
     }
 }
