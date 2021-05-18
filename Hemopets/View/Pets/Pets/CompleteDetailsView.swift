@@ -36,9 +36,14 @@ struct CompleteDetailsView: View {
     private var selectedGenderDescription: String {
         gender.description
     }
-
+    
+    @State private var activateLink: Bool = false
+    
     var body: some View {
         ZStack {
+            NavigationLink(destination: MainContentView(), isActive: $activateLink,
+                           label: { EmptyView() })
+            
             Color("Background")
                 .ignoresSafeArea()
             
@@ -50,6 +55,7 @@ struct CompleteDetailsView: View {
                         .padding(.top, Metrics.cardPaddingTop - 30)
                         .padding(.bottom, -10)
                     Spacer()
+                    
                     Button(action: saveInfo, label: {
                         Text("Salvar")
                             .foregroundColor(.init("ButtonPrimary"))
@@ -152,7 +158,9 @@ struct CompleteDetailsView: View {
                 }
             }
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text(alertTitle), message: Text(alertText), dismissButton: .default(Text("Ok")))
+                Alert(title: Text(alertTitle), message: Text(alertText), dismissButton: .default(Text("Ok")) {
+                    self.navigateBackToMainContent()
+                })
             }
             .onAppear() {
                 name = pet.name
@@ -205,6 +213,12 @@ struct CompleteDetailsView: View {
                 }
                 return
             }
+        }
+    }
+    
+    func navigateBackToMainContent() {
+        DispatchQueue.main.async {
+            self.activateLink = true
         }
     }
 }
