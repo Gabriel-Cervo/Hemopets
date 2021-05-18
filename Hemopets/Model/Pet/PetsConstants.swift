@@ -18,20 +18,6 @@ struct PetsConstants {
                   Vaccine(name: "V5", isTaken: false),
                   Vaccine(name: "Antirrábica", isTaken: false)]]
     
-    static var totalNumberOfVaccines: Int {
-        return PetRegistration.type == .cat ? PetsConstants.mandatoryVaccines["Cat"]!.count : PetsConstants.mandatoryVaccines["Dog"]!.count
-    }
-    
-    static func getTakenVacinesIndexes(by pet: Pet) -> [Int] {
-        var takenVaccines: [Int] = [Int]()
-        for (index, vaccine) in pet.vaccines.enumerated() {
-            if vaccine.isTaken {
-                takenVaccines.append(index)
-            }
-        }
-        return takenVaccines
-    }
-    
     static var registeredDogs: [Dog] = [Dog]()
     static var registeredCats: [Cat] = [Cat]()
 }

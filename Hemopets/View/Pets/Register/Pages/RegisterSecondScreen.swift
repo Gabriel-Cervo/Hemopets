@@ -57,7 +57,7 @@ struct RegisterSecondScreen: View {
                 
                 Picker(selection: $weight, label: FormPickerView(text: selectedWeightDescription), content: {
                     Text("Não sei").tag(WeightOptions.first)
-                    Text("Entre menos de um e 3kg").tag(WeightOptions.second)
+                    Text("Menos de 3kg").tag(WeightOptions.second)
                     Text("Entre 4 e 10kg").tag(WeightOptions.third)
                     Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
                     Text("Entre 20 e 25kg").tag(WeightOptions.five)

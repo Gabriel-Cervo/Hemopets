@@ -47,7 +47,7 @@ enum WeightOptions: String, CaseIterable, Identifiable, Codable {
         case .first:
             return "Não informado"
         case .second:
-            return "Entre menos de um e 3kg"
+            return "Menos de 3kg"
         case .third:
             return "Entre 4 e 10kg"
         case .fourth:

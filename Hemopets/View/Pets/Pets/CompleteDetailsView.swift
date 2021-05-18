@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CompleteDetailsView: View {
     var petType: PetType
+    
     @State var showingAlert: Bool = false
     @State var isEditingName: Bool = true
     @State var pet: Pet
     @State var name: String = ""
-    @State var selectedIndexes: [Int] = [Int]()
     @State var alertTitle: String = ""
     @State var alertText: String = ""
     
@@ -21,20 +21,21 @@ struct CompleteDetailsView: View {
     private var selectedWeightDescription: String {
         weight.description
     }
+    
     @State var age: AgeOptions = .first
     private var selectedAgeDescription: String {
         age.description
     }
+    
     @State var castration: CastrationOptions = .first
     private var selectedCastrationDescription: String {
         castration.description
     }
+    
     @State var gender: GenderOptions = .first
     private var selectedGenderDescription: String {
         gender.description
     }
-    
-    @State var vacs: [Vaccine] = []
 
     var body: some View {
         ZStack {
@@ -92,7 +93,7 @@ struct CompleteDetailsView: View {
                                             
                                             Picker(selection: $weight, label: FormPickerView(text: selectedWeightDescription, hasUnderline: false), content: {
                                                 Text("Não sei").tag(WeightOptions.first)
-                                                Text("Entre menos de um e 3kg").tag(WeightOptions.second)
+                                                Text("Menos de 3kg").tag(WeightOptions.second)
                                                 Text("Entre 4 e 10kg").tag(WeightOptions.third)
                                                 Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
                                                 Text("Entre 20 e 25kg").tag(WeightOptions.five)
@@ -135,7 +136,7 @@ struct CompleteDetailsView: View {
                                     .padding(.top, 15)
                                     .padding(.bottom, -10)
                                 
-                                VaccinesListView(selectedIndexes: $selectedIndexes, petType: petType)
+                                VaccinesListView(vacs: $pet.vaccines)
                                     .frame(height: 180)
                                     .padding(.horizontal, 15)
                                     .colorScheme(.light)
@@ -157,30 +158,8 @@ struct CompleteDetailsView: View {
                 name = pet.name
                 age = pet.age
                 weight = pet.weight
-                selectedIndexes = PetsConstants.getTakenVacinesIndexes(by: pet)
-                loadVaccinesValue()
             }
             .navigationBarHidden(true)
-        }
-    }
-    
-    func loadVaccinesValue() {
-        if petType == .cat {
-            for index in 0..<PetsConstants.totalNumberOfVaccines  {
-                if selectedIndexes.contains(index) {
-                    PetsConstants.mandatoryVaccines["Cat"]![index].isTaken = true
-                } else {
-                    PetsConstants.mandatoryVaccines["Cat"]![index].isTaken = false
-                }
-            }
-        } else {
-            for index in 0..<PetsConstants.totalNumberOfVaccines  {
-                if selectedIndexes.contains(index) {
-                    PetsConstants.mandatoryVaccines["Dog"]![index].isTaken = true
-                } else {
-                    PetsConstants.mandatoryVaccines["Dog"]![index].isTaken = false
-                }
-            }
         }
     }
     
@@ -203,13 +182,6 @@ struct CompleteDetailsView: View {
                     cat.name = name
                     cat.age = age
                     cat.weight = weight
-                    for i in 0..<PetsConstants.totalNumberOfVaccines {
-                        if selectedIndexes.contains(i) {
-                            cat.vaccines[i].isTaken = true
-                        } else {
-                            cat.vaccines[i].isTaken = false
-                        }
-                    }
                     do {
                         try UserDefaultsManager.saveData(data: PetsConstants.registeredCats, for: "registeredCats")
                         successAlert()
@@ -225,13 +197,6 @@ struct CompleteDetailsView: View {
                 dog.name = name
                 dog.age = age
                 dog.weight = weight
-                for i in 0..<PetsConstants.totalNumberOfVaccines {
-                    if selectedIndexes.contains(i) {
-                        dog.vaccines[i].isTaken = true
-                    } else {
-                        dog.vaccines[i].isTaken = false
-                    }
-                }
                 do {
                     try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs, for: "registeredDogs")
                     successAlert()
