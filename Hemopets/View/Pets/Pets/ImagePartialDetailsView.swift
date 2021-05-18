@@ -10,6 +10,7 @@ import SwiftUI
 struct ImagePartialDetailsView: View {
     var imageName: String
     var isViable: Bool
+    
     var body: some View {
         ZStack {
             if imageName.hasSuffix("Placeholder") {

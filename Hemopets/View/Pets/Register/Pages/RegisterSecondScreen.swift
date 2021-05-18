@@ -36,7 +36,7 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                RegisterText(text: "Seu pet é castrado?")
+                RegisterText(text: "Você considera o temperamento do seu pet como dócil?")
                     .padding(.leading)
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
@@ -57,17 +57,18 @@ struct RegisterSecondScreen: View {
                 
                 Picker(selection: $weight, label: FormPickerView(text: selectedWeightDescription), content: {
                     Text("Não sei").tag(WeightOptions.first)
-                    Text("Menos de 3kg").tag(WeightOptions.second)
-                    Text("Entre 4 e 10kg").tag(WeightOptions.third)
-                    Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
-                    Text("Entre 20 e 25kg").tag(WeightOptions.five)
                     Text("Mais de 28kg").tag(WeightOptions.sixth)
+                    Text("Entre 20 e 25kg").tag(WeightOptions.five)
+                    Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
+                    Text("Entre 4 e 10kg").tag(WeightOptions.third)
+                    Text("Menos de 4kg").tag(WeightOptions.second)
                 })
                 .pickerStyle(MenuPickerStyle())
                 .foregroundColor(weight != .first ? .black : .gray)
                 .underlineTextField(isActive: weight != .first)
                 .padding(.top, -3)
-                .padding(.horizontal, 25)
+                .padding(.leading, 15)
+                .padding(.trailing, 25)
                 
                 Spacer()
                 

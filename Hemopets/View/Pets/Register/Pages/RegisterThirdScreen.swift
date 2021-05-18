@@ -58,16 +58,17 @@ struct RegisterThirdScreen: View {
                     
                     Picker(selection: $age, label: FormPickerView(text: selectedAgeDescription), content: {
                         Text("Não sei").tag(AgeOptions.first)
-                        Text("Menos de um ano").tag(AgeOptions.second)
-                        Text("Entre 1 e 8 anos").tag(AgeOptions.third)
-                        Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
                         Text("Mais de 15 anos").tag(AgeOptions.five)
+                        Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
+                        Text("Entre 1 e 8 anos").tag(AgeOptions.third)
+                        Text("Menos de um ano").tag(AgeOptions.second)
                     })
                     .pickerStyle(MenuPickerStyle())
                     .foregroundColor(age != .first ? .black : .gray)
                     .underlineTextField(isActive: age != .first)
                     .padding(.top, -3)
-                    .padding(.horizontal, 25)
+                    .padding(.leading, 15)
+                    .padding(.trailing, 25)
                     
                     Spacer()
                     

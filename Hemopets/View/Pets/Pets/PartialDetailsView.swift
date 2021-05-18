@@ -31,6 +31,7 @@ struct PartialDetailsView: View {
                         .foregroundColor(isViable ? .green : .yellow)
                         .bold()
                 }
+                .frame(width: 130, alignment: .leading)
                 .padding(.leading, 10)
                 
                 Spacer()

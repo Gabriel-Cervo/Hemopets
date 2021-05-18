@@ -44,7 +44,7 @@ struct RegisteredPetsView: View {
                                     PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
                                         .padding(.horizontal, 10)
                                     
-                                    HStack {
+                                    HStack(spacing: 25) {
                                         Spacer()
                                         
                                         NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
@@ -67,7 +67,7 @@ struct RegisteredPetsView: View {
                                     PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
                                         .padding(.horizontal, 10)
                                     
-                                    HStack {
+                                    HStack(spacing: 25) {
                                         Spacer()
                                         
                                         NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
