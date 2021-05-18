@@ -52,9 +52,14 @@ struct RegisteredPetsView: View {
                                                 .font(.title3)
                                         }
                                         
+                                        Button(action: {
+                                            deleteRegister(pet: cat, petType: .cat)
+                                        }, label: {
+                                            Image(systemName: "trash")
+                                                .font(.title3)
+                                        })
                                         // Excluir -> Fazer funcionalidade
-                                        Image(systemName: "trash")
-                                            .font(.title3)
+                                        
                                         
                                     }
                                     .padding(.trailing, 30)
@@ -75,10 +80,12 @@ struct RegisteredPetsView: View {
                                                 .font(.title3)
                                         }
                                         
-                                        // Excluir -> Fazer funcionalidade
-                                        Image(systemName: "trash")
-                                            .font(.title3)
-                                        
+                                        Button(action: {
+                                            deleteRegister(pet: dog, petType: .dog)
+                                        }, label: {
+                                            Image(systemName: "trash")
+                                                .font(.title3)
+                                        })
                                     }
                                     .padding(.trailing, 30)
                                     .foregroundColor(.gray)
@@ -96,6 +103,32 @@ struct RegisteredPetsView: View {
             self.registeredDogs = PetsConstants.registeredDogs
         }
     }
+    func deleteRegister(pet: Pet, petType: PetType) {
+        do {
+            switch petType {
+            case .cat:
+                let registeredCats: [Cat] = try UserDefaultsManager.loadData(for: "registeredCats")
+                let filteredCats = registeredCats.filter {
+                    $0.id != pet.id
+                }
+                try UserDefaultsManager.saveData(data: filteredCats, for: "registeredCats")
+                PetsConstants.registeredCats = filteredCats
+                self.registeredCats = PetsConstants.registeredCats
+            
+            case .dog:
+                let registeredDogs: [Dog] = try UserDefaultsManager.loadData(for: "registeredDogs")
+                let filteredDogs = registeredDogs.filter {
+                    $0.id != pet.id
+                }
+                try UserDefaultsManager.saveData(data: filteredDogs, for: "registeredDogs")
+                PetsConstants.registeredDogs = filteredDogs
+                self.registeredDogs = PetsConstants.registeredDogs
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 
 struct RegisteredPetsView_Previews: PreviewProvider {
