@@ -9,10 +9,13 @@ import SwiftUI
 
 struct CompleteDetailsView: View {
     var petType: PetType
+    @State var showingAlert: Bool = false
     @State var isEditingName: Bool = true
     @State var pet: Pet
     @State var name: String = ""
     @State var selectedIndexes: [Int] = [Int]()
+    @State var alertTitle: String = ""
+    @State var alertText: String = ""
     
     @State private var weight: WeightOptions = .first
     private var selectedWeightDescription: String {
@@ -144,6 +147,9 @@ struct CompleteDetailsView: View {
                     .padding(.bottom, 20)
                 }
             }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertText), dismissButton: .default(Text("Ok.")))
+            }
             .onAppear() {
                 name = pet.name
                 age = pet.age
@@ -175,6 +181,16 @@ struct CompleteDetailsView: View {
         }
     }
     
+    func successAlert() {
+        alertTitle =  "Salvo com Sucesso!"
+        alertText = "Alterações salvas com sucesso."
+        showingAlert = true
+    }
+    func failAlert() {
+        alertTitle =  "Ocorreu um Problema!"
+        alertText = "As alterações não forem salvas, tente novamente."
+        showingAlert = true
+    }
     func saveInfo() {
         if petType == .cat {
             for cat in PetsConstants.registeredCats {
@@ -191,8 +207,9 @@ struct CompleteDetailsView: View {
                     }
                     do {
                         try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                        successAlert()
                     } catch {
-                        print(error.localizedDescription)
+                        failAlert()
                     }
                     return
                 }
@@ -212,8 +229,9 @@ struct CompleteDetailsView: View {
                 }
                 do {
                     try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                    successAlert()
                 } catch {
-                    print(error.localizedDescription)
+                    failAlert()
                 }
                 return
             }

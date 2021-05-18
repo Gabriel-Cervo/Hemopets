@@ -18,15 +18,14 @@ struct VaccinesListView: View {
         List(vacs.indices, id: \.self) { index in
             Toggle("\(vacs[index].name)", isOn: $vacs[index].isTaken)
                 .foregroundColor(.gray)
-                .onTapGesture {
+                .simultaneousGesture(TapGesture().onEnded {
                     if selectedIndexes.contains(index) {
                         let numberIndex = selectedIndexes.lastIndex(of: index)
                         selectedIndexes.remove(at: numberIndex!)
                     } else {
                         selectedIndexes.append(index)
                     }
-                    print(selectedIndexes)
-                }
+                })
         }
         .onAppear() {
             loadVaccinesData()
