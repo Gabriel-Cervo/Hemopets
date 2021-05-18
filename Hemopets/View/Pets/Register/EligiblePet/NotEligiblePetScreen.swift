@@ -22,6 +22,8 @@ struct NotEligiblePetScreen: View {
                         Color.init("Card")
 
                         VStack {
+                            Spacer()
+                            
                             NoPetsIllustration(illustrationName: "PetNotEligible", width: 0.55, height: 0.45)
                                 .padding(.top)
                                 .padding(.bottom, 15)
@@ -46,12 +48,13 @@ struct NotEligiblePetScreen: View {
                                     .foregroundColor(.black)
                                     .frame(width: 280)
                                     .lineLimit(3)
-
                             }
                             .padding(.top, 10)
                             .frame(width: 300)
                             
-                            FinishButton(text: "Meus Pets", nextView: AnyView(MainContentView().background(Color("Background"))), width: 250)
+                            Spacer()
+                            
+                            FinishButton(text: "Entendi", nextView: AnyView(MainContentView().background(Color("Background"))), width: 250)
                                 .padding(.bottom, 25)
                             
                         }

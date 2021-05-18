@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RegisteredPetsView: View {
+    @State var registeredCats: [Cat] = []
+    @State var registeredDogs: [Dog] = []
+    
     var body: some View {
         ZStack {
             Color("Background")
@@ -36,9 +39,9 @@ struct RegisteredPetsView: View {
                 ScrollView {
                     VStack(spacing: 5) {
                         Group {
-                            ForEach(PetsConstants.registeredCats, id: \.id) { cat in
+                            ForEach(registeredCats, id: \.id) { cat in
                                 ZStack {
-                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.isEligible())
+                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
                                         .padding(.horizontal, 10)
                                     
                                     HStack {
@@ -59,9 +62,9 @@ struct RegisteredPetsView: View {
                                 }
                             }
                             
-                            ForEach(PetsConstants.registeredDogs, id: \.id) { dog in
+                            ForEach(registeredDogs, id: \.id) { dog in
                                 ZStack {
-                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: "Cachorro", isViable: dog.isEligible())
+                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
                                         .padding(.horizontal, 10)
                                     
                                     HStack {
@@ -87,6 +90,10 @@ struct RegisteredPetsView: View {
                 Spacer()
             }
             .navigationBarHidden(true)
+        }
+        .onAppear() {
+            self.registeredCats = PetsConstants.registeredCats
+            self.registeredDogs = PetsConstants.registeredDogs
         }
     }
 }

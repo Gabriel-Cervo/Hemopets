@@ -39,7 +39,7 @@ class Pet: Identifiable, Codable {
         var oneOfFirstThreeTaken: Bool = false
         
         for index in 0..<3 {
-            if vaccines[index].isTaken {
+            if vaccines[index].isTaken && !oneOfFirstThreeTaken {
                 oneOfFirstThreeTaken = true
             }
         }
@@ -82,6 +82,6 @@ class Cat: Pet, Eligible {
     }
     
     func checkWeight() -> Bool {
-        return self.weight.id >= 2
+        return self.weight.id > 2
     }
 }

@@ -63,10 +63,10 @@ struct RegisterFourthScreen: View {
         
         if let newDog = newPet as? Dog {
             PetsConstants.registeredDogs.append(newDog)
+            isEligible = newDog.isEligible()
+            
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs as [Pet], for: "registeredDogs")
-                
-                isEligible = newDog.isEligible()
             } catch {
                 print(error.localizedDescription)
             }
@@ -75,12 +75,10 @@ struct RegisterFourthScreen: View {
         
         if let newCat = newPet as? Cat {
             PetsConstants.registeredCats.append(newCat)
+            isEligible = newCat.isEligible()
             
             do {
                 try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
-                
-                isEligible = newCat.isEligible()
-
             } catch {
                 print(error.localizedDescription)
             }
