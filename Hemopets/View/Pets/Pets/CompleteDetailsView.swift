@@ -72,13 +72,29 @@ struct CompleteDetailsView: View {
                         Color("Card")
                         
                         VStack {
-                            Image(pet.imageName)
-                                .resizable()
-                                .clipShape(Circle())
-                                .frame(width: 120, height: 120)
-                                .padding(.top, 30)
-                                .shadow(radius: 2)
-                            
+                            if pet.imageName.hasSuffix("Placeholder") {
+                                Image(pet.imageName)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .shadow(radius: 2)
+                                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                    .frame(width: 120, height: 120, alignment: .center)
+                                    .padding(.top, 30)
+
+                            } else {
+                                let imageURL = UserDefaultsManager.getDocumentsDirectory().appendingPathComponent(pet.imageName)
+                                let imageData = try? Data(contentsOf: imageURL)
+                                
+                                Image(uiImage: UIImage(data: imageData!)!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(Circle())
+                                    .shadow(radius: 2)
+                                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                    .frame(width: 120, height: 120, alignment: .center)
+                                    .padding(.top, 30)
+                            }
+//
                             TextField("Nome", text: $name)
                                 .font(.custom("Mithella-Bold", size: CGFloat(25) + Metrics.fontSize))
                                 .foregroundColor(.init("ButtonPrimary"))
@@ -102,7 +118,7 @@ struct CompleteDetailsView: View {
                                                 Text("Menos de 3kg").tag(WeightOptions.second)
                                                 Text("Entre 4 e 10kg").tag(WeightOptions.third)
                                                 Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
-                                                Text("Entre 20 e 25kg").tag(WeightOptions.five)
+                                                Text("Entre 20 e 28kg").tag(WeightOptions.five)
                                                 Text("Mais de 28kg").tag(WeightOptions.sixth)
                                             })
                                             .pickerStyle(MenuPickerStyle())

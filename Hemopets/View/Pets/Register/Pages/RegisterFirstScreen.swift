@@ -26,13 +26,24 @@ struct RegisterFirstScreen: View {
                             self.showingImagePicker = true
                     }) {
                         if imageHasBeenSet {
-                            Image(uiImage: inputImage!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .shadow(radius: 2)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                .frame(width: UIScreen.main.bounds.width * 0.28, height: UIScreen.main.bounds.width * 0.28)
+                            if let inputImage = inputImage {
+                                Image(uiImage: inputImage)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .shadow(radius: 2)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                    .frame(width: UIScreen.main.bounds.width * 0.28, height: UIScreen.main.bounds.width * 0.28)
+                            } else {
+                                Image("NewImage")
+                                    .resizable()
+                                    .shadow(radius: 2)
+                                    .aspectRatio(contentMode: .fit)
+                                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                    .frame(width: UIScreen.main.bounds.width * 0.28, height: UIScreen.main.bounds.width * 0.28)
+                                    .cornerRadius(100)
+                            }
+                            
                         } else {
                             Image("NewImage")
                                 .resizable()
