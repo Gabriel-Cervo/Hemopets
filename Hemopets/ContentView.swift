@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var hasNotLoadedDefaults: Bool = true
     @State private var hasSeenOnboarding: Bool = false
     
-    @State private var timeRemainingToExitSplash = 2
+    @State private var timeRemainingToExitSplash = 1
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {

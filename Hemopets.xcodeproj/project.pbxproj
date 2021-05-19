@@ -43,6 +43,7 @@
 		8432EBAC2646AA7800A7CA8F /* ArrayFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */; };
 		8448B18F2652FC89004F3B1E /* HemocenterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B18E2652FC89004F3B1E /* HemocenterButtonView.swift */; };
 		845179F726543E5600253D93 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845179F626543E5600253D93 /* QuestionData.swift */; };
+		845179F926558B5600253D93 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845179F826558B5600253D93 /* Launch Screen.storyboard */; };
 		8455AB47264F513800795CE4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB46264F513800795CE4 /* ImagePicker.swift */; };
 		8455AB49264F585100795CE4 /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB48264F585100795CE4 /* RegisterText.swift */; };
 		8455AB4B265029EE00795CE4 /* FormPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AB4A265029ED00795CE4 /* FormPickerView.swift */; };
@@ -119,6 +120,7 @@
 		8432EBAB2646AA7800A7CA8F /* ArrayFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFieldView.swift; sourceTree = "<group>"; };
 		8448B18E2652FC89004F3B1E /* HemocenterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HemocenterButtonView.swift; sourceTree = "<group>"; };
 		845179F626543E5600253D93 /* QuestionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		845179F826558B5600253D93 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Hemopets/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8455AB46264F513800795CE4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8455AB48264F585100795CE4 /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		8455AB4A265029ED00795CE4 /* FormPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		8492F230264080E400B9DF4A = {
 			isa = PBXGroup;
 			children = (
+				845179F826558B5600253D93 /* Launch Screen.storyboard */,
 				8492F23B264080E400B9DF4A /* Hemopets */,
 				8492F23A264080E400B9DF4A /* Products */,
 			);
@@ -508,6 +511,7 @@
 				8492F244264080E400B9DF4A /* Preview Assets.xcassets in Resources */,
 				8408D602264478530044EB71 /* Mithella-Regular.otf in Resources */,
 				8408D603264478530044EB71 /* Mithella-Bold.otf in Resources */,
+				845179F926558B5600253D93 /* Launch Screen.storyboard in Resources */,
 				8492F241264080E400B9DF4A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
