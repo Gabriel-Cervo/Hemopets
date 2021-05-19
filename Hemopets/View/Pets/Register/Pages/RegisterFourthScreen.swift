@@ -76,6 +76,8 @@ struct RegisterFourthScreen: View {
                 print(error.localizedDescription)
             }
         }
+        
+        resetPetRegistrationImage()
     }
     
     func saveImage(_ image: UIImage) -> String? {
@@ -89,6 +91,10 @@ struct RegisterFourthScreen: View {
         }
         
         return nil
+    }
+    
+    func resetPetRegistrationImage() {
+        PetRegistration.image = nil
     }
 }
 
