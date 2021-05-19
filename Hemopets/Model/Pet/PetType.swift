@@ -47,7 +47,7 @@ enum WeightOptions: String, CaseIterable, Identifiable, Codable {
         case .first:
             return "Não informado"
         case .second:
-            return "Entre menos de um e 3kg"
+            return "Menos de 4kg"
         case .third:
             return "Entre 4 e 10kg"
         case .fourth:
@@ -98,3 +98,48 @@ enum AgeOptions: String, CaseIterable, Identifiable, Codable {
     }
 }
 
+enum CastrationOptions: String, CaseIterable, Identifiable, Codable {
+    case first
+    case second
+    
+    var id: Int {
+        switch self {
+        case .first:
+            return 1
+        case .second:
+            return 2
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .first:
+            return "Não"
+        case .second:
+            return "Sim"
+        }
+    }
+}
+
+enum GenderOptions: String, CaseIterable, Identifiable, Codable {
+    case first
+    case second
+    
+    var id: Int {
+        switch self {
+        case .first:
+            return 1
+        case .second:
+            return 2
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .first:
+            return "Macho"
+        case .second:
+            return "Fêmea"
+        }
+    }
+}

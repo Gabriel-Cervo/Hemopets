@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LocationDetails: View {
     var hemocenter: Hemocenter
     
     var body: some View {
         ZStack {
-            Color.init("Card")
+            Color("Card")
 
             VStack(alignment: .leading) {
                 
@@ -27,10 +28,11 @@ struct LocationDetails: View {
                 
                 ScrollView {
                     HemocenterImage(imageName: hemocenter.name)
+                        .padding(.top, 10)
                     
                     VStack(alignment: .leading) {
                         SubtitleView(text: hemocenter.name)
-                            .padding(.vertical, 15)
+                            .padding(.bottom, 15)
                             .frame(width: 350, alignment: .leading)
                         
                         HStack {
@@ -48,12 +50,12 @@ struct LocationDetails: View {
                         
                         ArrayFieldView(iconName: "desktopcomputer", fieldName: "Sites:", fieldDescription: hemocenter.websites ?? [""], isURL: true)
                     }
+                    .padding(.horizontal, 20)
                     Spacer()
                 }
-                .padding(.horizontal, 10)
             }
-            .padding()
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     func callHemocenter() {
@@ -73,9 +75,10 @@ struct LocationDetails: View {
     }
     
     func openHemocenterInMaps() {
-        guard let url = URL(string:"http://maps.apple.com/?daddr=\(hemocenter.coordinate.latitude),\(hemocenter.coordinate.longitude)") else { return }
-        
-        UIApplication.shared.open(url)
+        let placemark = MKPlacemark(coordinate: hemocenter.coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = hemocenter.name
+        mapItem.openInMaps(launchOptions: nil)
     }
 }
 

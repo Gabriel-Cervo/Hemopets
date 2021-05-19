@@ -39,7 +39,7 @@ class Pet: Identifiable, Codable {
         var oneOfFirstThreeTaken: Bool = false
         
         for index in 0..<3 {
-            if vaccines[index].isTaken {
+            if vaccines[index].isTaken && !oneOfFirstThreeTaken {
                 oneOfFirstThreeTaken = true
             }
         }
@@ -59,7 +59,7 @@ class Pet: Identifiable, Codable {
 class Dog: Pet, Eligible {
     override init(name: String, age: AgeOptions, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
-        self.vaccines = PetsConstants.mandatoryVaccines["Dog"]!
+        self.vaccines.append(contentsOf: PetsConstants.mandatoryVaccines["Dog"]!)
     }
     
     required init(from decoder: Decoder) throws {
@@ -74,7 +74,7 @@ class Dog: Pet, Eligible {
 class Cat: Pet, Eligible {
     override init(name: String, age: AgeOptions, weight: WeightOptions, imageName: String) {
         super.init(name: name, age: age, weight: weight, imageName: imageName)
-        self.vaccines = PetsConstants.mandatoryVaccines["Cat"]!
+        self.vaccines.append(contentsOf: PetsConstants.mandatoryVaccines["Cat"]!)
     }
     
     required init(from decoder: Decoder) throws {
@@ -82,6 +82,6 @@ class Cat: Pet, Eligible {
     }
     
     func checkWeight() -> Bool {
-        return self.weight.id >= 2
+        return self.weight.id > 2
     }
 }

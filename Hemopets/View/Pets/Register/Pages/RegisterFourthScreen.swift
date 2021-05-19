@@ -9,6 +9,11 @@ import SwiftUI
 
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
+    @State var isEligible: Bool = false
+    
+    @State var newPet = PetRegistration.type == .cat ?
+        Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
+        Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
     
     var body: some View {
         RegisterContainerContentView {
@@ -18,7 +23,7 @@ struct RegisterFourthScreen: View {
                         .padding(.top,  Metrics.registerFieldPaddingTop)
                         .padding(.leading)
                     
-                    VaccinesListView(selectedIndexes: $selectedIndexes, petType: PetRegistration.type)
+                    VaccinesListView(vacs: $newPet.vaccines)
                         .padding(.top)
                         .padding(.horizontal)
                         .colorScheme(.light)
@@ -27,7 +32,7 @@ struct RegisterFourthScreen: View {
                         PreviousPageButton()
                         Spacer()
                         
-                        FinishButton(text: "Finalizar", nextView: AnyView(MainContentView()), onClick: registerPet)
+                        FinishButton(text: "Finalizar", nextView: AnyView(ShowPetEligibleStatus(isEligible: $isEligible)), onClick: registerPet)
                     }
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -41,40 +46,34 @@ struct RegisterFourthScreen: View {
     }
     
     func registerPet() {
-        PetsConstants.clearVaccinesValues()
-        
-        let newPet = PetRegistration.type == .cat ?
-            Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
-            Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
-        
+        for vaccine in newPet.vaccines {
+            print("\(vaccine.name): \(vaccine.isTaken)")
+        }
         if let image = PetRegistration.image {
             let imageName = saveImage(image)
+            
             if let imageName = imageName {
                 newPet.imageName = imageName
             }
         }
         
-        for i in 0..<PetsConstants.totalNumberOfVaccines {
-            if selectedIndexes.contains(i) {
-                newPet.vaccines[i].isTaken = true
-            }
-        }
-        
         if let newDog = newPet as? Dog {
-            PetsConstants.registeredDogs.append(newDog)
+            PetsConstants.registeredDogs.insert(newDog, at: 0)
+            isEligible = newDog.isEligible()
+            
             do {
-                try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs as [Pet], for: "registeredDogs")
+                try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs, for: "registeredDogs")
             } catch {
                 print(error.localizedDescription)
             }
-            
         }
         
         if let newCat = newPet as? Cat {
-            PetsConstants.registeredCats.append(newCat)
+            PetsConstants.registeredCats.insert(newCat, at: 0)
+            isEligible = newCat.isEligible()
             
             do {
-                try UserDefaultsManager.saveData(data: PetsConstants.registeredCats as [Pet], for: "registeredCats")
+                try UserDefaultsManager.saveData(data: PetsConstants.registeredCats, for: "registeredCats")
             } catch {
                 print(error.localizedDescription)
             }

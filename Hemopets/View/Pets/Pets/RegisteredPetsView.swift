@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RegisteredPetsView: View {
+    @State var registeredCats: [Cat] = []
+    @State var registeredDogs: [Dog] = []
+    
     var body: some View {
         ZStack {
             Color("Background")
@@ -36,22 +39,27 @@ struct RegisteredPetsView: View {
                 ScrollView {
                     VStack(spacing: 5) {
                         Group {
-                            ForEach(PetsConstants.registeredCats, id: \.id) { cat in
+                            ForEach(registeredCats, id: \.id) { cat in
                                 ZStack {
-                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: "Gato", isViable: cat.isEligible())
+                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
                                         .padding(.horizontal, 10)
                                     
-                                    HStack {
+                                    HStack(spacing: 25) {
                                         Spacer()
                                         
-                                        NavigationLink(destination: CompleteDetailsView(pet: cat as Pet)) {
+                                        NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
                                             Image(systemName: "square.and.pencil")
                                                 .font(.title3)
                                         }
                                         
+                                        Button(action: {
+                                            deleteRegister(pet: cat, petType: .cat)
+                                        }, label: {
+                                            Image(systemName: "trash")
+                                                .font(.title3)
+                                        })
                                         // Excluir -> Fazer funcionalidade
-                                        Image(systemName: "trash")
-                                            .font(.title3)
+                                        
                                         
                                     }
                                     .padding(.trailing, 30)
@@ -59,23 +67,25 @@ struct RegisteredPetsView: View {
                                 }
                             }
                             
-                            ForEach(PetsConstants.registeredDogs, id: \.id) { dog in
+                            ForEach(registeredDogs, id: \.id) { dog in
                                 ZStack {
-                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: "Cachorro", isViable: dog.isEligible())
+                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
                                         .padding(.horizontal, 10)
                                     
-                                    HStack {
+                                    HStack(spacing: 25) {
                                         Spacer()
                                         
-                                        NavigationLink(destination: CompleteDetailsView(pet: dog as Pet)) {
+                                        NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
                                             Image(systemName: "square.and.pencil")
                                                 .font(.title3)
                                         }
                                         
-                                        // Excluir -> Fazer funcionalidade
-                                        Image(systemName: "trash")
-                                            .font(.title3)
-                                        
+                                        Button(action: {
+                                            deleteRegister(pet: dog, petType: .dog)
+                                        }, label: {
+                                            Image(systemName: "trash")
+                                                .font(.title3)
+                                        })
                                     }
                                     .padding(.trailing, 30)
                                     .foregroundColor(.gray)
@@ -88,7 +98,37 @@ struct RegisteredPetsView: View {
             }
             .navigationBarHidden(true)
         }
+        .onAppear() {
+            self.registeredCats = PetsConstants.registeredCats
+            self.registeredDogs = PetsConstants.registeredDogs
+        }
     }
+    func deleteRegister(pet: Pet, petType: PetType) {
+        do {
+            switch petType {
+            case .cat:
+                let registeredCats: [Cat] = try UserDefaultsManager.loadData(for: "registeredCats")
+                let filteredCats = registeredCats.filter {
+                    $0.id != pet.id
+                }
+                try UserDefaultsManager.saveData(data: filteredCats, for: "registeredCats")
+                PetsConstants.registeredCats = filteredCats
+                self.registeredCats = PetsConstants.registeredCats
+            
+            case .dog:
+                let registeredDogs: [Dog] = try UserDefaultsManager.loadData(for: "registeredDogs")
+                let filteredDogs = registeredDogs.filter {
+                    $0.id != pet.id
+                }
+                try UserDefaultsManager.saveData(data: filteredDogs, for: "registeredDogs")
+                PetsConstants.registeredDogs = filteredDogs
+                self.registeredDogs = PetsConstants.registeredDogs
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 
 struct RegisteredPetsView_Previews: PreviewProvider {

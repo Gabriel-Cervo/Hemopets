@@ -7,12 +7,7 @@
 
 import Foundation
 
-class Vaccine: Codable {
+struct Vaccine: Codable {
     var name: String
     var isTaken: Bool
-    
-    init(name: String, isTaken: Bool) {
-        self.name = name
-        self.isTaken = isTaken
-    }
 }
