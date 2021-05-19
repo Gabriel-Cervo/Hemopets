@@ -11,19 +11,11 @@ struct ContentView: View {
     @State private var hasNotLoadedDefaults: Bool = true
     @State private var hasSeenOnboarding: Bool = false
     
-    @State private var timeRemainingToExitSplash = 1
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
     var body: some View {
-        if hasNotLoadedDefaults || timeRemainingToExitSplash > 0 {
+        if hasNotLoadedDefaults {
             SplashView()
                 .onAppear() {
                     loadUserDefaults()
-                }
-                .onReceive(timer) { _ in
-                    if timeRemainingToExitSplash > 0 {
-                        timeRemainingToExitSplash -= 1
-                    }
                 }
         } else {
             if hasSeenOnboarding {
@@ -46,7 +38,7 @@ struct ContentView: View {
     func loadRegisteredDogs() {
         do {
             let registeredDogs = try UserDefaultsManager.loadData(for: "registeredDogs") as [Dog]
-
+            
             DispatchQueue.main.async {
                 PetsConstants.registeredDogs = registeredDogs
             }
@@ -58,7 +50,7 @@ struct ContentView: View {
     func loadRegisteredCats() {
         do {
             let registeredCats = try UserDefaultsManager.loadData(for: "registeredCats") as [Cat]
-
+            
             DispatchQueue.main.async {
                 PetsConstants.registeredCats = registeredCats
             }

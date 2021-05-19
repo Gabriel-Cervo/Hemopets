@@ -30,6 +30,7 @@ struct NoPetsView: View {
                                 .font(.custom("Mithella-Bold", size: 40))
                                 .foregroundColor(.yellow)
                                 .padding(.bottom, 5)
+                                .multilineTextAlignment(.center)
                             
                             Divider()
                                 .frame(width: 300)
