@@ -17,84 +17,55 @@ struct RegisteredPetsView: View {
                 .ignoresSafeArea()
             
             VStack {
-                ZStack {
+                HStack {
                     HStack {
+                        Spacer()
                         TitleView(text: "Meus Pets")
+                            .padding(.leading, 50)
+                        Spacer()
                     }
-                    
                     NavigationLink(
                         destination: RegisterFirstScreen()) {
-                        HStack {
-                            Spacer()
-                            Image(systemName: "plus")
-                                .font(.title2)
-                                .padding(.trailing, 30)
-                                .foregroundColor(.gray)
-                        }
+                        Image(systemName: "plus")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                            .padding(.trailing)
                     }
                 }
                 .padding(.top, Metrics.cardPaddingTop)
-                .padding(.bottom, 10)
                 
-                ScrollView {
-                    VStack(spacing: 5) {
-                        Group {
-                            List {
-                                ForEach(registeredCats, id: \.id) { cat in
-                                    ZStack {
-                                        PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
-                                            .padding(.horizontal, 10)
-                                        
-                                        HStack(spacing: 25) {
-                                            Spacer()
-                                            
-                                            NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
-                                                Image(systemName: "square.and.pencil")
-                                                    .font(.title3)
-                                            }
-                                            
-                                            Button(action: {
-                                                deleteRegister(pet: cat, petType: .cat)
-                                            }, label: {
-                                                Image(systemName: "trash")
-                                                    .font(.title3)
-                                            })
-                                        }
-                                        .padding(.trailing, 30)
-                                        .foregroundColor(.gray)
-                                    }
+                List {
+                    ForEach(registeredCats, id: \.id) { cat in
+                        ZStack {
+                            HStack {
+                                PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
+                                    .padding(.horizontal)
+                                Spacer()
+                                NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
                                 }
-                                .onDelete(perform: { indexSet in
-                                    deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
-                                })
                             }
-                            
-                            List {
-                                ForEach(registeredDogs, id: \.id) { dog in
-                                    ZStack {
-                                        PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
-                                            .padding(.horizontal, 10)
-                                        
-                                        HStack(spacing: 25) {
-                                            Spacer()
-                                            
-                                            NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
-                                                Image(systemName: "square.and.pencil")
-                                                    .font(.title3)
-                                            }
-                                        }
-                                        .padding(.trailing, 30)
-                                        .foregroundColor(.gray)
-                                    }
+                        }
+                    }
+                    .onDelete(perform: { indexSet in
+                        deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
+                    })
+                    
+                    ForEach(registeredDogs, id: \.id) { dog in
+                        ZStack {
+                            HStack {
+                                PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
+                                    .padding(.horizontal)
+                                Spacer()
+                                NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
                                 }
-                                .onDelete(perform: { indexSet in
-                                    deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
-                                })
                             }
-                        }.padding(.bottom)
-                    }.padding(.top, 30)
+                        }
+                    }
+                    .onDelete(perform: { indexSet in
+                        deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
+                    })
                 }
-                Spacer()
+                
             }
             .navigationBarHidden(true)
         }

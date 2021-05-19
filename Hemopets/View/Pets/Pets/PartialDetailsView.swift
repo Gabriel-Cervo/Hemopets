@@ -19,6 +19,7 @@ struct PartialDetailsView: View {
             
             HStack {
                 ImagePartialDetailsView(imageName: imageName, isViable: isViable)
+                    .padding(.leading)
                 
                 VStack(alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
@@ -32,12 +33,13 @@ struct PartialDetailsView: View {
                         .bold()
                 }
                 .frame(width: 130, alignment: .leading)
-                .padding(.leading, 10)
                 
-                Spacer()
+                Image(systemName: "square.and.pencil")
+                    .font(.title3)
+                    .foregroundColor(.gray)
+                    .padding(.trailing)
             }
         }
-        .frame(height: 120)
         .cornerRadius(25)
         .shadow(radius: 2)
     }
