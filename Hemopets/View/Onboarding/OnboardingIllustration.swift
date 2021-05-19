@@ -13,8 +13,9 @@ struct OnboardingIllustration: View {
     var body: some View {
         Image(illustrationName)
             .resizable()
+            .aspectRatio(contentMode: .fill)
             .cornerRadius(10)
-            .frame(width: UIScreen.main.bounds.width * 0.70, height: UIScreen.main.bounds.width * 0.70)
+            .frame(width: UIScreen.main.bounds.width * 0.65, height: UIScreen.main.bounds.width * 0.65)
             .padding(.bottom, 30)
     }
 }
