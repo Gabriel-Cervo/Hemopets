@@ -12,93 +12,99 @@ struct RegisteredPetsView: View {
     @State var registeredDogs: [Dog] = []
     
     var body: some View {
-        ZStack {
-            Color("Background")
-                .ignoresSafeArea()
-            
-            VStack {
-                ZStack {
-                    HStack {
-                        TitleView(text: "Meus Pets")
-                    }
-                    
-                    NavigationLink(
-                        destination: RegisterFirstScreen()) {
+        if registeredCats.count + registeredDogs.count == 0 {
+            NoPetsView()
+        } else {
+            ZStack {
+                Color("Background")
+                    .ignoresSafeArea()
+                
+                VStack {
+                    ZStack {
                         HStack {
-                            Spacer()
-                            Image(systemName: "plus")
-                                .font(.title2)
-                                .padding(.trailing, 30)
-                                .foregroundColor(.gray)
+                            TitleView(text: "Meus Pets")
+                        }
+                        
+                        NavigationLink(
+                            destination: RegisterFirstScreen()) {
+                            HStack {
+                                Spacer()
+                                Image(systemName: "plus")
+                                    .font(.title2)
+                                    .padding(.trailing, 30)
+                                    .foregroundColor(.gray)
+                            }
                         }
                     }
-                }
-                .padding(.top, Metrics.cardPaddingTop)
-                .padding(.bottom, 10)
-                
-                ScrollView {
-                    VStack(spacing: 5) {
-                        Group {
-                            ForEach(registeredCats, id: \.id) { cat in
-                                ZStack {
-                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
-                                        .padding(.horizontal, 10)
-                                    
-                                    HStack(spacing: 25) {
-                                        Spacer()
+                    .padding(.top, Metrics.cardPaddingTop)
+                    .padding(.bottom, 10)
+                    
+                    ScrollView {
+                        VStack(spacing: 5) {
+                            Group {
+                                ForEach(registeredCats, id: \.id) { cat in
+                                    ZStack {
+                                        PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
+                                            .padding(.horizontal, 10)
                                         
-                                        NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
-                                            Image(systemName: "square.and.pencil")
-                                                .font(.title3)
+                                        HStack(spacing: 25) {
+                                            Spacer()
+                                            
+                                            NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
+                                                Image(systemName: "square.and.pencil")
+                                                    .font(.title3)
+                                            }
+                                            
+                                            Button(action: {
+                                                deleteRegister(pet: cat, petType: .cat)
+                                            }, label: {
+                                                Image(systemName: "trash")
+                                                    .font(.title3)
+                                            })
                                         }
-                                        
-                                        Button(action: {
-                                            deleteRegister(pet: cat, petType: .cat)
-                                        }, label: {
-                                            Image(systemName: "trash")
-                                                .font(.title3)
-                                        })
+                                        .padding(.trailing, 30)
+                                        .foregroundColor(.gray)
                                     }
-                                    .padding(.trailing, 30)
-                                    .foregroundColor(.gray)
                                 }
-                            }
-                            .onDelete(perform: { indexSet in
-                                deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
-                            })
-                            
-                            ForEach(registeredDogs, id: \.id) { dog in
-                                ZStack {
-                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
-                                        .padding(.horizontal, 10)
-                                    
-                                    HStack(spacing: 25) {
-                                        Spacer()
+                                .onDelete(perform: { indexSet in
+                                    deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
+                                })
+                                
+                                ForEach(registeredDogs, id: \.id) { dog in
+                                    ZStack {
+                                        PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
+                                            .padding(.horizontal, 10)
                                         
-                                        NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
-                                            Image(systemName: "square.and.pencil")
-                                                .font(.title3)
+                                        HStack(spacing: 25) {
+                                            Spacer()
+                                            
+                                            NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
+                                                Image(systemName: "square.and.pencil")
+                                                    .font(.title3)
+                                            }
                                         }
+                                        .padding(.trailing, 30)
+                                        .foregroundColor(.gray)
                                     }
-                                    .padding(.trailing, 30)
-                                    .foregroundColor(.gray)
                                 }
-                            }
-                            .onDelete(perform: { indexSet in
-                                deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
-                            })
-                        }.padding(.bottom)
-                    }.padding(.top, 30)
+                                .onDelete(perform: { indexSet in
+                                    deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
+                                })
+                            }.padding(.bottom)
+                        }.padding(.top, 30)
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
+            .onAppear() {
+                self.registeredCats = PetsConstants.registeredCats
+                self.registeredDogs = PetsConstants.registeredDogs
+            }
         }
-        .onAppear() {
-            self.registeredCats = PetsConstants.registeredCats
-            self.registeredDogs = PetsConstants.registeredDogs
-        }
+        
     }
+    
     func deleteRegister(pet: Pet, petType: PetType) {
         do {
             switch petType {
