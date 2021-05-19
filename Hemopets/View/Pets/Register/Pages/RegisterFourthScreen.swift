@@ -46,9 +46,6 @@ struct RegisterFourthScreen: View {
     }
     
     func registerPet() {
-        for vaccine in newPet.vaccines {
-            print("\(vaccine.name): \(vaccine.isTaken)")
-        }
         if let image = PetRegistration.image {
             let imageName = saveImage(image)
             
