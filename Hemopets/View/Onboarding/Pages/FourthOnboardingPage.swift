@@ -18,12 +18,12 @@ struct FourthOnboardingPage: View {
                 OnboardingIllustration(illustrationName: "FourthOnboarding")
                 
                 VStack(alignment: .leading) {
-                    Text("Dúvidas")
+                    Text("Saiba mais")
                         .foregroundColor(.init("Title"))
                         .font(.custom("Mithella-Bold", size: 30))
                     .padding(.bottom, 5)
                     
-                    OnboardingDescriptionTextView(text: "Saiba mais sobre o procedimento e os pré-requisitos necessários para realizar a doação")
+                    OnboardingDescriptionTextView(text: "Descubra sobre o procedimento e os pré-requisitos necessários para realizar a doação")
 
                     ProgressView(activeCircle: 4)
                     

@@ -45,7 +45,7 @@ enum WeightOptions: String, CaseIterable, Identifiable, Codable {
     var description: String {
         switch self {
         case .first:
-            return "Não informado"
+            return "Não sei"
         case .second:
             return "Menos de 4kg"
         case .third:
@@ -85,9 +85,9 @@ enum AgeOptions: String, CaseIterable, Identifiable, Codable {
     var description: String {
         switch self {
         case .first:
-            return "Não informado"
+            return "Não sei"
         case .second:
-            return "Menos de um ano"
+            return "Menos de 1 ano"
         case .third:
             return "Entre 1 e 8 anos"
         case .fourth:

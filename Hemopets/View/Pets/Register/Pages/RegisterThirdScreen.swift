@@ -61,7 +61,7 @@ struct RegisterThirdScreen: View {
                         Text("Mais de 15 anos").tag(AgeOptions.five)
                         Text("Entre 9 e 15 anos").tag(AgeOptions.fourth)
                         Text("Entre 1 e 8 anos").tag(AgeOptions.third)
-                        Text("Menos de um ano").tag(AgeOptions.second)
+                        Text("Menos de 1 ano").tag(AgeOptions.second)
                     })
                     .pickerStyle(MenuPickerStyle())
                     .foregroundColor(age != .first ? .black : .gray)
