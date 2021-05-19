@@ -10,7 +10,6 @@ import SwiftUI
 struct RegisterFourthScreen: View {
     @State var selectedIndexes: [Int] = [Int]()
     @State var isEligible: Bool = false
-    
     @State var newPet = PetRegistration.type == .cat ?
         Cat(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "CatPlaceholder") :
         Dog(name: PetRegistration.name, age: PetRegistration.age, weight: PetRegistration.weight, imageName: "DogPlaceholder")
@@ -53,6 +52,8 @@ struct RegisterFourthScreen: View {
                 newPet.imageName = imageName
             }
         }
+        
+        newPet.age = PetRegistration.age // Resolve bug bizarro em que o newPet nao carrega o age na linha 13
         
         if let newDog = newPet as? Dog {
             PetsConstants.registeredDogs.insert(newDog, at: 0)
