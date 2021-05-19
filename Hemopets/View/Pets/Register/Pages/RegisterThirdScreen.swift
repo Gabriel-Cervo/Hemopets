@@ -22,7 +22,7 @@ struct RegisterThirdScreen: View {
         RegisterContainerContentView {
             Group {
                 VStack {
-                    RegisterText(text: "Ele(a) já teve algum caso de doença grave?")
+                    RegisterText(text: "\(PetRegistration.name) já teve algum caso de doença grave?")
                         .padding(.top, Metrics.registerFieldPaddingTop)
                         .padding(.leading)
                     
@@ -36,7 +36,7 @@ struct RegisterThirdScreen: View {
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                     
-                    RegisterText(text: "Seu pet tem alguma doença infecciosa?")
+                    RegisterText(text: "\(PetRegistration.name) tem alguma doença infecciosa?")
                         .padding(.top,  Metrics.registerFieldPaddingTop)
                         .padding(.leading)
                         .padding(.bottom, 10)
@@ -50,7 +50,7 @@ struct RegisterThirdScreen: View {
                     }, firstButtonLabel: "SIM", secondButtonLabel: "NÃO", selectedButton: $selectedInfecctionIllness)
                     .padding(.horizontal)
                     
-                    RegisterText(text: "Qual a idade dele(a)?")
+                    RegisterText(text: "Qual a idade \(PetRegistration.gender == .male ? "do" : "da") \(PetRegistration.name) ?")
                         .padding(.leading)
                         .padding(.top, Metrics.registerFieldPaddingTop + 10)
                         .padding(.bottom, 10)
@@ -92,9 +92,10 @@ struct RegisterThirdScreen: View {
     }
     
     func saveValues() {
-        PetRegistration.age = age
         PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
         PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
+        PetRegistration.age = age
+
     }
     
     func checkIfShouldActivateButton() {

@@ -18,7 +18,7 @@ struct RegisterFourthScreen: View {
         RegisterContainerContentView {
             Group {
                 VStack {
-                    RegisterText(text: "Quais das vacinas abaixo seu pet tomou?")
+                    RegisterText(text: "Quais das vacinas abaixo \(PetRegistration.name) tomou?")
                         .padding(.top,  Metrics.registerFieldPaddingTop)
                         .padding(.leading)
                     

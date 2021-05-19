@@ -22,7 +22,7 @@ struct RegisterSecondScreen: View {
     var body: some View {
         RegisterContainerContentView {
             Group {
-                RegisterText(text: "Qual o sexo do seu pet?")
+                RegisterText(text: "Qual o sexo do \(PetRegistration.name) ?")
                     .padding(.leading)
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
@@ -36,7 +36,7 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                RegisterText(text: "Você considera o temperamento do seu pet como dócil?")
+                RegisterText(text: "Você considera o temperamento do(a) \(PetRegistration.name) como dócil?")
                     .padding(.leading)
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
@@ -50,7 +50,7 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                RegisterText(text: "Qual o peso dele(a)?")
+                RegisterText(text: "Qual o peso do seu pet")
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                     .padding(.bottom, 10)
                     .padding(.leading)
