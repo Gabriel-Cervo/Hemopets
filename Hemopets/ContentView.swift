@@ -29,6 +29,7 @@ struct ContentView: View {
             if hasSeenOnboarding {
                 NavigationView {
                     MainContentView()
+                        .colorScheme(.light)
                 }
             } else {
                 OnboardingView()

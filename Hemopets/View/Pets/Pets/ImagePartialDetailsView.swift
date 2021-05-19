@@ -26,11 +26,11 @@ struct ImagePartialDetailsView: View {
                 
                 Image(uiImage: UIImage(data: imageData!)!)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .clipShape(Circle())
                     .shadow(radius: 2)
                     .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                    .frame(width: 105, height: 105, alignment: .center)
+                    .frame(width: 70, height: 70, alignment: .center)
             }
             
             Image(systemName: isViable ? "checkmark.seal.fill" : "xmark.seal.fill")

@@ -93,6 +93,7 @@ struct RegisterThirdScreen: View {
     
     func saveValues() {
         PetRegistration.age = age
+        print(PetRegistration.age)
         PetRegistration.haveSeriousIllness = selectedSeriousIllness == .firstButton ? true : false
         PetRegistration.haveInfectionIllness = selectedInfecctionIllness == .firstButton ? true : false
     }

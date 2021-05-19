@@ -54,7 +54,7 @@ struct NotEligiblePetScreen: View {
                             
                             Spacer()
                             
-                            FinishButton(text: "Entendi", nextView: AnyView(MainContentView().background(Color("Background"))), width: 250)
+                            FinishButton(text: "Entendi", nextView: AnyView(MainContentView().background(Color("Background")).colorScheme(.light)), width: 250)
                                 .padding(.bottom, 25)
                             
                         }
