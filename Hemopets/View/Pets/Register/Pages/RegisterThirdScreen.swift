@@ -50,7 +50,7 @@ struct RegisterThirdScreen: View {
                     }, firstButtonLabel: "SIM", secondButtonLabel: "NÃO", selectedButton: $selectedInfecctionIllness)
                     .padding(.horizontal)
                     
-                    RegisterText(text: "Qual a idade \(PetRegistration.gender == .male ? "do" : "da") \(PetRegistration.name) ?")
+                    RegisterText(text: "Qual a idade \(PetRegistration.gender == .male ? "do" : "da") \(PetRegistration.name)?")
                         .padding(.leading)
                         .padding(.top, Metrics.registerFieldPaddingTop + 10)
                         .padding(.bottom, 10)
