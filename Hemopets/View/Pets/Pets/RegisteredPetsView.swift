@@ -39,58 +39,54 @@ struct RegisteredPetsView: View {
                 ScrollView {
                     VStack(spacing: 5) {
                         Group {
-                            List {
-                                ForEach(registeredCats, id: \.id) { cat in
-                                    ZStack {
-                                        PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
-                                            .padding(.horizontal, 10)
+                            ForEach(registeredCats, id: \.id) { cat in
+                                ZStack {
+                                    PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
+                                        .padding(.horizontal, 10)
+                                    
+                                    HStack(spacing: 25) {
+                                        Spacer()
                                         
-                                        HStack(spacing: 25) {
-                                            Spacer()
-                                            
-                                            NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
-                                                Image(systemName: "square.and.pencil")
-                                                    .font(.title3)
-                                            }
-                                            
-                                            Button(action: {
-                                                deleteRegister(pet: cat, petType: .cat)
-                                            }, label: {
-                                                Image(systemName: "trash")
-                                                    .font(.title3)
-                                            })
+                                        NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
+                                            Image(systemName: "square.and.pencil")
+                                                .font(.title3)
                                         }
-                                        .padding(.trailing, 30)
-                                        .foregroundColor(.gray)
+                                        
+                                        Button(action: {
+                                            deleteRegister(pet: cat, petType: .cat)
+                                        }, label: {
+                                            Image(systemName: "trash")
+                                                .font(.title3)
+                                        })
                                     }
+                                    .padding(.trailing, 30)
+                                    .foregroundColor(.gray)
                                 }
-                                .onDelete(perform: { indexSet in
-                                    deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
-                                })
                             }
+                            .onDelete(perform: { indexSet in
+                                deleteRegister(pet: registeredCats[indexSet.first!], petType: .cat)
+                            })
                             
-                            List {
-                                ForEach(registeredDogs, id: \.id) { dog in
-                                    ZStack {
-                                        PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
-                                            .padding(.horizontal, 10)
+                            ForEach(registeredDogs, id: \.id) { dog in
+                                ZStack {
+                                    PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
+                                        .padding(.horizontal, 10)
+                                    
+                                    HStack(spacing: 25) {
+                                        Spacer()
                                         
-                                        HStack(spacing: 25) {
-                                            Spacer()
-                                            
-                                            NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
-                                                Image(systemName: "square.and.pencil")
-                                                    .font(.title3)
-                                            }
+                                        NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
+                                            Image(systemName: "square.and.pencil")
+                                                .font(.title3)
                                         }
-                                        .padding(.trailing, 30)
-                                        .foregroundColor(.gray)
                                     }
+                                    .padding(.trailing, 30)
+                                    .foregroundColor(.gray)
                                 }
-                                .onDelete(perform: { indexSet in
-                                    deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
-                                })
                             }
+                            .onDelete(perform: { indexSet in
+                                deleteRegister(pet: registeredDogs[indexSet.first!], petType: .dog)
+                            })
                         }.padding(.bottom)
                     }.padding(.top, 30)
                 }

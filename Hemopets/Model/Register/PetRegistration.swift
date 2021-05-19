@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct PetRegistration {
-    //    var image: String
     static var name: String = ""
     static var type: PetType = .cat
     static var gender: GenderType = .male
