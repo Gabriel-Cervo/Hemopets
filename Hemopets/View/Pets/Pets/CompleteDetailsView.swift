@@ -161,7 +161,6 @@ struct CompleteDetailsView: View {
                                 VaccinesListView(vacs: $pet.vaccines)
                                     .frame(height: 180)
                                     .padding(.horizontal, 15)
-                                    .colorScheme(.light)
                             }
                             .padding(.bottom, 40)
                             

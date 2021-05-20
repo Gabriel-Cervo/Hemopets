@@ -15,6 +15,7 @@ struct VaccinesListView: View {
             Toggle("\(vacs[index].name)", isOn: $vacs[index].isTaken)
                 .foregroundColor(.gray)
         }
+        .colorScheme(.light)
     }
 }
 

@@ -19,7 +19,7 @@ struct PartialDetailsView: View {
             
             HStack {
                 ImagePartialDetailsView(imageName: imageName, isViable: isViable)
-                    .padding(.leading)
+                    .padding(.leading, 5)
                 
                 VStack(alignment: .leading, spacing: 2) {
                     SubtitleView(text: name)
