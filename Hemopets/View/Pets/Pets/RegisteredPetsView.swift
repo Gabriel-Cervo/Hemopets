@@ -36,7 +36,7 @@ struct RegisteredPetsView: View {
                             Image(systemName: "plus")
                                 .font(.title2)
                                 .foregroundColor(.gray)
-                                .padding(.trailing)
+                                .padding(.trailing, 50)
                         }
                     }
                     .padding(.top, Metrics.cardPaddingTop)
