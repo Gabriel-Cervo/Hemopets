@@ -18,6 +18,7 @@ struct LocationDetails: View {
             VStack(alignment: .leading) {
                 
                 SwipeDownIndicatorView()
+                    .padding(.top, 25)
                 
                 HStack {
                     Spacer()

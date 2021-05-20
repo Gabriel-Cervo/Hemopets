@@ -42,7 +42,7 @@ struct DonationFaqQuestions: View {
                             .padding(.vertical, 10)
                             .background(Color.white)
                             .cornerRadius(20)
-                            .lineLimit(nil)
+                            .lineLimit(5)
                             Spacer(minLength: 30)
                         }
                     }
