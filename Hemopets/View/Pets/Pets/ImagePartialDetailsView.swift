@@ -40,8 +40,8 @@ struct ImagePartialDetailsView: View {
                 .padding(.top, 50)
                 .padding(.leading, 80)
         }
-        
         .frame(width: 115, height: 115)
+        .offset(x: -15)
     }
 }
 

@@ -48,12 +48,12 @@ struct RegisteredPetsView: View {
                                 
                                 HStack {
                                     PartialDetailsView(name: cat.name, imageName: cat.imageName, type: .cat, isViable: cat.isEligible())
-                                        .padding(.horizontal)
+                                        .frame(width: UIScreen.main.bounds.width * 0.92)
                                     Spacer()
                                     NavigationLink(destination: CompleteDetailsView(petType: .cat, pet: cat as Pet)) {
                                     }
                                 }
-                                .padding(.vertical)
+                                .padding(.all)
                             }
                             .listRowInsets(EdgeInsets())
                         }
@@ -67,12 +67,12 @@ struct RegisteredPetsView: View {
 
                                 HStack {
                                     PartialDetailsView(name: dog.name, imageName: dog.imageName, type: .dog, isViable: dog.isEligible())
-                                        .padding(.horizontal)
+                                        .frame(width: UIScreen.main.bounds.width * 0.92)
                                     Spacer()
                                     NavigationLink(destination: CompleteDetailsView(petType: .dog, pet: dog as Pet)) {
                                     }
                                 }
-                                .padding(.vertical)
+                                .padding(.all)
                             }
                             .listRowInsets(EdgeInsets())
                         }
@@ -139,7 +139,7 @@ extension List {
         if #available(iOS 14.0, *) { // iOS 14
             self
             .accentColor(Color("Background"))
-            .listStyle(SidebarListStyle())
+            .listStyle(PlainListStyle())
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor(Color("Background"))
             }

@@ -36,7 +36,7 @@ struct RegisterSecondScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 
-                RegisterText(text: "Você considera o temperamento do animal como dócil?")
+                RegisterText(text: "Você o considera dócil?")
                     .padding(.leading)
                     .padding(.top, Metrics.registerFieldPaddingTop + 10)
                 
