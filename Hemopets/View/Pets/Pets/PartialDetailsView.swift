@@ -35,7 +35,7 @@ struct PartialDetailsView: View {
                 .frame(width: 130, alignment: .leading)
                 
                 Image(systemName: "square.and.pencil")
-                    .font(.title3)
+                    .font(.title2)
                     .foregroundColor(.gray)
                     .padding(.trailing)
             }

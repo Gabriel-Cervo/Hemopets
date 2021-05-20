@@ -69,7 +69,6 @@
 		C0BC20952649B551001B5681 /* RegisteredPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20942649B551001B5681 /* RegisteredPetsView.swift */; };
 		C0BC20972649BDC0001B5681 /* CompleteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */; };
 		C0EF5E1E264AF984003AA5ED /* VaccinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */; };
-		CC05DEAD2655B212000066FA /* HideRowSeparatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05DEAC2655B212000066FA /* HideRowSeparatorModifier.swift */; };
 		CC22FAF62645B5DC00CBC8C7 /* PetsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */; };
 		CC22FAF72645B5DC00CBC8C7 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22FAF52645B5DC00CBC8C7 /* Pet.swift */; };
 		CC567966264C61A00037360D /* RegisterSecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC567965264C61A00037360D /* RegisterSecondScreen.swift */; };
@@ -149,7 +148,6 @@
 		C0BC20942649B551001B5681 /* RegisteredPetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredPetsView.swift; sourceTree = "<group>"; };
 		C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDetailsView.swift; sourceTree = "<group>"; };
 		C0EF5E1D264AF984003AA5ED /* VaccinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesListView.swift; sourceTree = "<group>"; };
-		CC05DEAC2655B212000066FA /* HideRowSeparatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideRowSeparatorModifier.swift; sourceTree = "<group>"; };
 		CC22FAF42645B5DC00CBC8C7 /* PetsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsConstants.swift; sourceTree = "<group>"; };
 		CC22FAF52645B5DC00CBC8C7 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		CC567965264C61A00037360D /* RegisterSecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSecondScreen.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 				C0BC20902649A920001B5681 /* PartialDetailsView.swift */,
 				C0BC20942649B551001B5681 /* RegisteredPetsView.swift */,
 				C0BC20962649BDC0001B5681 /* CompleteDetailsView.swift */,
-				CC05DEAC2655B212000066FA /* HideRowSeparatorModifier.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -583,7 +580,6 @@
 				8408D616264569450044EB71 /* NextPageButton.swift in Sources */,
 				8408D60B2644851C0044EB71 /* SwipeDownIndicatorView.swift in Sources */,
 				8495A86A264C070B00A218DD /* TabItemView.swift in Sources */,
-				CC05DEAD2655B212000066FA /* HideRowSeparatorModifier.swift in Sources */,
 				CCA63F47264DD4420059113B /* RoundedRectangleView.swift in Sources */,
 				8455AB49264F585100795CE4 /* RegisterText.swift in Sources */,
 				8408D60E26455E6D0044EB71 /* OnboardingView.swift in Sources */,
