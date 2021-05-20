@@ -16,6 +16,9 @@ struct VaccinesListView: View {
                 .foregroundColor(.gray)
         }
         .colorScheme(.light)
+        .onAppear() {
+            UITableView.appearance().backgroundColor = UIColor(Color("Card"))
+        }
     }
 }
 

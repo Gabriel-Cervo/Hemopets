@@ -50,7 +50,9 @@ struct CompleteDetailsView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    PreviousPageButton(title: "Meus Pets")
+                    PreviousPageButton(title: "Meus Pets", addtionalAction: {
+                        UITableView.appearance().backgroundColor = UIColor(Color("Background"))
+                    })
                         .foregroundColor(.gray)
                         .padding(.top, Metrics.cardPaddingTop - 30)
                         .padding(.bottom, -10)

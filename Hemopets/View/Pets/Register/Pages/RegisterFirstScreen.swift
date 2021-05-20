@@ -98,7 +98,9 @@ struct RegisterFirstScreen: View {
                 Spacer()
                 
                 HStack {
-                    PreviousPageButton()
+                    PreviousPageButton() {
+                        UITableView.appearance().backgroundColor = UIColor(Color("Background"))
+                    }
                     
                     Spacer()
                     Button(action: saveValues, label: {
@@ -111,6 +113,9 @@ struct RegisterFirstScreen: View {
                 .padding(.horizontal)
             }
             .padding(.horizontal, 15)
+        }
+        .onAppear() {
+            UITableView.appearance().backgroundColor = UIColor(Color("Card"))
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
             ImagePicker(image: self.$inputImage)

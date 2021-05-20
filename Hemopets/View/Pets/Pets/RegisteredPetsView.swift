@@ -88,6 +88,7 @@ struct RegisteredPetsView: View {
             .onAppear() {
                 self.registeredCats = PetsConstants.registeredCats
                 self.registeredDogs = PetsConstants.registeredDogs
+                UITableView.appearance().backgroundColor = UIColor(Color("Background"))
             }
         }
     }
