@@ -117,7 +117,7 @@ struct CompleteDetailsView: View {
                                             
                                             Picker(selection: $weight, label: FormPickerView(text: selectedWeightDescription, hasUnderline: false), content: {
                                                 Text("Não sei").tag(WeightOptions.first)
-                                                Text("Menos de 3kg").tag(WeightOptions.second)
+                                                Text("Menos de 4kg").tag(WeightOptions.second)
                                                 Text("Entre 4 e 10kg").tag(WeightOptions.third)
                                                 Text("Entre 11 e 20kg").tag(WeightOptions.fourth)
                                                 Text("Entre 20 e 28kg").tag(WeightOptions.five)
