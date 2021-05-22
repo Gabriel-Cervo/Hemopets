@@ -37,6 +37,8 @@ struct CompleteDetailsView: View {
         gender.description
     }
     
+    @State var vaccines: [Vaccine] = []
+    
     @State private var activateLink: Bool = false
     
     var body: some View {
@@ -160,7 +162,7 @@ struct CompleteDetailsView: View {
                                     .padding(.top, 15)
                                     .padding(.bottom, -10)
                                 
-                                VaccinesListView(vacs: $pet.vaccines)
+                                VaccinesListView(vacs: $vaccines)
                                     .frame(height: 180)
                                     .padding(.horizontal, 15)
                             }
@@ -183,6 +185,7 @@ struct CompleteDetailsView: View {
                 name = pet.name
                 age = pet.age
                 weight = pet.weight
+                vaccines = pet.vaccines
             }
             .navigationBarHidden(true)
         }
@@ -207,6 +210,7 @@ struct CompleteDetailsView: View {
                     cat.name = name
                     cat.age = age
                     cat.weight = weight
+                    cat.vaccines = vaccines
                     do {
                         try UserDefaultsManager.saveData(data: PetsConstants.registeredCats, for: "registeredCats")
                         successAlert()
@@ -222,6 +226,7 @@ struct CompleteDetailsView: View {
                 dog.name = name
                 dog.age = age
                 dog.weight = weight
+                dog.vaccines = vaccines
                 do {
                     try UserDefaultsManager.saveData(data: PetsConstants.registeredDogs, for: "registeredDogs")
                     successAlert()
